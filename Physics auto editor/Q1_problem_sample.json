@@ -1,0 +1,757 @@
+[
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-A",
+      "版块3": "A1"
+    },
+    "题目信息": {
+      "背景信息": "The Earth’s magnetic field can be modeled as a magnetic dipole. In the equatorial plane, the magnetic field is strictly perpendicular to the orbital plane.\nThe magnitude of the magnetic field at a distance $r$ from the Earth's center is given by:\n    $$B(r) = B_0 \\left( \\frac{R_E}{r} \\right)^3$$\n    where $R_E$ is the Earth's radius and $B_0$ is the magnetic field strength at the surface on the equator.\nThe mechanical energy of a circular orbit with radius $r$ for a total mass $M_{tot}$ is $E = -\\frac{G M_E M_{tot}}{2r}$.\nFor any $x \\ll 1$, the approximation $(1+x)^n \\approx 1 + nx$ may be used.\nThe effective emission area of the cathode is $S_{emit} = \\eta S$, where $S$ is the total surface area of the tether and $\\eta$ is a dimensionless factor.",
+      "上下文": "# Orbital Decay and Electro-Thermal Equilibrium of an Electrodynamic Tether\nElectrodynamic tethers (EDTs) are long conducting wires used to exchange energy and momentum with a planetary magnetic field. In this problem, we consider an EDT system consisting of two identical small satellites, each of mass $m$, connected by a thin, straight, conductive tether of length $L$ and total resistance $R$. The system orbits the Earth in the equatorial plane at an altitude within the ionosphere. Due to the gravity gradient, the tether is stabilized in a radial orientation, pointing toward the Earth’s center.\n\n**Useful Information:**\n*   The Earth’s magnetic field can be modeled as a magnetic dipole. In the equatorial plane, the magnetic field is strictly perpendicular to the orbital plane.\n*   The magnitude of the magnetic field at a distance $r$ from the Earth's center is given by:\n    $$B(r) = B_0 \\left( \\frac{R_E}{r} \\right)^3$$\n    where $R_E$ is the Earth's radius and $B_0$ is the magnetic field strength at the surface on the equator.\n*   The mechanical energy of a circular orbit with radius $r$ for a total mass $M_{tot}$ is $E = -\\frac{G M_E M_{tot}}{2r}$.\n*   For any $x \\ll 1$, the approximation $(1+x)^n \\approx 1 + nx$ may be used.\n*   The effective emission area of the cathode is $S_{emit} = \\eta S$, where $S$ is the total surface area of the tether and $\\eta$ is a dimensionless factor.\n\n---\n\n---\n\n![](image/model-teacher_2026_1_1.png)\n\n### Part A: Orbital Dynamics and Motional EMF (3.0 points)\n\nConsider the tether system initially moving in a stable circular orbit of radius $r$ ($r \\gg L$) in the Earth’s equatorial plane. The mass of the tether is negligible (take $m_{tether} = 0$), so the two satellites are the only significant masses in the system. The center of mass of the system moves at the Keplerian velocity $v$.",
+      "问题原文": "Using a rotating reference frame centered on the system's center of mass, find the expression for the tension $T_N$ at the midpoint of the tether. Use a first-order Taylor expansion in terms of $L/r$ to simplify your result. Express your result in terms of $G$, $M_E$, $m$, $L$, and $r$. **[1.2 pt]**",
+      "改造后问题": "Using a rotating reference frame centered on the system's center of mass, the expression for the tension $T_N$ at the midpoint of the tether is ( ). Use a first-order Taylor expansion in terms of $L/r$ to simplify your result. Which of the following expresses your result in terms of $G$, $M_E$, $m$, $L$, and $r$?\n A $\\frac{3 G M_E m L}{2 r^3} $\n B $\\frac{G M_E m L}{r^3}$\n C $\\frac{3 G M_E m L}{r^3}$",
+      "核心思路": "In the co-rotating frame, compute the net radial force (gravity minus centrifugal) on an end mass, Taylor expand to first order in distance from the CM, and equate the tension to this force at x = L/2.",
+      "解答过程": "- **[Physical Principles]**: In a rotating frame centered at the CM (radius $r$) with angular velocity $\\omega = \\sqrt{G M_E / r^3}$, the net radial force on a mass $m$ at distance $x$ from the CM is the sum of the gravitational force, the centrifugal force and the inertial force caused by the acceleration of the CM.\n- **[Equations]**:\n  The effective radial force is:\n  $$F_{eff} = m \\omega^2 (r+x) - \\frac{G M_E m}{(r+x)^2} \\quad (1)$$\n- **[Derivation Steps]**:\n  Using a first-order Taylor expansion for $x \\ll r$:\n  $$F_{eff} \\approx m \\frac{G M_E}{r^3} (r+x) - \\frac{G M_E m}{r^2} \\left(1 - \\frac{2x}{r}\\right) = \\frac{G M_E m}{r^2} \\left(1 + \\frac{x}{r} - 1 + \\frac{2x}{r}\\right) = \\frac{3 G M_E m x}{r^3}$$\n  For the satellite at the outer end ($x = L/2$), the tension $T$ must balance this outward force. Since the tether is massless, the tension $T_N$ at the midpoint is equal to the tension at the ends.\n- **[Final Result]**:\n  $$T_N = \\frac{3 G M_E m L}{2 r^3}$$",
+      "最终答案": [
+        "$T_N = \\frac{3 G M_E m L}{2 r^3}$"
+      ],
+      "改造后答案": [
+        "A"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "medium"
+    },
+    "条件提取": {
+      "显性条件": [
+        "Use a rotating reference frame centered on the system's center of mass.",
+        "The center of mass moves in a circular orbit of radius r.",
+        "First-order Taylor expansion in terms of L/r.",
+        "Express result in terms of G, M_E, m, L, r."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "The tether is massless.",
+          "隐藏条件": "Tension is uniform along the entire tether."
+        },
+        {
+          "条件原文": "The tether is aligned radially (along the line from Earth's center).",
+          "隐藏条件": "The positions of the satellites are at r ± L/2."
+        },
+        {
+          "条件原文": "The center of mass is in Keplerian circular orbit.",
+          "隐藏条件": "Angular velocity satisfies ω^2 = G M_E / r^3."
+        },
+        {
+          "条件原文": "The system is in static equilibrium in the rotating frame.",
+          "隐藏条件": "No Coriolis forces considered; tension balances the effective net force."
+        }
+      ]
+    },
+    "物理模型": "Two point masses connected by a massless tether, in circular orbit around Earth, analyzed in the co-rotating frame of the center of mass.",
+    "关联考点": [
+      [
+        "Mechanics",
+        "Rotating Reference Frames",
+        "Centrifugal Force and Effective Gravity"
+      ],
+      [
+        "Mechanics",
+        "Gravitation",
+        "Newtonian Gravity"
+      ],
+      [
+        "Mechanics",
+        "Dynamics",
+        "Tension in Massless Ropes"
+      ]
+    ],
+    "物理场景": "Two identical satellites connected by a radial tether orbiting Earth in the equatorial plane; find the tension at the tether's midpoint due to differential gravity and rotation.",
+    "判分标准": [
+      "Set up net radial force equation in rotating frame: F_eff = m ω^2 (r+x) - G M_E m/(r+x)^2 (0.3 pt).",
+      "Perform first-order Taylor expansion in x/r to obtain F_eff ≈ 3 G M_E m x / r^3 (0.4 pt; 0.2 for ω^2 = G M_E/r^3, 0.2 for algebra).",
+      "Recognize tension is uniform for massless tether and T_N equals the force on a satellite at x = L/2 (0.3 pt).",
+      "Final expression: T_N = 3 G M_E m L / (2 r^3) (0.2 pt)."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-A",
+      "版块3": "A2"
+    },
+    "题目信息": {
+      "背景信息": "",
+      "上下文": "",
+      "问题原文": "As the conductive tether cuts through the Earth's magnetic field lines, a motional electromotive force (EMF) is generated between its ends. Calculate the magnitude of this EMF, $\\mathcal{E}$, as a function of $r$, $L$, and the given planetary constants. **[1.0 pt]**",
+      "改造后问题": "As the conductive tether cuts through the Earth's magnetic field lines, a motional electromotive force (EMF) is generated between its ends. The magnitude of this EMF, $\\mathcal{E}$ is ( ), as a function of $r$, $L$, and the given planetary constants. ",
+      "核心思路": "The motional EMF is the line integral of v × B along the tether. With a dipole magnetic field and Keplerian orbital velocity, integration gives E ≈ (B0 RE^3 L ω)/r^2; substituting ω from Kepler's third law yields the final expression in terms of r, L, and planetary constants.",
+      "解答过程": "- **[Physical Principles]**: The motional EMF is generated as the tether moves through the magnetic field $B(r)$.\n- **[Equations]**:\n  $$\\mathcal{E} = \\int_{r-L/2}^{r+L/2} v(r') B(r') dr' \\quad (2)$$\n- **[Derivation Steps]**:\n  Substituting $v(r') = \\omega r'$ and $B(r') = B_0 (R_E/r')^3$:\n  $$\\mathcal{E} = \\int_{r-L/2}^{r+L/2} \\omega r' \\frac{B_0 R_E^3}{r'^3} dr' = \\omega B_0 R_E^3 \\left[ -\\frac{1}{r'} \\right]_{r-L/2}^{r+L/2} \\approx \\frac{\\omega B_0 R_E^3 L}{r^2}$$\n  Using $\\omega = \\sqrt{G M_E / r^3}$:\n- **[Final Result]**:\n  $$\\mathcal{E} = B_0 R_E^3 L \\sqrt{\\frac{G M_E}{r^7}}$$",
+      "最终答案": [
+        "$\\mathcal{E} = B_0 R_E^3 L \\sqrt{\\frac{G M_E}{r^7}}$"
+      ],
+      "改造后答案": [
+        "$\\mathcal{E} = B_0 R_E^3 L \\sqrt{\\frac{G M_E}{r^7}}$"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "expression"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "medium"
+    },
+    "条件提取": {
+      "显性条件": [
+        "The tether is conductive.",
+        "The tether cuts through Earth's magnetic field lines.",
+        "The orbit is circular (assumed from context).",
+        "The EMF is a function of r, L, and the planetary constants B0, RE, G, ME.",
+        "Earth's magnetic field is a dipole: B(r) = B0 (RE / r)^3."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "L ≪ r (tether length is much smaller than orbital radius).",
+          "隐藏条件": "The magnetic field and velocity are approximately constant over the tether, allowing the integral to be simplified to vBL at the center of mass."
+        },
+        {
+          "条件原文": "The tether is radially oriented.",
+          "隐藏条件": "The tether's velocity is perpendicular to both the tether and the magnetic field, maximizing motional EMF and directing it along the tether."
+        },
+        {
+          "条件原文": "The orbit is equatorial and Keplerian.",
+          "隐藏条件": "The angular velocity ω is given by ω = √(G ME / r^3), and the velocity is azimuthal while the magnetic field is vertical."
+        }
+      ]
+    },
+    "物理模型": "Motional EMF generated in a radially-oriented conductive tether of length L moving through Earth's non-uniform magnetic dipole field in a circular Keplerian orbit.",
+    "关联考点": [
+      [
+        "Electromagnetism",
+        "Electromagnetic Induction",
+        "Motional EMF"
+      ],
+      [
+        "Mechanics",
+        "Gravitation",
+        "Circular Orbits"
+      ]
+    ],
+    "物理场景": "A conductive tether connecting two satellites in a circular equatorial orbit around Earth cuts through the Earth's magnetic field, inducing an EMF between the ends.",
+    "判分标准": [
+      "Award 0.3 pt for motional EMF integral expression E = ∫ v(r') B(r') dr' or recognizing E ≈ vBL at center of mass.",
+      "Award 0.3 pt for substituting v = ω r' and B = B0 (RE / r')^3.",
+      "Award 0.2 pt for using Keplerian substitution ω = √(G ME / r^3).",
+      "Award 0.2 pt for correct final expression: E = B0 RE^3 L √(G ME / r^7).",
+      "Deduct 0.2 pt if power of r is incorrect but steps are otherwise correct (error carried forward)."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": ["- **[Physical Principles]**: Because the tether length $L$ is much smaller than the orbital radius $r$ ($L \\ll r$), the velocity and magnetic field variations along the tether can be neglected for a first-order approximation. The motional EMF can be evaluated directly by simply multiplying the center-of-mass values, which yields the exact same first-order term as the full integration.\n- **[Equations]**:\n  $$\\mathcal{E} \\approx v_{cm} B_{cm} L$$\n- **[Derivation Steps]**:\n  The Keplerian velocity at the center of mass is $v_{cm} = \\omega r = \\sqrt{\\frac{G M_E}{r}}$.\n  The magnetic field at the center of mass is $B_{cm} = B_0 \\left(\\frac{R_E}{r}\\right)^3$.\n  Multiplying these center-of-mass values by the tether length $L$:\n  $$\\mathcal{E} = \\left(\\sqrt{\\frac{G M_E}{r}}\\right) \\left(B_0 \\left(\\frac{R_E}{r}\\right)^3\\right) L$$\n- **[Final Result]**:\n  $$\\mathcal{E} = B_0 R_E^3 L \\sqrt{\\frac{G M_E}{r^7}}$$"]
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-A",
+      "版块3": "A3"
+    },
+    "题目信息": {
+      "背景信息": "",
+      "上下文": "",
+      "问题原文": "Determine the polarity of the induced EMF, in other words, which satellite (the one closer to Earth or the one farther from Earth) accumulates positive charges? **[0.8 pt]**\n\n---",
+      "改造后问题": "Determine the polarity of the induced EMF. Which of the following is correct regarding the accumulation of positive charges?\n  A. The satellite closer to Earth accumulates positive charges.\n  B. The satellite farther from Earth accumulates positive charges.\n  C. The charges alternate periodically between the two satellites.\n  D. Neither satellite accumulates charges.\n",
+      "核心思路": "Using the right-hand rule for v × B with B northward and v eastward gives a radial outward force on positive charges, causing the outer (farther) satellite to accumulate positive charges.",
+      "解答过程": "- **[Physical Principles]**: The induced electric field is $\\vec{E}_{ind} = \\vec{v} \\times \\vec{B}$. In the Earth's equatorial plane, $\\vec{v}$ is along the orbital tangent and $\\vec{B}$ is directed toward the geographic North.\n- **[Derivation Steps]**:\n  Using the right-hand rule, $\\vec{v} \\times \\vec{B}$ points radially outward (away from Earth's center). Positive charges will therefore accumulate at the end further from Earth.\n- **[Final Result]**:\n  The satellite **farther from Earth** accumulates positive charges.\n\n---",
+      "最终答案": [
+        "The satellite farther from Earth accumulates positive charges."
+      ],
+      "改造后答案": [
+        "B"
+      ],
+      "答案类型": [
+        "choice"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "easy"
+    },
+    "条件提取": {
+      "显性条件": [
+        "The satellites move along a circular orbit in the Earth's equatorial plane.",
+        "The Earth's magnetic field in the equatorial plane is directed toward the geographic North (perpendicular to the orbital plane).",
+        "The satellite velocities are eastward.",
+        "The tether is conducting and oriented radially (one satellite closer to Earth, one farther)."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "induced EMF",
+          "隐藏条件": "The polarity is determined by the direction of the Lorentz force on positive charges: F = q(v × B)."
+        },
+        {
+          "条件原文": "Which satellite accumulates positive charges?",
+          "隐藏条件": "Assuming the tether is initially neutral; charge separation occurs, and positive charges move in the direction of v × B."
+        }
+      ]
+    },
+    "物理模型": "Motional EMF in a radially oriented conducting tether moving through Earth's dipolar magnetic field, with charge separation driven by the magnetic force q(v × B).",
+    "关联考点": [
+      [
+        "Electromagnetism",
+        "Electromagnetic Induction",
+        "Motional EMF"
+      ],
+      [
+        "Electromagnetism",
+        "Magnetic Force on Moving Charges",
+        "Lorentz Force"
+      ],
+      [
+        "Mechanics",
+        "Vectors",
+        "Cross Product (Right-hand rule)"
+      ]
+    ],
+    "物理场景": "Tethered satellite system in a circular equatorial orbit, with Earth's magnetic field perpendicular to the orbital plane (northward), and the orbital velocity eastward.",
+    "判分标准": [
+      "Applying right-hand rule for F = q(v × B) or E_ind = v × B, indicating force on positive charges points radially outward (0.4 pts).",
+      "Correctly concluding that the satellite farther from Earth accumulates positive charges (0.4 pts). No justification = 0 marks."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-B",
+      "版块3": "B1"
+    },
+    "题目信息": {
+      "背景信息": "The Earth’s magnetic field can be modeled as a magnetic dipole. In the equatorial plane, the magnetic field is strictly perpendicular to the orbital plane.\nThe magnitude of the magnetic field at a distance $r$ from the Earth's center is given by:\n    $$B(r) = B_0 \\left( \\frac{R_E}{r} \\right)^3$$\n    where $R_E$ is the Earth's radius and $B_0$ is the magnetic field strength at the surface on the equator.\nThe mechanical energy of a circular orbit with radius $r$ for a total mass $M_{tot}$ is $E = -\\frac{G M_E M_{tot}}{2r}$.\nFor any $x \\ll 1$, the approximation $(1+x)^n \\approx 1 + nx$ may be used.\nThe effective emission area of the cathode is $S_{emit} = \\eta S$, where $S$ is the total surface area of the tether and $\\eta$ is a dimensionless factor.",
+      "上下文": "---\n\n![](image/model-teacher_2026_1_2.png)\n\n### Part B: Electrodynamic Drag and Orbital Evolution (4.0 points)\n\nThe tether is immersed in the ionospheric plasma, which is a dilute ionized gas. By using specialized contactors at the ends of the tether (e.g., a hollow cathode at the lower end and an electron collection tether at the upper end), the circuit is closed through the ambient plasma. The plasma acts as a return path with negligible resistance. A steady current $I$ flows through the tether.",
+      "问题原文": "Derive the expression for the total Lorentz force $\\vec{F}_L$ acting on the tether. Show that this force acts in the direction exactly opposite to the orbital velocity vector $\\vec{v}$. **[1.0 pt]**",
+      "改造后问题": "Fill in the blanks: The induced EMF drives a current $I$ from the inner to the outer satellite, so $d\\vec{l}$ is in the $+\\hat{r}$ direction. Using $d\\vec{F}_L = I d\\vec{l} \\times \\vec{B}$, the resulting Lorentz force points in the ( ) direction, which is exactly ( ) to the orbital velocity $\\vec{v}$. The magnitude of this total force is approximately ( ).\n  A. $-\\hat{\\phi}$, opposite, $I B(r) L$\n  B. $+\\hat{\\phi}$, parallel, $I B(r) L$\n  C. $-\\hat{r}$, perpendicular, $I B(r) L$\n  D. $+\\hat{r}$, perpendicular, $I B(r) L$",
+      "核心思路": "The Lorentz force on a current element is $d\\vec{F} = I d\\vec{l} \\times \\vec{B}$; integrating over the tether with radial $d\\vec{l}$ and perpendicular $\\vec{B}$ yields a total force proportional to $I B(r) L$, directed opposite to the orbital velocity due to the cross product.",
+      "解答过程": "- **[Physical Principles]**: The Lorentz force is $d\\vec{F}_L = I d\\vec{l} \\times \\vec{B}$.\n- **[Derivation Steps]**:\n  The induced EMF drives a current $I$ from the lower potential (inner) to the higher potential (outer) satellite through the tether. Thus, $d\\vec{l}$ is in the $+\\hat{r}$ direction.\n  $$\\vec{F}_L = \\int_{r-L/2}^{r+L/2} I (\\hat{r} dr') \\times (B(r') \\hat{z}) = \\int I B(r') (-\\hat{\\phi}) dr'$$\n  Since the orbital velocity $\\vec{v}$ is in the $+\\hat{\\phi}$ direction, $\\vec{F}_L$ is exactly opposite to $\\vec{v}$.\n- **[Final Result]**:\n  The total force is $\\vec{F}_L \\approx - I B(r) L \\hat{v}$.",
+      "最终答案": [
+        "$\\vec{F}_L \\approx - I B(r) L \\hat{v}$"
+      ],
+      "改造后答案": [
+        "A"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "easy"
+    },
+    "条件提取": {
+      "显性条件": [
+        "Earth's magnetic field is a dipole, given by $B(r) = B_0 (R_E/r)^3$ and perpendicular to the orbital plane.",
+        "The orbit is circular with radius $r$.",
+        "The tether is oriented radially, connecting two satellites.",
+        "A current $I$ flows through the tether (induced by motional EMF)."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "The induced EMF drives a current $I$ from the lower potential (inner) to the higher potential (outer) satellite through the tether.",
+          "隐藏条件": "The current direction is radially outward, so the current element is $d\\vec{l} = \\hat{r} dr$."
+        },
+        {
+          "条件原文": "For any $x \\ll 1$, the approximation $(1+x)^n \\approx 1 + nx$ may be used.",
+          "隐藏条件": "The tether length $L$ is much smaller than the orbital radius $r$, so the magnetic field variation across the tether is negligible and $B(r') \\approx B(r)$."
+        }
+      ]
+    },
+    "物理模型": "Current-carrying straight wire in a non-uniform magnetic dipole field, with integration of $d\\vec{F} = I d\\vec{l} \\times \\vec{B}$.",
+    "关联考点": [
+      [
+        "Electromagnetism",
+        "Magnetic Fields",
+        "Lorentz Force"
+      ]
+    ],
+    "物理场景": "An electrodynamic tether consisting of a straight radial conductor connecting two satellites in a circular equatorial orbit around Earth, with current driven by motional EMF, experiencing a Lorentz force due to Earth's magnetic dipole field.",
+    "判分标准": [
+      "Award 0.3 pt for stating the Lorentz force primitive: $d\\vec{F}_L = I d\\vec{l} \\times \\vec{B}$.",
+      "Award 0.3 pt for identifying current direction (from inner to outer satellite) and setting $d\\vec{l} = \\hat{r} dr$.",
+      "Award 0.2 pt for obtaining the magnitude $F_L = I B(r) L$.",
+      "Award 0.2 pt for proving the force is opposite to orbital velocity ($-\\hat{\\phi}$ direction)."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-B",
+      "版块3": "B2"
+    },
+    "题目信息": {
+      "背景信息": "",
+      "上下文": "",
+      "问题原文": "Due to the work done by the Lorentz force, the system's mechanical energy dissipates, causing the orbit to decay. Assuming the orbit remains quasi-circular at all times, derive the differential equation for the rate of change of the orbital radius, $dr/dt$, in terms of $I, B_0 L, m, M_E, R_E$, and $r$. **[1.5 pt]**",
+      "改造后问题": "Due to the work done by the Lorentz force, the system's mechanical energy dissipates. Assuming a quasi-circular orbit, the differential equation for the orbital decay rate $dr/dt$ is ( ).\n  A. $- \\frac{I B_0 R_E^3 L}{m \\sqrt{G M_E} r^{3/2}}$\n  B. $- \\frac{I B_0 R_E^3 L}{2m \\sqrt{G M_E} r^{3/2}}$\n  C. $- \\frac{I B_0 R_E^2 L}{m \\sqrt{G M_E} r^{5/2}}$\n  D. $+ \\frac{I B_0 R_E^3 L}{m \\sqrt{G M_E} r^{3/2}}$",
+      "核心思路": "The loss rate of total mechanical energy of the two-satellite system equals the power dissipated by the Lorentz force. Using the circular orbit velocity and the dipole field expression, this eliminates v and B, yielding a differential equation for dr/dt.",
+      "解答过程": "- **[Equations]**:\n  Total mechanical energy $E = -\\frac{G M_E m}{r}$. Power dissipated $P = \\vec{F}_L \\cdot \\vec{v} = - I B L v$.\n- **[Derivation Steps]**:\n  $$\\frac{dE}{dt} = \\frac{G M_E m}{r^2} \\frac{dr}{dt} = - I B L \\sqrt{\\frac{G M_E}{r}}$$\n  Solving for $dr/dt$:\n- **[Final Result]**:\n  $$\\frac{dr}{dt} = - \\frac{I B_0 R_E^3 L}{m \\sqrt{G M_E} r^{3/2}}$$",
+      "最终答案": [
+        "$\\frac{dr}{dt} = - \\frac{I B_0 R_E^3 L}{m \\sqrt{G M_E} r^{3/2}}$"
+      ],
+      "改造后答案": [
+        "A"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "medium"
+    },
+    "条件提取": {
+      "显性条件": [
+        "The orbit remains quasi-circular at all times.",
+        "The mechanical energy dissipation is solely due to the Lorentz force.",
+        "The current I, tether length L, satellite mass m, Earth mass M_E, Earth radius R_E, and surface magnetic field B0 are known parameters.",
+        "The radial dependence of the magnetic field is B = B0 (R_E/r)^3."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "Assuming the orbit remains quasi-circular at all times",
+          "隐藏条件": "The orbital speed is given by the instantaneous circular orbit formula: v = √(G M_E / r)."
+        },
+        {
+          "条件原文": "Due to the work done by the Lorentz force, the system's mechanical energy dissipates",
+          "隐藏条件": "The rate of change of total mechanical energy equals the power dissipated: dE/dt = F_L · v."
+        },
+        {
+          "条件原文": "The total mechanical energy is E = -GM_E m / r",
+          "隐藏条件": "The system consists of two equal masses m in circular orbit; the sum of kinetic and potential energies reduces to -GM_E m / r, with the center of mass at distance r."
+        },
+        {
+          "条件原文": "The Lorentz force on the tether is F_L = I L B, directed opposite to velocity",
+          "隐藏条件": "The force acts anti-parallel to the orbital velocity vector, giving power = - I B L v."
+        },
+        {
+          "条件原文": "The tether length L is constant and much smaller than r",
+          "隐藏条件": "The orbital radius r is approximately the distance to both satellites and the magnetic field variation across L is negligible in the product IBL, but B is evaluated at r."
+        }
+      ]
+    },
+    "物理模型": "Two satellites of mass m connected by a conductive tether of length L, orbiting Earth in a quasi-circular equatorial orbit. A constant radial current I flows. Earth's magnetic field is modeled as a dipole: B = B0 (R_E/r)^3. The Lorentz force on the tether opposes the orbital velocity, causing energy dissipation.",
+    "关联考点": [
+      [
+        "Mechanics",
+        "Gravitation",
+        "Orbital energy"
+      ],
+      [
+        "Electromagnetism",
+        "Magnetic fields",
+        "Lorentz force"
+      ],
+      [
+        "Mechanics",
+        "Work and Energy",
+        "Power"
+      ],
+      [
+        "Mechanics",
+        "Kinematics",
+        "Circular motion"
+      ]
+    ],
+    "物理场景": "An electrodynamic tether system in low Earth orbit experiences orbital decay due to the drag force from the current interacting with the geomagnetic field.",
+    "判分标准": [
+      "0.4 pt for total mechanical energy or angular momentum (E_tot = -GM_E m / r or L_ang = 2mvr), accounting for two satellites. Deduct 0.2 if energy is written incorrectly as -GM_E m/(2r).",
+      "0.4 pt for relating dE/dt to Lorentz power or torque: dE/dt = -I B L v (or dL_ang/dt = -I B L r), including negative sign.",
+      "0.4 pt for derivative: dE/dt = (GM_E m / r^2) dr/dt (or equivalent via angular momentum).",
+      "0.3 pt for final result: dr/dt = - (I B0 R_E^3 L) / (m sqrt(G M_E) r^(3/2)), with correct substitution of B(r)."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-B",
+      "版块3": "B3"
+    },
+    "题目信息": {
+      "背景信息": "",
+      "上下文": "",
+      "问题原文": "Let $Q$ be the total charge transferred through the tether as the system descends from an initial radius $r_1$ to a final radius $r_2$. Prove that $Q = \\int I dt$ depends only on $r_1, r_2$, and the planetary constants ($M_E, R_E, B_0$), but is independent of the tether's resistance $R$ or the specific time-evolution of the current. Find the expression for $Q$. **[1.5 pt]**\n\n---",
+      "改造后问题": "The total charge $Q$ transferred through the tether as the system descends from initial radius $r_1$ to final radius $r_2$ is ( ) of the tether's resistance $R$. The expression for $Q$ is ( ).\n  A. dependent, $\\frac{m \\sqrt{G M_E}}{B_0 R_E^3 L} (r_1^{3/2} - r_2^{3/2})$\n  B. independent, $\\frac{2m \\sqrt{G M_E}}{5 B_0 R_E^3 L} (r_1^{5/2} - r_2^{5/2})$\n  C. dependent, $\\frac{2m \\sqrt{G M_E}}{5 B_0 R_E^3 L} (r_1^{5/2} - r_2^{5/2})$\n  D. independent, $\\frac{m \\sqrt{G M_E}}{3 B_0 R_E^3 L} (r_1^{3/2} - r_2^{3/2})$",
+      "核心思路": "Use the chain rule to change the integration variable from time to radius, substitute the orbital decay rate from B.2 to eliminate the current, and integrate the resulting pure function of r to show Q depends only on r1, r2, and constants, independent of R.",
+      "解答过程": "- **[Derivation Steps]**:\n  $Q = \\int I dt = \\int \\frac{I}{dr/dt} dr$. From B.2: $I dt = -\\frac{m \\sqrt{G M_E}}{B(r) L r^{3/2}} dr$.\n  $$Q = \\int_{r_2}^{r_1} \\frac{m \\sqrt{G M_E}}{(B_0 R_E^3 r^{-3}) L r^{3/2}} dr = \\frac{m \\sqrt{G M_E}}{B_0 R_E^3 L} \\int_{r_2}^{r_1} r^{3/2} dr$$\n- **[Final Result]**:\n  $$Q = \\frac{2m \\sqrt{G M_E}}{5 B_0 R_E^3 L} (r_1^{5/2} - r_2^{5/2})$$\n\n---",
+      "最终答案": [
+        "$Q = \\frac{2m \\sqrt{G M_E}}{5 B_0 R_E^3 L} (r_1^{5/2} - r_2^{5/2})$"
+      ],
+      "改造后答案": [
+        "B"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "easy"
+    },
+    "条件提取": {
+      "显性条件": [
+        "Total charge transferred Q = ∫ I dt",
+        "Initial radius r1, final radius r2",
+        "Planetary constants: M_E, R_E, B0",
+        "System parameters: satellite mass m, tether length L",
+        "Q must be independent of tether resistance R and time-evolution of I"
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "From B.2: I dt = - (m sqrt(G M_E))/(B(r) L r^{3/2}) dr",
+          "隐藏条件": "The differential relation between current and radial change during orbital decay is known and can be substituted."
+        },
+        {
+          "条件原文": "The tether remains in a circular orbit and the descent is slow",
+          "隐藏条件": "Quasi-steady approximation holds; orbital velocity is Keplerian at each radius."
+        }
+      ]
+    },
+    "物理模型": "Electrodynamic tether system in circular equatorial orbit: two satellites connected by a conducting tether, Earth's dipolar magnetic field, Lorentz drag force, and orbital energy loss.",
+    "关联考点": [
+      [
+        "Electromagnetism",
+        "Electromagnetic Induction",
+        "Motional EMF"
+      ],
+      [
+        "Mechanics",
+        "Gravitation",
+        "Orbital Motion"
+      ]
+    ],
+    "物理场景": "A two-satellite system with a conductive tether spirals inward from initial radius r1 to final radius r2 due to electrodynamic drag, while a total charge Q flows through the tether.",
+    "判分标准": [
+      "Setting up the integral Q = ∫ I dt and converting to ∫ I (dt/dr) dr (0.5 pt)",
+      "Canceling current by substituting dt/dr from B.2, yielding I dt = -[m√(GM_E)]/[B(r)L r^{3/2}] dr (0.5 pt)",
+      "Performing the integration and obtaining final expression Q = (2m√(GM_E))/(5 B0 R_E^3 L) (r1^{5/2} - r2^{5/2}) (0.5 pt)"
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-C",
+      "版块3": "C1"
+    },
+    "题目信息": {
+      "背景信息": "Stefan-Boltzmann Law: The power radiated by a surface area $S$ with emissivity $\\epsilon$ at temperature $T$ is $P_{rad} = \\epsilon \\sigma S T^4$, where $\\sigma$ is the Stefan-Boltzmann constant.\nRichardson’s Law for thermionic emission: The saturation current $I$ emitted by a surface $S_{emit}$ at temperature $T$ is given by $I = S_{emit} A_R T^2 \\exp\\left(-\\frac{\\Phi}{k_B T}\\right)$, where $A_R$ is Richardson's constant and $\\Phi$ is the work function.",
+      "上下文": "---\n\n### Part C: Electro-Thermal Limits and Asymptotic Evolution (3.0 points)\n\nIn a realistic scenario, the current $I$ is limited by the ability of the tether's ends to emit electrons into the plasma. At the cathode (the negative end), the current is governed by Richardson's thermionic emission law. Furthermore, the tether is subject to intense heating.\n\n**Useful Information for Part C:**\n*   Stefan-Boltzmann Law: The power radiated by a surface area $S$ with emissivity $\\epsilon$ at temperature $T$ is $P_{rad} = \\epsilon \\sigma S T^4$, where $\\sigma$ is the Stefan-Boltzmann constant.\n*   Richardson’s Law for thermionic emission: The saturation current $I$ emitted by a surface $S_{emit}$ at temperature $T$ is given by $I = S_{emit} A_R T^2 \\exp\\left(-\\frac{\\Phi}{k_B T}\\right)$, where $A_R$ is Richardson's constant and $\\Phi$ is the work function.",
+      "问题原文": "The tether reaches a steady-state temperature $T_{eq}$ when the Joule heating power is balanced by thermal radiation into space and the energy carried away by the emitted electrons. The whole system is of the same temperature. Assume each emitted electron carries away a kinetic energy that is negligible compared to the work function $\\Phi$, so the energy carried away can be approximately written as $\\Phi$. Furthermore, assume the induced EMF $\\mathcal{E}$ is sufficiently large such that the current $I$ is exactly the saturation current $I_{sat}$ allowed by the cathode temperature. Assume the total surface area of the system is $S$, and $S_{emit}=\\eta S$. Formulate a system of two equations that self-consistently determine the steady-state temperature $T_{eq}$ and the saturated current $I_{sat}$ in terms of the tether's parameters ($R, S, \\eta, \\epsilon, \\Phi$) and the local EMF $\\mathcal{E}$. **[1.2 pt]**",
+      "改造后问题": "The system of two equations that self-consistently determine the steady-state temperature $T_{eq}$ and the saturated current $I_{sat}$ are the energy balance equation ( ) and the current balance equation ( ).\n  A. $I_{sat}^2 R = \\epsilon \\sigma S T_{eq}^4 + \\frac{I_{sat} \\Phi}{e}$ and $I_{sat} = \\eta S A_R T_{eq}^2 \\exp\\left(-\\frac{\\Phi}{k_B T_{eq}}\\right)$\n  B. $I_{sat}^2 R = \\epsilon \\sigma S T_{eq}^4$ and $I_{sat} = \\eta S A_R T_{eq}^4 \\exp\\left(-\\frac{\\Phi}{k_B T_{eq}}\\right)$\n  C. $I_{sat}^2 R = \\epsilon \\sigma S T_{eq}^4 + \\frac{I_{sat} \\Phi}{e}$ and $I_{sat} = \\eta S A_R T_{eq}^2$\n  D. $I_{sat} R = \\epsilon \\sigma S T_{eq}^4$ and $I_{sat} = \\eta S A_R T_{eq}^2 \\exp\\left(-\\frac{\\Phi}{k_B T_{eq}}\\right)$",
+      "核心思路": "Combine energy conservation (Joule heating vs. radiative cooling plus thermionic energy loss) with Richardson's law for saturation current to self-consistently determine T_eq and I_sat.",
+      "解答过程": "- **[Equations]**:\n  1. Energy balance: $I_{sat}^2 R = \\epsilon \\sigma S T_{eq}^4 + \\frac{I_{sat} \\Phi}{e}$\n  2. Current balance: $I_{sat} = \\eta S A_R T_{eq}^2 \\exp\\left(-\\frac{\\Phi}{k_B T_{eq}}\\right)$",
+      "最终答案": [
+        ""
+      ],
+      "改造后答案": [
+        "A"
+      ],
+      "答案类型": [
+        "equation"
+      ],
+      "改造后答案类型": [
+        ""
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "medium"
+    },
+    "条件提取": {
+      "显性条件": [
+        "Total surface area S, emitting area fraction η (S_emit = ηS).",
+        "Emitted electrons carry energy approximately equal to work function Φ.",
+        "Induced EMF E is sufficiently large so current equals saturation current I_sat.",
+        "Whole system at same temperature T_eq.",
+        "Radiated power: εσS T_eq^4.",
+        "Joule heating power: I_sat^2 R.",
+        "Saturation current: I_sat = ηS A_R T_eq^2 exp(-Φ/(k_B T_eq)).",
+        "Parameters given: R, S, η, ε, Φ, E (local EMF)."
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "Assume each emitted electron carries away a kinetic energy that is negligible compared to the work function Φ, so the energy carried away can be approximately written as Φ.",
+          "隐藏条件": "Power loss due to emitted electrons is (I_sat/e) * Φ, where e is the elementary charge."
+        },
+        {
+          "条件原文": "The tether reaches a steady-state temperature T_eq when the Joule heating power is balanced by thermal radiation into space and the energy carried away by the emitted electrons.",
+          "隐藏条件": "Energy balance: I_sat^2 R = εσS T_eq^4 + (I_sat/e)Φ."
+        },
+        {
+          "条件原文": "the induced EMF E is sufficiently large such that the current I is exactly the saturation current I_sat allowed by the cathode temperature.",
+          "隐藏条件": "The tether's current is not limited by the ohmic resistance but by thermionic emission; i.e., I_sat is given directly by Richardson's law and does not depend on EMF magnitude (as long as it is large enough to maintain saturation)."
+        },
+        {
+          "条件原文": "The whole system is of the same temperature.",
+          "隐藏条件": "The cathode emitting area is at T_eq, and thermal gradients are negligible; thus Richardson's law uses T_eq."
+        },
+        {
+          "条件原文": "The total surface area of the system is S, and S_emit = ηS.",
+          "隐藏条件": "The emitting area is a fraction η of the total radiating area S; the same S is used for radiation (with emissivity ε)."
+        }
+      ]
+    },
+    "物理模型": "Isothermal tether with Joule heating, radiative cooling, and thermionic emission energy loss; saturation current limited by cathode temperature via Richardson's law.",
+    "关联考点": [
+      [
+        "Thermodynamics",
+        "Heat Transfer",
+        "Radiation"
+      ],
+      [
+        "Thermodynamics",
+        "Thermal Equilibrium",
+        "Steady-State Heat Balance"
+      ],
+      [
+        "Electromagnetism",
+        "Current and Resistance",
+        "Joule Heating"
+      ],
+      [
+        "Modern Physics",
+        "Thermionic Emission",
+        "Richardson's Law"
+      ]
+    ],
+    "物理场景": "Electrodynamic tether in space reaching steady-state temperature, with thermionic emission of electrons balancing Joule heating against radiation and electron energy loss.",
+    "判分标准": [
+      "Award 0.6 pt for correctly writing the energy balance equation: I_sat^2 R = εσS T_eq^4 + (I_sat/e)Φ.",
+      "Award 0.6 pt for correctly writing the saturation current equation: I_sat = ηS A_R T_eq^2 exp(-Φ/(k_B T_eq))."
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  },
+  {
+    "标注基础信息": {
+      "来源": "model-teacher",
+      "补充": "",
+      "年份": "2026",
+      "版块1": "Q1",
+      "版块2": "Part-C",
+      "版块3": "C2"
+    },
+    "题目信息": {
+      "背景信息": "",
+      "上下文": "",
+      "问题原文": "Consider a limit where the system is driven to extreme temperatures such that Joule heating dominates the emission cooling (i.e., $I^2 R \\gg I\\Phi/e$) and the thermal energy is much larger than the work function ($k_B T \\gg \\Phi$). Under these asymptotic conditions, the exponential term in Richardson's Law can be approximated as $\\exp(-\\Phi/k_B T) \\approx 1 - \\Phi/k_B T$. Assuming the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\\mathcal{E}(r)$, find the expression for the orbital decay rate $|dr/dt|$ in this limit, expressed in terms of the tether's material/geometric constants ($S, \\epsilon, R, L$), the satellites' mass $m$, and the local orbital parameters ($B, v, r$). **[1.8 pt]**",
+      "改造后问题": "Under extreme asymptotic conditions where the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\\mathcal{E}(r)$, the expression for the orbital decay rate $|dr/dt|$ is ( ).\n  A. $\\frac{B L^2 r}{m R^2}$\n  B. $\\frac{B^2 L^2 r}{m R}$\n  C. $\\frac{B^2 L^2 r^2}{m R}$\n  D. $\\frac{B L r^2}{m R}$",
+      "核心思路": "At the tipping point, the current is limited by the available EMF, so $I = \\mathcal{E}/R = B L v / R$. Substituting this into the previously derived orbital decay rate $|dr/dt| = I B L r / (m v)$ yields $|dr/dt| = B^2 L^2 r / (m R)$.",
+      "解答过程": "- **[Derivation Steps]**:\n  In the limit $I^2 R \\gg I \\Phi/e$ and $k_B T \\gg \\Phi$, the equations simplify to $I^2 R \\approx \\epsilon \\sigma S T^4$ and $I \\approx \\eta S A_R T^2$. At the tipping point, the current is determined by the maximum available EMF: $I = \\mathcal{E}/R$.\n  Substitute $I = \\frac{B L v}{R}$ into the decay rate $|dr/dt| = \\frac{I B L r}{m v}$ (from B.2):\n  $$|dr/dt| = \\frac{(B L v / R) B L r}{m v} = \\frac{B^2 L^2 r}{m R}$$\n- **[Final Result]**:\n  $$|dr/dt| = \\frac{B^2 L^2 r}{m R}$$",
+      "最终答案": [
+        "$|dr/dt| = \\frac{B^2 L^2 r}{m R}$"
+      ],
+      "改造后答案": [
+        "B"
+      ],
+      "答案类型": [
+        "expression"
+      ],
+      "改造后答案类型": [
+        "choice"
+      ],
+      "答案单位": [
+        ""
+      ],
+      "改造后答案单位": [
+        ""
+      ],
+      "关联图片路径": [
+        ""
+      ],
+      "模态类型": [
+        "text-only"
+      ],
+      "难度": "medium"
+    },
+    "条件提取": {
+      "显性条件": [
+        "$I^2 R \\gg I\\Phi/e$ (Joule heating dominates emission cooling)",
+        "$k_B T \\gg \\Phi$ (thermal energy much larger than work function)",
+        "Exponential approximation $\\exp(-\\Phi/k_B T) \\approx 1 - \\Phi/k_B T$",
+        "Tether operated at tipping point: $I_{sat}$ is exactly limited by the available EMF $\\mathcal{E}(r)$",
+        "Find $|dr/dt|$ in terms of material/geometric constants $S, \\epsilon, R, L$, mass $m$, and local orbital parameters $B, v, r$"
+      ],
+      "隐性条件": [
+        {
+          "条件原文": "assuming the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\\mathcal{E}(r)$",
+          "隐藏条件": "The current is $I = \\mathcal{E}/R$, not determined by Richardson's law; the thermionic emission can supply this current exactly without excess."
+        },
+        {
+          "条件原文": "the exponential term in Richardson's Law can be approximated as $\\exp(-\\Phi/k_B T) \\approx 1 - \\Phi/k_B T$",
+          "隐藏条件": "Richardson's law simplifies to $I \\approx \\eta S A_R T^2 (1-\\Phi/k_B T)$, but in this limit the current is set by EMF/R, not by emission saturation."
+        },
+        {
+          "条件原文": "find the expression for the orbital decay rate $|dr/dt|$ in this limit",
+          "隐藏条件": "The orbital decay rate expression derived in part B.2, $|dr/dt| = I B L r / (m v)$, is applicable."
+        },
+        {
+          "条件原文": "expressed in terms of the tether's material/geometric constants ($S, \\epsilon, R, L$), the satellites' mass $m$, and the local orbital parameters ($B, v, r$)",
+          "隐藏条件": "$S$ and $\\epsilon$ do not appear in the final expression because the current is not limited by emission properties; the result depends only on $B, L, r, m, R$."
+        },
+        {
+          "条件原文": "the tether is operated [in orbit]",
+          "隐藏条件": "The tether is aligned radially, the orbital motion is circular and Keplerian, and the motional EMF is $\\mathcal{E} = B L v$ with $B$ roughly constant along $L$."
+        }
+      ]
+    },
+    "物理模型": "Electrodynamic tether in circular Earth orbit, generating current via motional EMF, with thermionic emission current source operating in the EMF-limited regime (tipping point), causing orbital decay through Lorentz drag.",
+    "关联考点": [
+      [
+        "Mechanics",
+        "Orbital Mechanics",
+        "Orbital Decay due to Dissipative Forces"
+      ],
+      [
+        "Electromagnetism",
+        "Electromagnetic Induction",
+        "Motional EMF"
+      ],
+      [
+        "Electromagnetism",
+        "Electromagnetic Forces",
+        "Lorentz Force on Current-Carrying Wire"
+      ],
+      [
+        "Thermodynamics",
+        "Thermal Radiation",
+        "Stefan-Boltzmann Law"
+      ],
+      [
+        "Modern Physics",
+        "Thermionic Emission",
+        "Richardson's Law"
+      ]
+    ],
+    "物理场景": "A conductive tether of length L connecting two satellites in low Earth orbit, moving through the geomagnetic field, generating a current that interacts with the field to produce drag, leading to a gradual decrease in orbital radius.",
+    "判分标准": [
+      "Recognize that at the tipping point, the current is $I = \\mathcal{E}/R$ (0.6 pt)",
+      "Use motional EMF $\\mathcal{E} = B L v$ (0.4 pt)",
+      "Substitute into decay rate from B.2: $|dr/dt| = I B L r / (m v)$ (0.4 pt)",
+      "Simplify to $B^2 L^2 r / (m R)$ (0.4 pt)"
+    ],
+    "错误解题步骤": [],
+    "多解法标注": []
+  }
+]

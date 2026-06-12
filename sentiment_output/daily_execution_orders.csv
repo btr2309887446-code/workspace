@@ -1,0 +1,9 @@
+ticker,action,final_signal,allocation_weight,target_dollar_amount
+MU,Long,1.0,0.1504,150.42
+WDC,Long,1.0,0.1504,150.42
+STX,Long,1.0,0.1504,150.42
+NVDA,Long,0.9999,0.1504,150.41
+AMD,Long,0.9997,0.1504,150.38
+USO,Long,0.664,0.0999,99.88
+GLD,Long,0.6044,0.0909,90.92
+MSFT,Long,0.3799,0.0571,57.15

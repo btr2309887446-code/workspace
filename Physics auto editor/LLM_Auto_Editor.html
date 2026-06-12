@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>物理题目自动化大模型处理终端</title>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-hover: #4338CA;
+            --secondary: #10B981;
+            --secondary-hover: #059669;
+            --bg-color: #F3F4F6;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --border-color: #E5E7EB;
+            --radius: 12px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .header-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        /* 玻璃拟态设置面板 */
+        .settings-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .settings-panel h2 {
+            grid-column: 1 / -1;
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="file"] {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #F9FAFB;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+            background: #FFF;
+        }
+
+        input[type="file"] {
+            padding: 9px;
+            background: #FFF;
+            cursor: pointer;
+        }
+
+        .btn-group {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            background-color: #9CA3AF;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-success {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* 题目输出卡片 */
+        #outputContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .problem-card {
+            background: #FFF;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .problem-header h3 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: #E5E7EB;
+            color: #4B5563;
+        }
+
+        .status-processing { background: #DBEAFE; color: #1D4ED8; }
+        .status-success { background: #D1FAE5; color: #065F46; }
+        .status-error { background: #FEE2E2; color: #B91C1C; }
+
+        .content-block {
+            margin-bottom: 20px;
+        }
+
+        .content-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-box {
+            background: #F9FAFB;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: #1F2937;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .copy-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            background: #E5E7EB;
+            color: #374151;
+        }
+
+        .copy-btn:hover {
+            background: #D1D5DB;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8; 
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="header-title">✨ 物理题目自动化改造终端</h1>
+
+    <!-- 配置面板 -->
+    <div class="settings-panel">
+        <h2>⚙️ 接口及数据配置</h2>
+        
+        <div class="form-group">
+            <label for="apiKey">🔑 API Key</label>
+            <input type="password" id="apiKey" placeholder="输入你的模型 API Key (例如 sk-...)">
+        </div>
+        
+        <div class="form-group">
+            <label for="baseUrl">🌐 接口地址 (Base URL)</label>
+            <input type="text" id="baseUrl" value="https://api.deepseek.com/chat/completions" placeholder="必须包含具体的路径，如 /chat/completions">
+        </div>
+        
+        <div class="form-group">
+            <label for="modelName">🤖 模型名称 (Model)</label>
+            <input type="text" id="modelName" value="deepseek-v4-pro" placeholder="例如: gpt-4o, deepseek-chat, deepseek-v4-pro">
+        </div>
+
+        <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="jsonFile">📂 选择原始 JSON 数据文件</label>
+            <input type="file" id="jsonFile" accept=".json">
+        </div>
+
+        <div class="progress-bar-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="progressText" style="text-align: center; font-size: 0.95rem; font-weight: 600; color: #4B5563; margin-top: 8px; display: none;"></div>
+
+        <div class="btn-group">
+            <button class="btn-primary" id="startBtn" onclick="startProcessing()" disabled>
+                ▶️ 开始自动化改造
+            </button>
+            <button class="btn-success" id="downloadBtn" onclick="downloadJSON()" style="display: none;">
+                📥 下载更新后的 JSON
+            </button>
+        </div>
+    </div>
+
+    <!-- 输出渲染区 -->
+    <div id="outputContainer">
+        <!-- 题目卡片会注入在这里 -->
+    </div>
+</div>
+
+<script>
+    let globalJsonData = null;
+    let isProcessing = false;
+
+    // 监听文件上传
+    document.getElementById('jsonFile').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                globalJsonData = JSON.parse(e.target.result);
+                renderInitialCards();
+                document.getElementById('startBtn').disabled = false;
+                document.getElementById('downloadBtn').style.display = 'none';
+            } catch (err) {
+                alert('JSON 文件解析失败，请确保文件格式正确。\n错误信息: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
+    });
+
+    // 渲染初始骨架屏卡片
+    function renderInitialCards() {
+        const container = document.getElementById('outputContainer');
+        container.innerHTML = ''; // 清空
+
+        globalJsonData.forEach((item, index) => {
+            const originalProblem = item.题目信息?.问题原文 || "无问题原文";
+            const idx = index + 1;
+
+            const card = document.createElement('div');
+            card.className = 'problem-card';
+            card.id = `card-${idx}`;
+
+            card.innerHTML = `
+                <div class="problem-header">
+                    <h3>问题 ${idx}</h3>
+                    <span class="status-badge" id="status-${idx}">等待处理</span>
+                </div>
+                
+                <div class="content-block">
+                    <div class="content-label">
+                        <span>原文</span>
+                        <button class="copy-btn" onclick="copyText(this, 'orig-${idx}')">📋 复制原文</button>
+                    </div>
+                    <div class="text-box" id="orig-${idx}">${escapeHTML(originalProblem)}</div>
+                </div>
+
+                <div class="content-block" id="block-trans-mc-${idx}" style="opacity: 0.5;">
+                    <div class="content-label">
+                        <span>改造后问题 - 选择题</span>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="copy-btn" onclick="selectFinal(${idx}, 'mc')" id="sel-mc-${idx}" disabled style="background-color: #3B82F6; color: white;">⭐ 设为最终方案</button>
+                            <button class="copy-btn" onclick="copyText(this, 'trans-mc-${idx}')" disabled id="btn-trans-mc-${idx}">📋 复制选择题</button>
+                        </div>
+                    </div>
+                    <div class="text-box" id="trans-mc-${idx}" style="transition: all 0.3s ease;">点击"开始自动化改造"后生成...</div>
+                </div>
+
+                <div class="content-block" id="block-trans-fb-${idx}" style="opacity: 0.5;">
+                    <div class="content-label">
+                        <span>改造后问题 - 填空题</span>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="copy-btn" onclick="selectFinal(${idx}, 'fb')" id="sel-fb-${idx}" disabled style="background-color: #3B82F6; color: white;">⭐ 设为最终方案</button>
+                            <button class="copy-btn" onclick="copyText(this, 'trans-fb-${idx}')" disabled id="btn-trans-fb-${idx}">📋 复制填空题</button>
+                        </div>
+                    </div>
+                    <div class="text-box" id="trans-fb-${idx}" style="transition: all 0.3s ease;">点击"开始自动化改造"后生成...</div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 主处理循环
+    async function startProcessing() {
+        if (!globalJsonData || globalJsonData.length === 0) return;
+        
+        const apiKey = document.getElementById('apiKey').value.trim();
+        let baseUrl = document.getElementById('baseUrl').value.trim();
+        const modelName = document.getElementById('modelName').value.trim();
+        
+        // 自动纠正 DeepSeek 接口地址防止 404 (用户可能只填了主域名)
+        if (baseUrl.endsWith('api.deepseek.com') || baseUrl.endsWith('api.deepseek.com/')) {
+            baseUrl = baseUrl.replace(/\/$/, '') + '/chat/completions';
+            document.getElementById('baseUrl').value = baseUrl; // 同步到UI
+        }
+
+        if (!apiKey) {
+            alert('请先输入 API Key！');
+            document.getElementById('apiKey').focus();
+            return;
+        }
+
+        isProcessing = true;
+        document.getElementById('startBtn').disabled = true;
+        document.getElementById('startBtn').innerHTML = '⏳ 处理中...';
+        document.getElementById('progressContainer').style.display = 'block';
+        document.getElementById('progressText').style.display = 'block';
+
+        const total = globalJsonData.length;
+        
+        for (let i = 0; i < total; i++) {
+            const item = globalJsonData[i];
+            const idx = i + 1;
+            const context = item.题目信息?.上下文 || "";
+            const originalProblem = item.题目信息?.问题原文 || "";
+
+            // 更新 UI 状态
+            updateStatus(idx, 'processing');
+            updateProgress(i, total);
+
+            const prompt = `You are an expert physics problem designer. Your task is to transform the provided "Original Problem" into standardized formats based on the "Context Information".
+
+Context Information:
+${context}
+
+Original Problem:
+${originalProblem}
+
+=== TRANSFORMATION RULES ===
+1. Dual Formats: You must transform the original problem into EXACTLY TWO forms: a Multiple-Choice question AND a Fill-in-the-blank question.
+2. English Only: The entire output must be written in professional English.
+3. Complete Coverage: You must address ALL sub-questions and required quantities from the Original Problem. Do not omit any parts.
+4. Verifiable Forms & No Units: The answers (options or blanks) must be in verifiable forms (single numerical value, mathematical expression, or option letter). The answers MUST NOT include units. If a unit is contextually required, explicitly place it OUTSIDE the blank (e.g., "The distance is ( ) m").
+5. Blank Formatting: Explicitly use "( )" to denote where the student should write their answer.
+6. Option Formatting: Multiple-choice options must be formatted using the explicit string "\\n" to start new lines, strictly starting with " A. ", " B. ", " C. ", " D. ".
+
+=== JSON OUTPUT FORMAT ===
+You must output ONLY a valid JSON object containing exactly these four fields. Do not include any markdown wrappers (like \`\`\`json).
+{
+  "multiple_choice": "Text of the multiple choice question...",
+  "multiple_choice_answer": "The correct answer option (e.g., A)",
+  "fill_in_the_blank": "Text of the fill-in-the-blank question...",
+  "fill_in_the_blank_answer": "The correct answer expression/value"
+}
+
+=== LATEX, SINGLE-LINE & ESCAPING RULES (CRITICAL) ===
+Because your output is evaluated as a JSON string, you MUST strictly follow JSON escaping rules:
+- Math Delimiters: ALL mathematical formulas, expressions, and variables MUST be enclosed in standard LaTeX dollar-sign delimiters. Use $...$ for inline math and $$...$$ for block math. DO NOT use \\( or \\[.
+- Single-Line Output: Raw physical line breaks are strictly FORBIDDEN. You MUST output each JSON value as a single, continuous line. Whenever you need a line break (e.g., before options), you MUST use the literal sequence \\n.
+- Backslash Escaping: A single backslash in LaTeX (e.g., \\frac) MUST be escaped as \\\\frac. A double backslash (e.g., \\\\) MUST be escaped as \\\\\\\\.`;
+
+            // 请求 LLM
+            try {
+                const transformedText = await callLLM(prompt, apiKey, baseUrl, modelName);
+                
+                // 解析 JSON
+                const jsonMatch = transformedText.match(/\{[\s\S]*\}/);
+                if (!jsonMatch) throw new Error("LLM 返回的不是有效的 JSON 格式");
+                const parsed = JSON.parse(jsonMatch[0]);
+
+                // 使用 processLatex 处理文本，满足用户显式需要 \frac 转变为 \\frac 的需求
+                const mcAns = processLatex(parsed.multiple_choice_answer || "");
+                const fbAns = processLatex(parsed.fill_in_the_blank_answer || "");
+                const mcText = processLatex(parsed.multiple_choice || "") + "\n【答案】" + mcAns;
+                const fbText = processLatex(parsed.fill_in_the_blank || "") + "\n【答案】" + fbAns;
+                
+                // 为了兼容新结构，可以全部保留在题目信息里，但最终输出以 改造后问题 为准（见 selectFinal）
+                if (!item.题目信息) item.题目信息 = {};
+                item.题目信息.改造后问题_选择题 = mcText;
+                item.题目信息.改造后答案_选择题 = [mcAns];
+                item.题目信息.改造后问题_填空题 = fbText;
+                item.题目信息.改造后答案_填空题 = [fbAns];
+
+                // 更新 UI
+                document.getElementById(`trans-mc-${idx}`).innerHTML = escapeHTML(mcText);
+                document.getElementById(`block-trans-mc-${idx}`).style.opacity = '1';
+                document.getElementById(`btn-trans-mc-${idx}`).disabled = false;
+                document.getElementById(`sel-mc-${idx}`).disabled = false;
+                
+                document.getElementById(`trans-fb-${idx}`).innerHTML = escapeHTML(fbText);
+                document.getElementById(`block-trans-fb-${idx}`).style.opacity = '1';
+                document.getElementById(`btn-trans-fb-${idx}`).disabled = false;
+                document.getElementById(`sel-fb-${idx}`).disabled = false;
+                
+                // 默认选择选择题作为最终方案
+                selectFinal(idx, 'mc');
+                
+                updateStatus(idx, 'success');
+
+            } catch (error) {
+                console.error(`问题 ${idx} 处理失败:`, error);
+                document.getElementById(`trans-mc-${idx}`).innerHTML = `<span style="color: #DC2626;">调用失败: ${escapeHTML(error.message)}</span>`;
+                document.getElementById(`trans-fb-${idx}`).innerHTML = `<span style="color: #DC2626;">调用失败: ${escapeHTML(error.message)}</span>`;
+                updateStatus(idx, 'error');
+            }
+            
+            // 为了防止请求过快导致接口限流，加入小延迟
+            await new Promise(r => setTimeout(r, 1000));
+        }
+
+        updateProgress(total, total);
+        isProcessing = false;
+        document.getElementById('startBtn').innerHTML = '✅ 改造完成';
+        document.getElementById('downloadBtn').style.display = 'flex';
+    }
+
+    // 调用 LLM 接口
+    async function callLLM(prompt, apiKey, baseUrl, modelName) {
+        const payload = {
+            model: modelName,
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0.7,
+            response_format: { type: 'json_object' }
+        };
+
+        const response = await fetch(baseUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            const errBody = await response.text();
+            throw new Error(`HTTP ${response.status} - ${errBody}`);
+        }
+
+        const data = await response.json();
+        let content = data.choices[0].message.content.trim();
+        
+        // 过滤可能的 markdown 代码块
+        if (content.startsWith("```")) {
+            const lines = content.split("\n");
+            if (lines.length > 2) {
+                content = lines.slice(1, -1).join("\n");
+            }
+        }
+        
+        return content;
+    }
+
+    // 下载 JSON
+    function downloadJSON() {
+        if (!globalJsonData) return;
+        const dataStr = JSON.stringify(globalJsonData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "Q1_problem_updated.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    // 复制文本工具
+    function copyText(buttonElement, textId) {
+        const textElement = document.getElementById(textId);
+        const text = textElement.innerText || textElement.textContent;
+        
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = buttonElement.innerHTML;
+            buttonElement.innerHTML = '✅ 已复制!';
+            buttonElement.style.background = '#10B981';
+            buttonElement.style.color = '#FFF';
+            setTimeout(() => { 
+                buttonElement.innerHTML = originalText; 
+                buttonElement.style.background = '';
+                buttonElement.style.color = '';
+            }, 2000);
+        }).catch(err => {
+            alert('复制失败，请尝试手动复制');
+        });
+    }
+
+    // 更新状态角标
+    function updateStatus(idx, state) {
+        const statusBadge = document.getElementById(`status-${idx}`);
+        statusBadge.className = 'status-badge';
+        if (state === 'processing') {
+            statusBadge.classList.add('status-processing');
+            statusBadge.innerText = '⚙️ 处理中...';
+        } else if (state === 'success') {
+            statusBadge.classList.add('status-success');
+            statusBadge.innerText = '✅ 成功';
+        } else if (state === 'error') {
+            statusBadge.classList.add('status-error');
+            statusBadge.innerText = '❌ 失败';
+        }
+    }
+
+    // 设置为最终方案的逻辑
+    function selectFinal(idx, type) {
+        const item = globalJsonData[idx - 1];
+        if (!item.题目信息) item.题目信息 = {};
+        
+        // 恢复全部样式
+        const mcBox = document.getElementById(`trans-mc-${idx}`);
+        const fbBox = document.getElementById(`trans-fb-${idx}`);
+        if(mcBox) mcBox.style.border = '1px solid var(--border-color)';
+        if(fbBox) fbBox.style.border = '1px solid var(--border-color)';
+        
+        const mcBtn = document.getElementById(`sel-mc-${idx}`);
+        const fbBtn = document.getElementById(`sel-fb-${idx}`);
+        if(mcBtn) { mcBtn.innerText = '⭐ 设为最终方案'; mcBtn.style.backgroundColor = '#3B82F6'; }
+        if(fbBtn) { fbBtn.innerText = '⭐ 设为最终方案'; fbBtn.style.backgroundColor = '#3B82F6'; }
+        
+        // 高亮选中项
+        const selectedBox = document.getElementById(`trans-${type}-${idx}`);
+        const selectedBtn = document.getElementById(`sel-${type}-${idx}`);
+        if(selectedBox) selectedBox.style.border = '2px solid #10B981';
+        if(selectedBtn) { selectedBtn.innerText = '✅ 已选为最终方案'; selectedBtn.style.backgroundColor = '#10B981'; }
+        
+        // 更新 JSON 数据中的 改造后问题 字段（覆盖）
+        item.题目信息.改造后问题 = type === 'mc' ? item.题目信息.改造后问题_选择题 : item.题目信息.改造后问题_填空题;
+        item.题目信息.改造后答案 = type === 'mc' ? item.题目信息.改造后答案_选择题 : item.题目信息.改造后答案_填空题;
+    }
+
+    // 更新进度条
+    function updateProgress(current, total) {
+        const percentage = (current / total) * 100;
+        document.getElementById('progressBar').style.width = `${percentage}%`;
+        document.getElementById('progressText').innerText = `生成进度: ${current} / ${total} (${Math.round(percentage)}%)`;
+    }
+
+    // HTML 转义防止注入
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+            tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag)
+        );
+    }
+
+    // 1. 将真实的单反斜杠全部加倍（保证看到双斜杠）
+    // 2. 将真实的物理换行符转换为字面量的 \n（恢复单行输出）
+    function processLatex(text) {
+        if (!text) return "";
+        let processed = text.replace(/\\/g, '\\\\');
+        return processed.replace(/\n/g, '\\n');
+    }
+</script>
+</body>
+</html>

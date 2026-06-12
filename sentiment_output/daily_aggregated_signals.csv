@@ -1,0 +1,9 @@
+ticker,news_count,bullish_count,bearish_count,neutral_count,net_impact_raw,final_smoothed_signal,suggested_action
+AMD,8,7,1,0,44.0,0.9997,Buy
+GLD,1,1,0,0,7.0,0.6044,Buy
+MSFT,2,1,1,0,4.0,0.3799,Buy
+MU,18,18,0,0,144.0,1.0,Buy
+NVDA,8,7,1,0,50.0,0.9999,Buy
+STX,13,13,0,0,101.0,1.0,Buy
+USO,1,1,0,0,8.0,0.664,Buy
+WDC,14,14,0,0,110.0,1.0,Buy

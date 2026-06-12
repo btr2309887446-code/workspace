@@ -1,0 +1,998 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-01T20:55:55.696312",
+    "search_days_back": 3,
+    "llm_model": "deepseek-v4-pro",
+    "total_news_fetched": 40,
+    "total_relevant_news": 24,
+    "statistics": {
+      "NVDA": {
+        "Bullish": 14,
+        "Bearish": 1,
+        "Neutral": 0
+      },
+      "AMD": {
+        "Bullish": 12,
+        "Bearish": 1,
+        "Neutral": 0
+      },
+      "MSFT": {
+        "Bullish": 7,
+        "Bearish": 0,
+        "Neutral": 0
+      },
+      "MU": {
+        "Bullish": 10,
+        "Bearish": 0,
+        "Neutral": 0
+      },
+      "GLD": {
+        "Bullish": 0,
+        "Bearish": 3,
+        "Neutral": 0
+      },
+      "USO": {
+        "Bullish": 0,
+        "Bearish": 2,
+        "Neutral": 0
+      },
+      "WDC": {
+        "Bullish": 8,
+        "Bearish": 1,
+        "Neutral": 0
+      },
+      "STX": {
+        "Bullish": 7,
+        "Bearish": 0,
+        "Neutral": 0
+      }
+    }
+  },
+  "asset_pool": {
+    "Tech_AI": {
+      "NVDA": "NVIDIA",
+      "AMD": "Advanced Micro Devices",
+      "MSFT": "Microsoft"
+    },
+    "Storage": {
+      "MU": "Micron Technology",
+      "WDC": "Western Digital",
+      "STX": "Seagate Technology"
+    },
+    "Hedge": {
+      "GLD": "Gold market or SPDR Gold Trust",
+      "USO": "Crude Oil market or WTI/Brent"
+    }
+  },
+  "results": [
+    {
+      "source_ticker": "NVDA",
+      "source_category": "Tech_AI",
+      "news_title": "NASDAQ:NVDA Stock Price - NVIDIA Corporation - TradingView",
+      "news_url": "https://www.tradingview.com/symbols/NASDAQ-NVDA",
+      "news_date": "",
+      "news_snippet": "Weight 14.27%\n\nMarket value‪10.85 B‬\n\nExplore more ETFs\n\n## Frequently asked questions\n\nWhat is NVIDIA Corporation stock price today?\n\nThe current price of NVDA is 211.14 USD — it has decreased by −1.45% in the past 24 hours. Watch NVIDIA Corporation stock price performance more closely on the chart.\n\nWhat is NVIDIA Corporation stock ticker?\n\nDepending on the exchange, the stock ticker may vary. For instance, on NASDAQ exchange NVIDIA Corporation stocks are traded under the ticker NVDA.\n\nIs NVIDIA Corporation stock price growing?\n\nNVDA stock has fallen by −4.42% compared to the previous week, the month change is a −0.73% fall, over the last year NVIDIA Corporation has showed a 48.43% increase.\n\nWhat is NVDA stock forecast? [...] What is NVDA stock forecast?\n\nWe've gathered analysts' opinions on NVIDIA Corporation future price: according to them, NVDA price has a max estimate of 743.10 USD and a min estimate of 180.00 USD. Watch NVDA chart and read a more detailed NVIDIA Corporation stock forecast: see what analysts think of NVIDIA Corporation and suggest that you do with its stocks.\n\nWhat are NVIDIA Corporation stock highest and lowest prices ever?\n\nNVDA reached its all-time high on May 14, 2026 with the price of 236.54 USD, and its all-time low was 0.03 USD and was reached on Apr 26, 1999. View more price dynamics on NVDA chart. \n\nSee other stocks reaching their highest and lowest prices.\n\nHow volatile is NVDA stock? [...] How volatile is NVDA stock?\n\nNVDA stock is 3.19% volatile and has beta coefficient of 1.42. Track NVIDIA Corporation stock price on the chart and check out the list of the most volatile stocks — is NVIDIA Corporation there?\n\nWhat is NVIDIA Corporation market cap?\n\nToday NVIDIA Corporation has the market capitalization of ‪5.11 T‬, it has decreased by −3.14% over the last week.\n\nDoes NVIDIA Corporation release reports?\n\nYes, you can track NVIDIA Corporation financials in yearly and quarterly reports right on TradingView.\n\nWhen is the next NVIDIA Corporation earnings date?\n\nNVIDIA Corporation is going to release the next earnings report on Aug 26, 2026. Keep track of upcoming events with our Earnings Calendar.\n\nWhat were NVIDIA Corporation earnings last quarter?",
+      "analyzed_news_summary": "The article provides basic NVIDIA stock data such as current price, market cap, beta, volatility, and earnings date, with no material news events.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "NVDA",
+      "source_category": "Tech_AI",
+      "news_title": "NVIDIA Corp (NVDA) Stock Price & News - Google Finance",
+      "news_url": "https://www.google.com/finance/beta/quote/NVDA:NASDAQ",
+      "news_date": "",
+      "news_snippet": "scientific research, and industrial applications. As of the first quarter of 2025, Nvidia held a 92% share of the discrete desktop and laptop GPU market. In the early 2000s, the company invested over a billion dollars to develop CUDA, a software platform and API that enabled GPUs to run massively parallel programs for a broad range of compute-intensive applications.Wikipedia [...] Nvidia Corporation is an American multinational technology company headquartered in Santa Clara, California. The company develops graphics processing units, systems on chips, and application programming interfaces for data science, high-performance computing, video games, and mobile and automotive applications. Founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem, Nvidia has been widely described as a Big Tech company. Originally focused on GPUs for video games, Nvidia broadened their use into other markets, including artificial intelligence, professional visualization, and supercomputing. The company's product lines include GeForce GPUs for gaming and creative workloads, and professional GPUs for edge computing, scientific research, and industrial applications. As of the [...] About NVIDIA Corp\n\nCEO Jensen Huang\n\nEmployees 42K\n\nFounded Apr 5, 1993\n\nHeadquarters Santa Clara, California, United States\n\nSector Semiconductor\n\nWebsite-\n\nLast report\n\nMay 20, 2026\n\nFiscal period\n\nQ1 2027\n\nEPS / Est. (USD)\n\n$1.87 / $1.77\n\n+5.54%beat\n\n_arrow\\_upward_\n\nRevenue / Est. (USD)\n\n81.62B / 79.12B\n\n+3.16%beat\n\n_arrow\\_upward_\n\nFiscal Q1 2027 earnings call\n\n_youtube\\_live_ Waiting for the earnings call\n\nAt a glance\n\nInsights from the latest news and reports\n\nPrevious reports All values in USD\n\nLoading Previous Earnings...\n\nIncome statement Balance sheet Cash flow\n\nIncome statement\n\nRevenue\n\nNet income\n\n_calendar\\_month_ Quarterly\n\n   Quarterly\n   Annual",
+      "analyzed_news_summary": "NVIDIA Q1 2027 earnings beat estimates with EPS $1.87 vs $1.77 and revenue $81.62B vs $79.12B, demonstrating continued AI-driven demand.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "Strong earnings beat signals robust AI GPU demand and solid execution, reinforcing NVIDIA's dominant market position."
+        }
+      ]
+    },
+    {
+      "source_ticker": "AMD",
+      "source_category": "Tech_AI",
+      "news_title": "Advanced Micro Devices, Inc. (AMD) Stock Historical Prices & Data - Yahoo Finance",
+      "news_url": "https://finance.yahoo.com/quote/AMD/history",
+      "news_date": "",
+      "news_snippet": "| Oct 10, 2025 | 232.77 | 234.22 | 213.20 | 214.90 | 214.90 | 118,656,600 |\n| Oct 9, 2025 | 236.30 | 240.10 | 229.53 | 232.89 | 232.89 | 94,290,700 |\n| Oct 8, 2025 | 212.95 | 235.87 | 210.70 | 235.56 | 235.56 | 159,983,500 |\n| Oct 7, 2025 | 214.85 | 218.90 | 209.28 | 211.51 | 211.51 | 115,748,100 |\n| Oct 6, 2025 | 226.45 | 226.71 | 203.01 | 203.71 | 203.71 | 248,859,600 |\n| Oct 3, 2025 | 170.68 | 170.68 | 163.14 | 164.67 | 164.67 | 42,699,100 |\n| Oct 2, 2025 | 168.68 | 171.06 | 166.12 | 169.73 | 169.73 | 55,475,200 |\n| Oct 1, 2025 | 160.93 | 164.18 | 160.49 | 164.01 | 164.01 | 39,895,200 |\n| Sep 30, 2025 | 160.79 | 162.28 | 159.33 | 161.79 | 161.79 | 29,669,300 |\n| Sep 29, 2025 | 160.12 | 164.30 | 159.90 | 161.36 | 161.36 | 39,828,800 | [...] | Aug 28, 2025 | 168.50 | 170.99 | 166.65 | 168.58 | 168.58 | 36,285,200 |\n| Aug 27, 2025 | 166.04 | 167.68 | 164.65 | 167.13 | 167.13 | 37,031,000 |\n| Aug 26, 2025 | 168.65 | 169.77 | 164.91 | 166.62 | 166.62 | 52,138,600 |\n| Aug 25, 2025 | 165.55 | 165.59 | 161.72 | 163.36 | 163.36 | 36,134,700 |\n| Aug 22, 2025 | 162.17 | 168.53 | 161.80 | 167.76 | 167.76 | 43,998,600 |\n| Aug 21, 2025 | 165.86 | 165.88 | 162.26 | 163.71 | 163.71 | 37,880,500 |\n| Aug 20, 2025 | 164.10 | 166.65 | 158.25 | 165.20 | 165.20 | 60,233,200 |\n| Aug 19, 2025 | 173.10 | 173.17 | 166.10 | 166.55 | 166.55 | 64,455,000 |\n| Aug 18, 2025 | 176.76 | 178.80 | 174.36 | 176.14 | 176.14 | 35,937,500 |\n| Aug 15, 2025 | 180.06 | 180.14 | 176.25 | 177.51 | 177.51 | 51,543,100 | [...] | Nov 7, 2025 | 230.94 | 235.87 | 224.64 | 233.54 | 233.54 | 52,162,600 |\n| Nov 6, 2025 | 253.47 | 253.51 | 235.74 | 237.70 | 237.70 | 66,049,700 |\n| Nov 5, 2025 | 243.24 | 259.65 | 242.81 | 256.33 | 256.33 | 67,366,600 |\n| Nov 4, 2025 | 250.35 | 257.38 | 247.39 | 250.05 | 250.05 | 56,491,800 |\n| Nov 3, 2025 | 259.33 | 260.91 | 253.89 | 259.65 | 259.65 | 36,351,400 |\n| Oct 31, 2025 | 259.60 | 262.13 | 253.41 | 256.12 | 256.12 | 34,449,200 |\n| Oct 30, 2025 | 259.92 | 263.88 | 252.31 | 254.84 | 254.84 | 45,162,500 |\n| Oct 29, 2025 | 264.19 | 267.08 | 257.40 | 264.33 | 264.33 | 49,335,600 |\n| Oct 28, 2025 | 259.14 | 264.58 | 257.00 | 258.01 | 258.01 | 47,448,700 |\n| Oct 27, 2025 | 257.88 | 260.42 | 249.80 | 259.67 | 259.67 | 65,613,100 |",
+      "analyzed_news_summary": "该新闻仅为AMD历史股价数据表格，无任何实质性事件或市场信息。",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "NVDA",
+      "source_category": "Tech_AI",
+      "news_title": "NVIDIA: NVDA Stock Price Quote & News - Robinhood",
+      "news_url": "https://robinhood.com/us/en/stocks/NVDA",
+      "news_date": "",
+      "news_snippet": "TipRanks 1h Nvidia CEO Jensen Huang Says AI Will Create Jobs, Not Kill Them For Nvidia Corporation (NVDA) investors, the debate over AI and jobs is not just a social issue. It goes straight to the company’s long-term growth story, as Nv...Nasdaq 4h High Oil Prices, Sticky Inflation, and a Frozen Housing Market -- How Did Companies Still Beat Estimates? Key Points Cost cuts and efficiency gains continue supporting profits. AI spending remains a major driver of earnings growth. Higher rates haven't derailed e... Image 5: Broadcom Reports Earnings June 3. Time to Buy?CNBC 4h Nvidia picks Unitree for humanoid robot platform as Chinese startup eyes IPO Unitree Robotics humanoids dance on May 31, 2026, in Shanghai, for the opening of Asia's first embodied intelligence experience store. Nvidia [...] 52 Week low$132.92\n\n52 Week low$132.92\n\n## Stock Snapshot\n\nThe current NVIDIA(NVDA) stock price is $215.21, with a market capitalization of 5.19T. The stock trades at a price-to-earnings (P/E) ratio of 32.33 and offers a dividend yield of 1.9%.\n\nOn 2026-06-01, NVIDIA(NVDA) stock traded between a low of $211.13 and a high of $217.86. Shares are currently priced at $215.21, which is +1.9% above the low and -1.2% below the high.\n\nNVIDIA(NVDA) shares are trading with a volume of 289.41M, against a daily average of 181.33M.\n\nDuring the past year, NVIDIA(NVDA) stock moved between $132.92 at its lowest and $236.54 at its peak.\n\nDuring the past year, NVIDIA(NVDA) stock moved between $132.92 at its lowest and $236.54 at its peak.\n\nSee More\n\n## NVDA News [...] to Buy?Simply Wall St 6h Nvidia Deepens CoreWeave Stake As Valuation Lags Analyst Target Nvidia has nearly doubled its stake in CoreWeave, deepening its investment in the AI infrastructure provider. The move comes alongside Nvidia’s multibillion do... Image 9: Nvidia Deepens CoreWeave Stake As Valuation Lags Analyst TargetBenzinga 6h Why Nvidia CEO Jensen Huang's Computex Speech Matters: AI Chips, Taiwan Investments And The Company's Next Big Moves Nvidia's AI Roadmap Takes Center Stage At Computex Huang will open the Computex trade show in Taipei on Monday with a speech expected to focus heavily on artif... Image 10: Why Nvidia CEO Jensen Huang's Computex Speech Matters: AI Chips, Taiwan Investments And The Company's Next Big Moves",
+      "analyzed_news_summary": "Nvidia加大對CoreWeave的投資，拓展人形機器人平台，並將在Computex發表AI芯片和台灣投資主題演講，彰顯AI需求強勁及業務擴張。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "Nvidia deepening CoreWeave stake and robotics push signals accelerating AI infrastructure demand, reinforcing its dominant position and long-term revenue growth."
+        }
+      ]
+    },
+    {
+      "source_ticker": "NVDA",
+      "source_category": "Tech_AI",
+      "news_title": "NVDA: NVIDIA Corp - Stock Price, Quote and News - CNBC",
+      "news_url": "https://www.cnbc.com/quotes/NVDA",
+      "news_date": "",
+      "news_snippet": "## Content From Our Affiliates\n\n   Nvidia (NVDA) Stock Rises as New RTX Spark Superchip for PCs Amps up Chip War with AMD, Intel Stock Rises as New RTX Spark Superchip for PCs Amps up Chip War with AMD, Intel\")21 Min Ago TipRanks  \n   Nvidia (NVDA) CEO Jensen Huang Says AI Will Create Jobs, Not Kill Them CEO Jensen Huang Says AI Will Create Jobs, Not Kill Them\")1 Hour Ago TipRanks  \n   Nvidia Faces New Export Hurdle as US Closes China AI Chip Loophole3 Hours Ago TipRanks  \n   U.S. to close loophole allowing advanced chips to Chinese firms, Reuters says9 Hours Ago TipRanks  \n   How High Can Nvidia Stock Go in One Year? One 5-Star Analyst Sees a Path to $10 Trillion Valuation10 Hours Ago TipRanks  \n\n### Returns [...] The next wave of AI: Analyst explains how embodied AI is taking shapeImage 15: CNBC Video6 Hours Ago CNBC.com  \n   6.53\n   P/E (TTM)32.33\n   Fwd P/E (NTM)21.24\n   EBITDA (TTM)166.125B\n   ROE (TTM)114.29%\n   Revenue (TTM)253.491B\n   Gross Margin (TTM)74.15%\n   Net Margin (TTM)62.97%\n   Debt To Equity (MRQ)4.33% [...] CNBC Daily Open: Vive le Softbank and Nvidia’s PC push3 Hours Ago CNBC.com  \n   Nvidia outperforming peers on margins, valuation still ‘unassailable’Image 12: CNBC Video4 Hours Ago CNBC.com  \n   Nvidia’s CUDA software ecosystem will be a key driver in company’s future growthImage 13: CNBC Video4 Hours Ago CNBC.com  \n   Nvidia picks Unitree for humanoid robot platform as Chinese startup eyes IPO4 Hours Ago CNBC.com  \n   Nvidia-backed AI company tells CNBC of major London expansion4 Hours Ago CNBC.com  \n   Nvidia unveils first Arm-based PC chip powering new laptops from Microsoft, Dell5 Hours Ago CNBC.com  \n   Chinese companies are innovating for survival: McKinsey China ChairImage 14: CNBC Video5 Hours Ago CNBC.com",
+      "analyzed_news_summary": "Nvidia stock rises on new RTX Spark Superchip and first Arm-based PC chip for Microsoft/Dell laptops, but faces new US export hurdle closing China AI chip loophole.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "New PC chip launches expand TAM and strengthen competitive position against AMD/Intel, outweighing near-term export curb concerns."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bearish",
+          "impact_score": 5,
+          "reasoning": "Nvidia's RTX Spark Superchip directly intensifies the PC GPU war, threatening AMD's market share in consumer and AI edge segments."
+        },
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Nvidia's Arm-based PC chip powering Microsoft laptops accelerates Windows on Arm ecosystem, potentially boosting Surface and OEM partnerships."
+        }
+      ]
+    },
+    {
+      "source_ticker": "AMD",
+      "source_category": "Tech_AI",
+      "news_title": "Advanced Micro Devices, Inc. (AMD) Stock Price, News, Quote ...",
+      "news_url": "https://finance.yahoo.com/quote/AMD",
+      "news_date": "",
+      "news_snippet": "www.amd.com\n\n31,000\n\n### Full Time Employees\n\nDecember 27\n\n### Fiscal Year Ends\n\nTechnology\n\n### Sector\n\nSemiconductors\n\n### Industry\n\nMore about Advanced Micro Devices, Inc.\n\n### Recent News\n\nView More\n\nAll News Earnings Calls Press Releases SEC Filings \n\nView More\n\n### Performance Overview\n\nTrailing total returns as of 5/29/2026, which may include dividends or other distributions. Benchmark is S&P 500 (^GSPC)\").\n\n### YTD Return\n\nAMD\n\n140.99%\n\nS&P 500 (^GSPC)\n\n10.73%\n\n### 1-Year Return\n\nAMD\n\n356.60%\n\nS&P 500 (^GSPC)\n\n28.21%\n\n### 3-Year Return\n\nAMD\n\n306.28%\n\nS&P 500 (^GSPC)\n\n80.24%\n\n### 5-Year Return\n\nAMD\n\n544.48%\n\nS&P 500 (^GSPC)\n\n80.30%\n\n### Earnings Trends\n\nView More\n\n### Earnings Per Share\n\n- [x] gaap GAAP\n\n- [x] nongaap Normalized\n\n- [x] gaap GAAP\n\n- [x] nongaap Normalized\n\nQ1 FY26 [...] 7,613.75\n\n+18.00+0.24%\n\nDow Futures\n\n51,194.00\n\n+117.00+0.23%\n\nNasdaq Futures\n\n30,505.00\n\n+99.75+0.33%\n\nRussell 2000 Futures\n\n2,923.10\n\n-1.20-0.04%\n\nVIX\n\n15.85\n\n+0.53+3.46%\n\nGold\n\n4,529.50\n\n-63.50-1.38%\n\nBitcoin USD\n\n72,869.34\n\n-864.04-1.17%\n\nBrent Crude Oil\n\n94.17\n\n+3.05+3.35%\n\nADVERTISEMENT\n\nAMD\n\nAdvanced Micro Devices, Inc.\n\n497.03-3.69%\n\n   Summary\n   News\n   Research\n   Chart\n   Community\n   Statistics\n   Historical Data\n   Profile\n   Financials\n   Analysis\n   Options\n   Holders\n\nNasdaqGS - Nasdaq Real Time Price•USD\n\n# Advanced Micro Devices, Inc. (AMD)\n\n516.10-1.99(-0.38%)\n\nAt close: May 29 at 4:00:01 PM EDT\n\n497.03-19.07(-3.69%)\n\nPre-Market: 5:18:01 AM EDT\n\nTrade AMD on CoinbaseTrading disclosure\n\n## Trading disclosure [...] AMD has recently ramped up production of its 2nm EPYC Venice processors, which has positively impacted its stock, rising 10.4%. However, competition from Nvidia and regulatory challenges may pose risks for AMD moving forward.\n\nUpdated 26m ago · Powered by Yahoo Scout\n\n View more\n\n   Previous Close 518.09\n   Open 520.43\n   Bid 502.00 x 300\n   Ask 537.55 x 100\n   Day's Range 503.43 - 522.00\n   52 Week Range 111.01 - 527.20\n   Volume 30,803,236\n   Avg. Volume 37,878,044\n   Market Cap (intraday) 841.553B\n   Beta (5Y Monthly) 2.40\n   PE Ratio (TTM) 172.61\n   EPS (TTM) 2.99\n   Earnings Date (est.) Aug 4, 2026\n   Forward Dividend & Yield --\n   Ex-Dividend Date Apr 27, 1995\n   1y Target Est 472.17\n\n## Advanced Micro Devices, Inc. Overview Semiconductors / Technology",
+      "analyzed_news_summary": "AMD ramped up production of 2nm EPYC Venice processors, driving a 10.4% stock increase, but faces competitive and regulatory risks.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Ramp-up of 2nm EPYC Venice processors positions AMD for data center growth; stock already up 10.4% on the news."
+        }
+      ]
+    },
+    {
+      "source_ticker": "AMD",
+      "source_category": "Tech_AI",
+      "news_title": "AMD shares hit record high, spark global chips rally on AI ... - Reuters",
+      "news_url": "https://www.reuters.com/business/amd-forecast-sparks-aidriven-rally-us-chipmaker-stocks-2026-05-06",
+      "news_date": "",
+      "news_snippet": "# AMD shares hit record high, spark global chips rally on AI demand optimism | Reuters\n\nSkip to main content\n\nExclusive news, data and analytics for financial market professionals Learn more about Refinitiv\n\n - Advanced Micro Devices' shares (AMD.O), opens new tab jumped to an all-time high on Wednesday as its strong outlook ​boosted investor confidence about sustained demand for AI infrastructure, sparking a rally across global semiconductor stocks.\n\nAMD jumped 14.9% and was ‌set to add more than $86 billion in market value, if gains hold. Rival Intel (INTC.O), opens new tab also rose 1.9% to a record high, while chip designer Arm Holdings surged 10.1% and chipmaker Qualcomm (QCOM.O), opens new tab gained 1.6%.",
+      "analyzed_news_summary": "AMD shares surged to a record high following a strong outlook, fueling AI demand optimism and sparking a global semiconductor rally.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 10,
+          "reasoning": "AMD's own record high and sharp gains directly reflect the market's bullish reaction to its AI-driven outlook."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "As the dominant AI chip player, NVIDIA benefits from the same AI infrastructure demand optimism that lifted AMD and the broader sector."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "AI demand drives memory chip needs (HBM); Micron is a key supplier, and the sector-wide rally signals rising expectations for memory growth."
+        }
+      ]
+    },
+    {
+      "source_ticker": "AMD",
+      "source_category": "Tech_AI",
+      "news_title": "AMD Stock Forecast | Q1 2026 Earnings in Focus - Capital.com",
+      "news_url": "https://capital.com/en-int/market-updates/amd-stock-forecast-04-05-2026",
+      "news_date": "",
+      "news_snippet": "## Advanced Micro Devices stock price: Technical overview\n\nThe AMD stock price is trading at $324.78 as of 10:07am UTC on 29 April 2026, well above its key moving-average cluster. The 20/50/100/200-day SMAs sit at approximately $264 / $226 / $224 / $208, with a 20-over-50 alignment intact across the SMA family, which points to an established medium-term trend.\n\nMomentum readings from TradingView are stretched: the 14-day relative strength index stands at 73.54, a level that historically characterises an extended trend rather than confirming the near-term direction. The average directional index at 45.29 indicates that an established and well-defined trend is in place, according to TradingView data. [...] # AMD Stock Forecast | Q1 2026 Earnings in Focus | Capital.com\n\nCFDs are complex instruments and come with a high risk of losing money rapidly due to leverage.78.48% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.\n\nImage 1, 4 May 2026\n\nImage 15Image 16Image 17\n\nImage 18\n\nImage 19: AMD logo displayed on a smartphone screen with a digital circuit background\n\nPhoto: Shutterstock\n\nAdvanced Micro Devices Inc (AMD) is trading at $324.78 as of 10:07am UTC on 29 April 2026, within an intraday range of $310.95–$335.67. Past performance is not a reliable indicator of future results. [...] AMD is trading at $324.78 as of 10:07am UTC on 29 April 2026, having surged from a two-year low near $76 in April 2025 to a recent high of $354.95 on 27 April 2026.\n   Key price drivers include accelerating hyperscaler AI infrastructure demand, AMD's expanding GPU and CPU data-centre market share, and ongoing US export licensing restrictions on MI-series chips into China.\n   AMD announced its ‘Advancing AI 2026’ flagship event for July 2026 and a 6-gigawatt GPU partnership expansion with Meta, while Intel's stronger-than-expected Q1 CPU results lifted sentiment across the broader CPU market, including AMD.",
+      "analyzed_news_summary": "AMD股价受益于AI数据中心需求激增及Meta合作，但受对华出口管制限制，技术指标超买但趋势强劲。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "AI数据中心需求加速及Meta 6GW GPU合作推动股价飙升，尽管出口管制带来风险，整体情绪偏正面。"
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "AI基础设施建设需求强劲，AMD的扩张印证行业高景气，间接利好AI芯片龙头NVDA。"
+        },
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 3,
+          "reasoning": "超大规模云AI需求增长预示Azure云业务扩张，但高资本开支可能对利润构成压力，整体略积极。"
+        }
+      ]
+    },
+    {
+      "source_ticker": "MSFT",
+      "source_category": "Tech_AI",
+      "news_title": "Microsoft Corp (MSFT) Stock Price & News - Google Finance",
+      "news_url": "https://www.google.com/finance/beta/quote/MSFT:NASDAQ",
+      "news_date": "",
+      "news_snippet": "TSLA Tesla Inc $435.79 -1.43% _arrow\\_downward_\n\nNFLX Netflix Inc $86.02 -0.39% _arrow\\_downward_\n\nNews stories\n\nFrom sources across the web\n\nImage 3: Morningstar\n\nMorningstar\n\n·\n\n13 minutes ago\n\nWhy Microsoft Stock Is Worth USD 600\n\nImage 4: finance.yahoo.com\n\nYahoo Finance\n\n·\n\n47 minutes ago\n\nMicrosoft is bringing out its Copilot 365 AI Assistant to Accenture plc (ACN) Employees\n\nImage 5: www.investing.com\n\nInvesting.com\n\n·\n\n1 hour ago\n\nJMP Securities initiates Microsoft stock with outperform rating on AI strategy\n\nImage 6: TipRanks\n\nTipRanks\n\n·\n\n8 hours ago\n\n‘Time to Act,’ Says Morgan Stanley About Microsoft Stock\n\nImage 7: Simply Wall Street\n\nSimply Wall Street\n\n·\n\n12 hours ago\n\nIs Microsoft’s (MSFT) Push Into Proprietary AI Models Quietly Rewriting Its Investment Story? [...] 1x\n\n1.25x\n\n1.5x\n\n2x\n\nCall transcript\n\n_summarize\\_auto_\n\nMicrosoft reported record Q3 2026 results with revenue of $82.9B, up 18% year-over-year, and EPS of $4.27, beating estimates. Performance was fueled by Microsoft Cloud revenue exceeding $54B (up 29%) and a massive 123% surge in the AI business annual revenue run rate to $37B.\n\n_expand\\_more_\n\n_summarize\\_auto_\n\nHighlights\n\n   Microsoft reported record Q3 2026 results with revenue of $82.9B, up 18% year-over-year, and EPS of $4.27, beating estimates. Performance was fueled by Microsoft Cloud revenue exceeding $54B (up 29%) and a massive 123% surge in the AI business annual revenue run rate to $37B.\n\nExpand highlights _expand\\_all_\n\n[Operator Instructions]\n\n25s\n\n_music\\_history_ Listen from here\n\nListen from here [...] About Microsoft Corp\n\nCEO Satya Nadella\n\nEmployees 228K\n\nFounded Apr 4, 1975\n\nHeadquarters Redmond, Washington, United States\n\nSector Software\n\nWebsitemicrosoft.com\n\nLast report\n\nApr 29, 2026\n\nFiscal period\n\nQ3 2026\n\nEPS / Est. (USD)\n\n$4.27 / $4.06\n\n+5.25%beat\n\n_arrow\\_upward_\n\nRevenue / Est. (USD)\n\n82.89B / 81.43B\n\n+1.79%beat\n\n_arrow\\_upward_\n\nFiscal Q3 2026 earnings call\n\n_docs_ Documents and forms\n\n_slide\\_library_ Presentation Slides_monitoring_ Earnings Release (8-K)_account\\_balance_ Quarterly Report (10-Q)\n\nAI Business Surpasses $37 Billion ARR\n\n3m 7s",
+      "analyzed_news_summary": "Microsoft reported record Q3 2026 earnings with revenue of $82.9B and EPS of $4.27, driven by 29% cloud growth and AI business annual revenue run rate surpassing $37B.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "Direct beneficiary: record earnings, massive AI revenue run rate surge, and cloud strength signal strong execution and AI monetization."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Microsoft's 123% AI business growth implies heavy GPU procurement for Azure AI infrastructure, directly boosting demand for NVIDIA's data center GPUs."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "Cloud providers diversifying AI silicon may lift AMD's MI300-series sales as Microsoft scales AI, albeit less directly than NVIDIA."
+        }
+      ]
+    },
+    {
+      "source_ticker": "MSFT",
+      "source_category": "Tech_AI",
+      "news_title": "Buy or Sell Microsoft Stock - MSFT Stock Price Quote & News",
+      "news_url": "https://robinhood.com/us/en/stocks/MSFT",
+      "news_date": "",
+      "news_snippet": "# Buy or Sell Microsoft Stock - MSFT Stock Price Quote & News | Robinhood\n\n trades at $463.47. The stock has a price-to-earnings ratio of 26.82 and currently yields dividends of 77.3%.\n\nOn 2026-06-01, Microsoft(MSFT) stock traded between a low of $425.92 and a high of $450.33. Shares are currently priced at $463.47, which is +8.8% above the low and +2.9% below the high.\n\nMicrosoft(MSFT) shares are trading with a volume of 79.65M, against a daily average of 38.42M.\n\nDuring the past year, Microsoft(MSFT) stock moved between $356.28 at its lowest and $555.45 at its peak.\n\nDuring the past year, Microsoft(MSFT) stock moved between $356.28 at its lowest and $555.45 at its peak.\n\nSee More\n\n## MSFT News [...] ## Analyst ratings\n\n## 95%\n\nof 60 ratings\n\nBuy\n\n95%\n\nHold\n\n5%\n\nSell\n\n0%\n\n## MSFT Earnings\n\n$0.00\n\n$1.42\n\n$2.85\n\n$4.27\n\nQ1 FY25\n\nQ2 FY25\n\nQ3 FY25\n\nQ4 FY25\n\nQ1 FY26\n\nQ2 FY26\n\nQ3 FY26\n\nQ4 FY26\n\nEstimated$4.23 per share\n\nEstimated$4.23 per share\n\nActual Expected Jul 29, After Hours\n\nActual Expected Jul 29, After Hours\n\n## More MSFT News [...] TipRanks 28m Microsoft initiated with an Outperform at Citizens Citizens analyst Patrick Walravens initiated coverage of Microsoft (MSFT) with an Outperform rating and $550 price target The shares are down 7% year-to-date as...Investing.com 1h JMP Securities initiates Microsoft stock with outperform rating on AI strategy - Investing.com ... Image 2: JMP Securities initiates Microsoft stock with outperform rating on AI strategy - Investing.comSimply Wall St 12h Is Microsoft’s Push Into Proprietary AI Models Quietly Rewriting Its Investment Story? In late May 2026, Microsoft outlined a series of AI-focused moves, including unveiling homegrown models at its Build conference, deepening alliances like a US$1... Image 3: Microsoft EY AI Alliance Reshapes Enterprise Strategy Litigation And Xbox",
+      "analyzed_news_summary": "Multiple analysts initiated coverage on Microsoft with Outperform ratings and $550 price target, citing AI strategy; stock currently trades at $463.47.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "New analyst Outperform ratings and $550 target (18.6% upside) signal confidence in MSFT's AI roadmap, potentially driving near-term price appreciation."
+        }
+      ]
+    },
+    {
+      "source_ticker": "MSFT",
+      "source_category": "Tech_AI",
+      "news_title": "MSFT: Microsoft Corp Latest Stock Price, Analysis, News ... - Stocktwits",
+      "news_url": "https://stocktwits.com/symbol/MSFT",
+      "news_date": "",
+      "news_snippet": "Trending\n News\n Earnings\n\nDIADIA0.12%SPYSPY0.20%QQQQQQ0.45%\n\nTop trending tickerBBAIBBAI2.38%SOFISOFI3.90%IBMIBM10.81%MSFTMSFT2.75%SPCESPCE21.04%HOODHOOD2.83%NOWNOW9.83%BBBB4.44%PURRPURR20.12%ONDSONDS3.48%\n\nTop trending tickerBBAIBBAI2.38%SOFISOFI3.90%IBMIBM10.81%MSFTMSFT2.75%SPCESPCE21.04%HOODHOOD2.83%NOWNOW9.83%BBBB4.44%PURRPURR20.12%ONDSONDS3.48%\n\nhomeSymbolMSFT\n\nMSFT logo\n\n# MSFT Microsoft Corp\n\n534,221\n\nMkt Cap\n\n$3.34T\n\nVolume\n\n79.65M\n\n52W High\n\n$555.45\n\n52W Low\n\n$356.28\n\nPE Ratio\n\n26.82\n\nMSFT Fundamentals\n\nPrice\n\n$450.24\n\nPrev Close\n\n$426.99\n\nOpen\n\n$432.55\n\n50D MA\n\n$402.83\n\nBeta\n\n0.99\n\nAvg. Volume\n\n34.12M\n\nEPS (Annual)\n\n$13.64\n\nP/B\n\n8.07\n\nRev/Employee\n\n$1.24M\n\n$3,730,784.65\n\nPE Ratio\n\n26.82\n\n## Feed\n\n## News\n\n## Sentiment\n\n## Earnings\n\n## Fundamentals\n\n## Info\n\n### Compact View",
+      "analyzed_news_summary": "The provided snippet is a stock overview for MSFT with trending tickers and fundamental data, containing no news article or event.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "NVDA",
+      "source_category": "Tech_AI",
+      "news_title": "NVIDIA Corporation (NVDA) Stock Price, News, Quote & History",
+      "news_url": "https://finance.yahoo.com/quote/NVDA",
+      "news_date": "",
+      "news_snippet": "39.   News • 6 days ago SpaceX and OpenAI IPOs could push the AI trade deeper into bubble territory [...] 15.   News • 2 days ago The JPMorgan CEO blasted Coinbase's lobbying push for a major crypto bill, going so far as to call its CEO 'full of shit'\n    16.   Breaking News • 2 days ago The Dow closed above 51,000 for the first time, and the S&P 500 and Nasdaq rose to fresh records as stocks capped a winning month.\n    17.   News • 2 days ago Markets are betting on an Iran deal. But social media posts from Trump and Iran's foreign minister point to a key sticking point.\n    18.   News • 2 days ago Why Ford stock is suddenly on fire\n    19.   News • 2 days ago US stocks gained at the open as markets awaited an update on US-Iran talks\n    20.   News • 2 days ago 'This is what an AI supercycle looks like.' Dell shares are soaring after a blockbuster quarter and hefty guidance boost. [...] 33.   News • 5 days ago The S&P 500 and Nasdaq hit record highs as chip stocks rallied, sending Micron’s market cap above $1 trillion\n    34.   News • 5 days ago The White House says energy prices will fall once the Strait of Hormuz reopens, but analysts don't agree\n    35.   News • 5 days ago Micron surged, leading chipmakers and tech stocks higher, as UBS more than tripled its price target.\n    36.   News • 5 days ago US stocks opened higher on Iran peace prospects as oil prices remained volatile\n    37.   News • 6 days ago Blackrock's Mike Pyle, a former economic advisor to Obama and Biden, discusses AI’s impact on the labor market\n    38.   News • 6 days ago Schwab CEO explains why the investment services giant doesn't plan to integrate meme coins and gambling",
+      "analyzed_news_summary": "NVIDIA Corporation (NVDA) Stock Price, News, Quote & History",
+      "is_relevant": false,
+      "affected_assets": [],
+      "_error": "LLM analysis failed after 3 retries"
+    },
+    {
+      "source_ticker": "MU",
+      "source_category": "Storage",
+      "news_title": "Micron Technology, Inc. (MU) Stock Price, News, Quote & History - Yahoo Finance",
+      "news_url": "https://finance.yahoo.com/quote/MU",
+      "news_date": "",
+      "news_snippet": "industrial, and consumer embedded markets, as well as the smartphone and other mobile-device markets. It sells its products through its direct sales force, independent sales representatives, distributors, and retailers; web-based customer direct sales channel; and channel and distribution partners. Micron Technology, Inc. was founded in 1978 and is headquartered in Boise, Idaho. [...] include 1y DRAM and G9 NAND technologies. It also offers storage products, such as data center solid-state drives (SSD), client SSD storage, and auto and industrial SSD storage; managed NAND; NAND flash; NOR flash; and memory cards. In addition, the company provides design tools, including FBGA and part decoders; DRAM power calculators; NAND power calculators; simulation models; chipset compatibility guides; serial presence-detection tools; cross-reference tools; UFSparm; SSD firmware; software and drivers; storage executive software; and obsolete part catalogs. It markets its semiconductor memory and storage products under the Micron and Crucial brands. The company serves the data center, PC, graphics, networking, automotive, industrial, and consumer embedded markets, as well as the [...] - Most active\n    - Day gainers\n    - Day losers\n  + Private companies   \n\n    - 52 week gainers\n    - Recently funded\n    - Most funded\n  + Options   \n\n    - Day gainers\n    - Day losers\n    - Highest open interest\n    - Highest implied volatility\n  + Sectors   \n\n    - Technology\n    - Financial services\n    - Consumer cyclical\n    - Communication services\n    - Healthcare\n    - Industrials\n    - Consumer defensive\n    - Energy\n    - Basic materials\n    - Real estate\n    - Utilities\n  + Treasury bonds\n  + Futures\n  + Currencies\n  + World indices\n  + ETFs\n Research  \n\n  + Stock picks\n  + Screeners   \n\n    - Stocks\n    - Most shorted\n    - Most active penny stocks\n    - Analyst strong buy\n  + Calendar",
+      "analyzed_news_summary": "This snippet is a generic company description of Micron Technology's products and markets, containing no new event or material information.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "MSFT",
+      "source_category": "Tech_AI",
+      "news_title": "Microsoft Corporation (MSFT) Stock Price, News, Quote & History",
+      "news_url": "https://finance.yahoo.com/quote/MSFT",
+      "news_date": "",
+      "news_snippet": "7,614.00\n\n+18.25+0.24%\n\nDow Futures\n\n51,194.00\n\n+117.00+0.23%\n\nNasdaq Futures\n\n30,505.00\n\n+99.75+0.33%\n\nRussell 2000 Futures\n\n2,923.00\n\n-1.30-0.04%\n\nVIX\n\n15.85\n\n+0.53+3.46%\n\nGold\n\n4,529.50\n\n-63.50-1.38%\n\nBitcoin USD\n\n72,869.34\n\n-864.04-1.17%\n\nBrent Crude Oil\n\n94.17\n\n+3.05+3.35%\n\nADVERTISEMENT \n\nMSFT\n\nMicrosoft Corporation\n\n463.45 +2.93%\n\n   Summary\n   News\n   Research\n   Chart\n   Community\n   Statistics\n   Historical Data\n   Profile\n   Financials\n   Analysis\n   Options\n   Holders\n\nNasdaqGS - Nasdaq Real Time Price•USD\n\n# Microsoft Corporation (MSFT)\n\n450.24 +23.25 (+5.45%) \n\nAt close: May 29 at 4:00:01 PM EDT \n\n463.45 +13.21 (+2.93%) \n\nPre-Market: 5:18:03 AM EDT \n\nTrade MSFT on CoinbaseTrading disclosure \n\n## Trading disclosure [...] www.microsoft.com\n\n228,000\n\n### Full Time Employees\n\nJune 30\n\n### Fiscal Year Ends\n\nTechnology\n\n### Sector\n\nSoftware - Infrastructure\n\n### Industry\n\nMore about Microsoft Corporation\n\n### Recent News\n\nView More\n\n All  News  Earnings Calls  Press Releases  SEC Filings \n\nView More\n\n### Performance Overview\n\nTrailing total returns as of 5/29/2026, which may include dividends or other distributions. Benchmark is S&P 500 (^GSPC)\").\n\n### YTD Return\n\nMSFT\n\n6.49% \n\nS&P 500 (^GSPC)\n\n10.73%\n\n### 1-Year Return\n\nMSFT\n\n1.06% \n\nS&P 500 (^GSPC)\n\n28.21%\n\n### 3-Year Return\n\nMSFT\n\n38.45% \n\nS&P 500 (^GSPC)\n\n80.24%\n\n### 5-Year Return\n\nMSFT\n\n87.90% \n\nS&P 500 (^GSPC)\n\n80.30%\n\n### Earnings Trends\n\nView More\n\n### Earnings Per Share\n\n- [x] gaap GAAP\n\n- [x] nongaap Normalized\n\n- [x] gaap GAAP [...] Advanced Chart\n\nAlphaSpace Chart\n\nLoading chart for MSFT\n\n## News headlines Microsoft continues to strengthen its position in AI and personal computing, collaborating with Nvidia on innovative chips and expanding its Copilot AI assistant to major enterprise clients. Amid rising tech share prices, concerns grow regarding accessibility for retail investors.\n\nMicrosoft continues to strengthen its position in AI and personal computing, collaborating with Nvidia on innovative chips and expanding its Copilot AI assistant to major enterprise clients. Amid rising tech share prices, concerns grow regarding accessibility for retail investors.\n\nUpdated 25m ago · Powered by Yahoo Scout\n\n View more",
+      "analyzed_news_summary": "Microsoft strengthens AI position through Nvidia chip collaboration and Copilot expansion to enterprise clients.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Microsoft expanding Copilot to major enterprise clients signals strong AI monetization; Nvidia collaboration bolsters AI infrastructure."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "Nvidia's chip collaboration with Microsoft indicates sustained demand for its AI hardware from a top cloud provider."
+        }
+      ]
+    },
+    {
+      "source_ticker": "MSFT",
+      "source_category": "Tech_AI",
+      "news_title": "MSFT Stock Chart and Price — Microsoft (NASDAQ) - TradingView",
+      "news_url": "https://www.tradingview.com/symbols/NASDAQ-MSFT",
+      "news_date": "",
+      "news_snippet": "Image 36: NASDAQ:MSFTMSFT BNP Paribas just dropped a strong note on Microsoft’s AI trajectory (May 26, 2026). Here are the key points: 1. Copilot Adoption Is Accelerating • Engagement + retention rising across Office apps • Enterprise rollout delays fading • Copilot seats projected to exceed 25M by FY26 • Agent Mode rolling out wider This is the first real sign of broad enterprise AI penetration. 2. Azure Growth Expected Above 40% BNP models >40% Azure growth for several quarters, driven by: • New AI datacenters (Fairwater Wisconsin + Atlanta) • Rapid AI infrastructure expansion This is the strongest Azure outlook in years. 4. OpenAI Risk Removed • Updated MSFT–OpenAI agreement eliminates AGI‑related concerns • OpenAI’s $122B funding round supports $250B+ Azure commitments • Court win [...] TradingView Key facts: MSFT Q4 $86.7–$87.8B; Azure +39–40%, capex >$40B; coding AI Image 73  Image 74  Image 75: NASDAQ:MSFT Dow Jones Newswires Sign in to read exclusive news Image 76: NASDAQ:MSFT Stock Story Microsoft (MSFT) Stock Trades Up, Here Is Why Image 77  Image 78  Image 79  Image 80: NASDAQ:MSFT CryptoProwl Anthropic Hits $965B Valuation as Series H Adds $65B for AI Expansion Image 81: NASDAQ:MSFT  Image 82  Image 83 Reuters Microsoft to release new coding model next week, the Information reports Image 84: NASDAQ:MSFT  Image 85  Image 86 MarketBeat Microsoft Is Spending Billions on AI, But Investors Aren’t Buying It Image 87  Image 88: NASDAQ:MSFT InvestingLive Tech sector rebounds as Oracle and Microsoft lead the charge Image 89: NASDAQ:MSFT Zacks Microsoft Gains From M365 [...] Image 106\n\nby Enduro1\n\nMay 26\n\n4 46\n\nMicrosoft Corp.(MSFT): Horizontal Consolidation, Anticipate BuyMicrosoft is trading around $418-$419, experiencing slight volatility as tech investors digest AI strategy shifts and recent lawsuits. With a massive market capitalization hovering over $3.1 trillion, the stock maintains strong analyst backing. Technical outlook: Stock hovers around trapped channe\n\nImage 107: NASDAQ:MSFT\n\nImage 108\n\nby Blaisefxacademy\n\nUpdated May 28\n\n4 41 0",
+      "analyzed_news_summary": "BNP Paribas bullish on Microsoft's AI trajectory: Copilot adoption accelerating, Azure growth >40%, OpenAI risk removed, massive capex; stock consolidates around $418.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "Strong enterprise AI adoption and >40% Azure growth with $40B+ capex signal major revenue acceleration and cloud dominance."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Microsoft's AI datacenter expansion requires massive GPU purchases, directly boosting NVIDIA's data center revenue outlook."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "Azure's rapid AI growth and use of AMD MI300X for cloud inference lift AMD's datacenter GPU pipeline and market share."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Increasing AI server infrastructure and new datacenters heighten demand for Micron's HBM and DDR5 memory products."
+        }
+      ]
+    },
+    {
+      "source_ticker": "MU",
+      "source_category": "Storage",
+      "news_title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
+      "news_url": "https://robinhood.com/us/en/stocks/MU",
+      "news_date": "",
+      "news_snippet": "Stanley Druckenmiller Sold Every Share of Alphabet. He Just Bought 5 AI Hardware Stocks Instead. Key Points Druckenmiller's family office exited its entire Alphabet stake and cut most of its Amazon position in the first quarter. The filing also showed new... Image 7: If You Had Invested $1,000 in Micron 1 Year Ago, Here's How Much You'd Have Now. Is the Stock Still a Buy?Nasdaq 1d If You Had Invested $1,000 in Micron 1 Year Ago, Here's How Much You'd Have Now. Is the Stock Still a Buy? Key Points A $1,000 investment in Micron a year ago would now be worth approximately $9,500. The memory specialist's fiscal second-quarter revenue jumped 196%... Image 8: If You Had Invested $1,000 in Micron 1 Year Ago, Here's How Much You'd Have Now. Is the Stock Still a Buy? [...] Nasdaq 4h Why Micron Stock Popped Today What happened Shares of computer memory-chip maker Micron Technology (NASDAQ: MU) jumped higher on Wednesday morning, after beating earnings Tuesday night, and... Image 5: If You Had Invested $1,000 in Micron 1 Year Ago, Here's How Much You'd Have Now. Is the Stock Still a Buy?Nasdaq 6h Meet the Newest Member of the Stock Market's Exclusive $1 Trillion Club (Hint: It's an AI Semiconductor Powerhouse) Key Points Micron Technology is one of the world's leading suppliers of high-bandwidth memory for data centers, which is a key part of the artificial intellige... Image 6: If You Had Invested $1,000 in Micron 1 Year Ago, Here's How Much You'd Have Now. Is the Stock Still a Buy?TipRanks 9h Micron price target raised to $1,750 from $600 at Susquehanna [...] of an AI-fueled bull market that continues to rewrite record books across Wall Street. The... Image 4: Micron's Best Month Since 1985 Powers A 9-Week S&P 500 Rally: This Week On Wall Street",
+      "analyzed_news_summary": "多篇文章凸显美光科技(Micron)财报超预期、股价大涨、目标价被上调至1750美元，并将该公司定位为AI存储领域的领跑者，吸引投资者关注。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "财报超预期，Susquehanna将目标价从600美元大幅上调至1750美元，AI驱动的HBM存储器需求强劲，直接利好美光。"
+        }
+      ]
+    },
+    {
+      "source_ticker": "MU",
+      "source_category": "Storage",
+      "news_title": "Micron Technology to Report Fiscal Third Quarter Results on June ...",
+      "news_url": "https://markets.businessinsider.com/news/stocks/micron-technology-to-report-fiscal-third-quarter-results-on-june-24-2026-1036199790",
+      "news_date": "",
+      "news_snippet": "About Micron Technology, Inc.     \nMicron Technology, Inc. is an industry leader in innovative memory and storage solutions transforming how the world uses information to enrich life for all. With a relentless focus on our customers, technology leadership, and manufacturing and operational excellence, Micron delivers a rich portfolio of high-performance DRAM, NAND, and NOR memory and storage products. Every day, the innovations that our people create fuel the data economy, enabling advances in artificial intelligence (AI) and compute-intensive applications that unleash opportunities — from the data center to the intelligent edge and across the client and mobile user experience. To learn more about Micron Technology, Inc. (Nasdaq: MU), visit micron.com. [...] EMAIL\n\nCOPY LINK\n\n## Micron Technology NewsMORE\n\n|  |\n\n| The Zacks Analyst Blog Highlights Alphabet, Apple, Micron Technology, Cumberland Pharmaceuticals and AmeriServ Financial Zacks |\n| Micron (MU) and SanDisk (SNDK): Mizuho Joins the AI Memory Bull Parade, Here’s Why It Lifts Price Targets TipRanks |\n| ‘Position Yourself for What’s Next,’ Says Investor About Micron Stock TipRanks |\n| Top Analyst Reports for Alphabet, Apple & Micron Technology Zacks |\n| Micron Technology to Report Fiscal Third Quarter Results on June 24, 2026 GlobeNewswire |\n| SPDR S&P 500 ETF Trust (SPY) Daily Update, 5/27/2026 TipRanks |\n| New Price Target for Micron After Monster 600% Run TipRanks |\n| MU, SNDK: Barclays Goes Big on Micron and SanDisk Stocks — Boosts Ratings and Price Targets TipRanks | [...] My Markets Watchlist\n\nMarkets   News\n\n# Micron Technology to Report Fiscal Third Quarter Results on June 24, 2026\n\nPRESS RELEASE GlobeNewswire\n\nMay. 27, 2026, 04:01 PM\n\nBOISE, Idaho, May 27, 2026 (GLOBE NEWSWIRE) -- Micron Technology, Inc. (Nasdaq: MU) announced today that it will hold its fiscal third quarter earnings conference call on Wednesday, June 24, 2026, at 2:30 p.m. Mountain time.\n\nThe call will be webcast live at  Webcast replays of presentations can be accessed from Micron’s Investor Relations website for approximately one year after the call.",
+      "analyzed_news_summary": "美光科技宣布将于2026年6月24日举行第三财季财报电话会议，属于常规日程公告。",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "MU",
+      "source_category": "Storage",
+      "news_title": "Micron Technology, Inc. Stock Price - Perplexity",
+      "news_url": "https://www.perplexity.ai/finance/MU",
+      "news_date": "",
+      "news_snippet": "Micron Technology surged to all-time highs, closing up over 15% on massive volume — nearly 1.5x its daily average — capping its best weekly performance in roughly eight months. The rally was fueled by a powerful confluence of tailwinds: a broader chip sector rebound driven by strong AI-related earnings from AMD, Intel, Alphabet, and Amazon, which reinforced the case for sustained data center memory demand. Mizuho raised its price target on Micron to $740 citing AI tailwinds, Gartner projected 'memflation' with DRAM prices spiking 125% in 2026, and TD Cowen noted Micron's entire 2026 HBM capacity is pre-sold. A stronger-than-expected April jobs report (115,000 vs. 55,000 est.) and easing US-Iran tensions further boosted risk appetite. Shares extended gains in after-hours trading, [...] 6.50% \n\nMicron Technology surged 6.5%, extending its record-setting run as two fresh catalysts amplified the AI memory supercycle narrative: Samsung union workers threatened a walkout starting May 21, raising supply-disruption fears that benefit Micron, while Deutsche Bank dramatically raised its price target to $1,000 (from $550), the highest on Wall Street. Adding momentum, Micron CEO Sanjay Mehrotra is part of President Trump's delegation to China this week, signaling Micron's pivotal role in U.S.-China tech diplomacy. The stock touched a 52-week high of $818.67 intraday, with volume nearly 70% above average, as retail and institutional investors pile into a name whose HBM4 supply is fully booked through 2026 and whose Q2 FY2026 revenue surged 196% year-over-year to $23.9 billion. [...] Micron Technology, Inc. (NASDAQ: MU) is a leading U.S.-based semiconductor company founded in 1978 and headquartered in Boise, Idaho, specializing in the design, development, manufacturing, and sale of memory and storage solutions worldwide. As the only American manufacturer of all three major memory technologies — DRAM, NAND, and NOR — Micron holds approximately 23% market share in DRAM and 11% in NAND, positioning it as the third-largest player globally in both categories. The company serves a broad range of end markets, including cloud data centers, PCs, mobile devices, graphics, networking, automotive, and industrial applications, marketing its products under the Micron and Crucial brands through direct sales, distributors, and retail channels. Under the leadership of CEO Sanjay",
+      "analyzed_news_summary": "Micron Technology股价因AI内存需求激增、目标价上调及三星工会罢工威胁而创历史新高，同时超预期的就业数据和美伊紧张局势缓解提振了整体风险偏好。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "核心利好：AI驱动的HBM需求旺盛，2026年产能预售一空；多家投行大幅上调目标价；三星罢工威胁可能扰乱供应，利好Micron市场份额。"
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "AMD强劲的AI相关财报是此次芯片板块反弹的催化剂之一，表明数据中心AI需求全面扩张，间接利好其芯片销售。"
+        },
+        {
+          "ticker": "GLD",
+          "asset_category": "Hedge",
+          "impact": "Bearish",
+          "impact_score": 4,
+          "reasoning": "超预期的非农数据降低美联储降息紧迫性，美伊紧张局势缓解削弱避险需求，双重因素对金价构成压力。"
+        },
+        {
+          "ticker": "USO",
+          "asset_category": "Hedge",
+          "impact": "Bearish",
+          "impact_score": 4,
+          "reasoning": "美伊紧张局势缓解降低原油供应中断风险，地缘政治溢价消退，可能拖累油价。"
+        }
+      ]
+    },
+    {
+      "source_ticker": "WDC",
+      "source_category": "Storage",
+      "news_title": "Western Digital (NASDAQ:WDC) Hits New 12-Month High  - Here's Why",
+      "news_url": "https://www.marketbeat.com/instant-alerts/western-digital-nasdaqwdc-hits-new-12-month-high-heres-why-2026-05-26",
+      "news_date": "",
+      "news_snippet": "In other Western Digital news, insider Vidyadhara K. Gubbi sold 4,674 shares of the stock in a transaction dated Monday, May 4th. The shares were sold at an average price of $443.19, for a total transaction of $2,071,470.06. Following the sale, the insider owned 90,041 shares of the company's stock, valued at $39,905,270.79. This represents a 4.93% decrease in their position. The sale was disclosed in a legal filing with the Securities & Exchange Commission, which can be accessed through this hyperlink. Also, CEO Irving Tan sold 20,000 shares of the business's stock in a transaction dated Friday, May 1st. The stock was sold at an average price of $411.84, for a total transaction of $8,236,800.00. Following the completion of the transaction, the chief executive officer directly owned [...] In other Western Digital news, insider Vidyadhara K. Gubbi sold 4,674 shares of the stock in a transaction dated Monday, May 4th. The shares were sold at an average price of $443.19, for a total transaction of $2,071,470.06. Following the sale, the insider owned 90,041 shares of the company's stock, valued at $39,905,270.79. This represents a 4.93% decrease in their position. The sale was disclosed in a legal filing with the Securities & Exchange Commission, which can be accessed through this hyperlink. Also, CEO Irving Tan sold 20,000 shares of the business's stock in a transaction dated Friday, May 1st. The stock was sold at an average price of $411.84, for a total transaction of $8,236,800.00. Following the completion of the transaction, the chief executive officer directly owned [...] In other Western Digital news, insider Vidyadhara K. Gubbi sold 4,674 shares of the stock in a transaction dated Monday, May 4th. The shares were sold at an average price of $443.19, for a total transaction of $2,071,470.06. Following the sale, the insider owned 90,041 shares of the company's stock, valued at $39,905,270.79. This represents a 4.93% decrease in their position. The sale was disclosed in a legal filing with the Securities & Exchange Commission, which can be accessed through this hyperlink. Also, CEO Irving Tan sold 20,000 shares of the business's stock in a transaction dated Friday, May 1st. The stock was sold at an average price of $411.84, for a total transaction of $8,236,800.00. Following the completion of the transaction, the chief executive officer directly owned",
+      "analyzed_news_summary": "Western Digital stock hit a 12-month high, but CEO and another insider sold substantial shares at elevated prices.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bearish",
+          "impact_score": 4,
+          "reasoning": "CEO Irving Tan sold 20,000 shares at $411.84 and insider Gubbi sold 4,674 shares at $443.19 near a 12-month high, signaling possible insider caution and profit-taking."
+        }
+      ]
+    },
+    {
+      "source_ticker": "AMD",
+      "source_category": "Tech_AI",
+      "news_title": "AMD Stock Quote Price and Forecast - CNN",
+      "news_url": "https://www.cnn.com/markets/stocks/AMD",
+      "news_date": "",
+      "news_snippet": "May 21, 2026 1:35am ET AMD Announces More Than $10 Billion in Taiwan Ecosystem Investments to Accelerate AI Infrastructure by GlobeNewswireMay 21, 2026 1:35am ET AMD Announces Production Ramp of Next-Generation AMD EPYC Processor “Venice” on TSMC 2nm Process Technology by GlobeNewswireMay 07, 2026 4:15pm ET AMD to Host Annual Meeting of Stockholders by GlobeNewswireMay 05, 2026 4:15pm ET AMD Reports First Quarter 2026 Financial Results by GlobeNewswireApr 28, 2026 9:00am ET AMD Announces “Advancing AI 2026”by GlobeNewswireApr 08, 2026 4:15pm ET AMD to Report Fiscal First Quarter 2026 Financial Results by GlobeNewswireMar 02, 2026 3:00am ET AMD Gives Consumers and Businesses More AI PC Options with Expanded Ryzen™ AI 400 Series Portfolio by GlobeNewswireFeb 24, 2026 7:00am ET AMD and Meta [...] Workload-Optimized Solutions for Entry-Level Enterprise by GlobeNewswireMay 07, 2025 4:30pm ET AMD to Host Annual Meeting of Stockholders by GlobeNewswireMay 06, 2025 4:15pm ET AMD Reports First Quarter 2025 Financial Results by GlobeNewswireApr 23, 2025 9:00am ET AMD Announces Press Conference at Computex 2025 by GlobeNewswireApr 14, 2025 6:01pm ET AMD Achieves First TSMC N2 Product Silicon Milestone by GlobeNewswireApr 09, 2025 9:08am ET 5th Gen AMD EPYC Processors Deliver Leadership Performance for Google Cloud C4D and H4D Virtual Machines by GlobeNewswireApr 09, 2025 9:00am ET AMD Announces “Advancing AI 2025”by GlobeNewswireApr 08, 2025 4:15pm ET AMD to Report Fiscal First Quarter 2025 Financial Results by GlobeNewswireMar 31, 2025 9:00am ET Powered by 5th Gen AMD EPYC CPUs, Oracle [...] Europe’s New Exascale Supercomputer, the First Based in France by GlobeNewswireNov 11, 2025 4:30pm ET AMD Unveils Strategy to Lead the $1 Trillion Compute Market and Accelerate Next Phase of Growth by GlobeNewswireNov 04, 2025 4:15pm ET AMD Reports Third Quarter 2025 Financial Results by GlobeNewswireOct 27, 2025 3:00pm ET AMD Powers U.S. Sovereign AI Factory Supercomputers, Accelerating an Open American AI Stack by GlobeNewswireOct 27, 2025 8:40am ET AMD Completes Divestiture of ZT Systems Data Center Infrastructure Manufacturing Business to Sanmina by GlobeNewswireOct 16, 2025 8:30am ET AMD to Participate in Upcoming Investor Conferences by GlobeNewswireOct 14, 2025 9:00am ET AMD Showcases “Helios” Rack-Scale Platform Built on the Open Compute Project Open Rack for AI, Introduced by",
+      "analyzed_news_summary": "AMD announces more than $10 billion in Taiwan ecosystem investments and production ramp of next-gen EPYC 'Venice' on TSMC 2nm process, accelerating AI infrastructure and competitive positioning.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "Massive $10B investment and 2nm EPYC ramp signal aggressive AI data center push, boosting revenue outlook and competitive moat."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bearish",
+          "impact_score": 6,
+          "reasoning": "AMD's ecosystem investments and next-gen process could erode NVIDIA's AI compute dominance, increasing competitive pressure in the data center GPU market."
+        }
+      ]
+    },
+    {
+      "source_ticker": "MU",
+      "source_category": "Storage",
+      "news_title": "NASDAQ:MU - Micron Technology, Inc. - TradingView",
+      "news_url": "https://www.tradingview.com/symbols/NASDAQ-MU",
+      "news_date": "",
+      "news_snippet": "demand outpaces supply, driving record growth and major capacity expansions through 2026 [...] What is Micron Technology, Inc. stock price today?\n\nThe current price of MU is 751.00 USD — it has decreased by −1.46% in the past 24 hours. Watch Micron Technology, Inc. stock price performance more closely on the chart.\n\nWhat is Micron Technology, Inc. stock ticker?\n\nDepending on the exchange, the stock ticker may vary. For instance, on NASDAQ exchange Micron Technology, Inc. stocks are traded under the ticker MU.\n\nIs Micron Technology, Inc. stock price growing?\n\nMU stock has risen by 2.52% compared to the previous week, the month change is a 62.23% rise, over the last year Micron Technology, Inc. has showed a 687.13% increase.\n\nWhat is MU stock forecast? [...] How volatile is MU stock?\n\nMU stock is 4.42% volatile and has beta coefficient of 2.67. Track Micron Technology, Inc. stock price on the chart and check out the list of the most volatile stocks — is Micron Technology, Inc. there?\n\nWhat is Micron Technology, Inc. market cap?\n\nToday Micron Technology, Inc. has the market capitalization of ‪846.93 B‬, it has decreased by −8.89% over the last week.\n\nDoes Micron Technology, Inc. release reports?\n\nYes, you can track Micron Technology, Inc. financials in yearly and quarterly reports right on TradingView.\n\nWhen is the next Micron Technology, Inc. earnings date?\n\nMicron Technology, Inc. is going to release the next earnings report on Jul 1, 2026. Keep track of upcoming events with our Earnings Calendar.",
+      "analyzed_news_summary": "Micron Technology reports demand outpaces supply, driving record growth and major capacity expansions through 2026.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "MU demand exceeding supply signals strong pricing power and revenue growth, directly boosting its financial outlook."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Memory demand surge implies robust AI GPU deployments, corroborating NVIDIA's data center growth narrative."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Tight memory supply signals expanding AI infrastructure demand, benefiting AMD's MI300 and server CPU sales."
+        },
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Favorable memory market dynamics often spill over to NAND storage demand, indirectly aiding Western Digital."
+        },
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Strong memory demand may uplift overall storage sector sentiment, though Seagate focuses on HDD, not direct memory."
+        }
+      ]
+    },
+    {
+      "source_ticker": "WDC",
+      "source_category": "Storage",
+      "news_title": "Western Digital Corporation (WDC) Stock Price, News, Quote & History",
+      "news_url": "https://finance.yahoo.com/quote/WDC",
+      "news_date": "",
+      "news_snippet": "1Y\n\n### 910.87%\n\n \n\n5Y\n\n### 834.19%\n\n \n\nAll\n\n### 62,370.31%\n\nMountain\n\nAdvanced Chart \n\nAlphaSpace Chart\n\nLoading chart for WDC\n\n## News headlines Western Digital (WDC) is experiencing significant momentum, driven by strong demand for memory and AI infrastructure. The company reported impressive fiscal Q3 results, with revenue up 45% year-over-year and a gross margin of 50.5%.\n\nWestern Digital (WDC) is experiencing significant momentum, driven by strong demand for memory and AI infrastructure. The company reported impressive fiscal Q3 results, with revenue up 45% year-over-year and a gross margin of 50.5%.\n\nUpdated 29m ago · Powered by Yahoo Scout\n\nView more [...] www.westerndigital.com\n\n40,000\n\n### Full Time Employees\n\nJune 27\n\n### Fiscal Year Ends\n\nTechnology\n\n### Sector\n\nComputer Hardware\n\n### Industry\n\nMore about Western Digital Corporation\n\n### Recent News\n\nView More \n\nAll   News   Earnings Calls   Press Releases   SEC Filings\n\nView More\n\n### Performance Overview\n\nTrailing total returns as of 5/29/2026, which may include dividends or other distributions. Benchmark is S&P 500 (^GSPC)\") .\n\n### YTD Return\n\nWDC\n\n208.51%\n\nS&P 500 (^GSPC)\n\n10.73%\n\n### 1-Year Return\n\nWDC\n\n915.23%\n\nS&P 500 (^GSPC)\n\n28.21%\n\n### 3-Year Return\n\nWDC\n\n1,677.45%\n\nS&P 500 (^GSPC)\n\n80.24%\n\n### 5-Year Return\n\nWDC\n\n838.22%\n\nS&P 500 (^GSPC)\n\n80.30%\n\n### Earnings Trends\n\nView More \n\n### Earnings Per Share\n\ngaap GAAP\n\nnongaap Normalized\n\ngaap GAAP\n\nnongaap Normalized [...] NasdaqGS - Nasdaq Real Time Price • USD \n\n# Western Digital Corporation (WDC)\n\n531.21  +0.03  (+0.01%)\n\nAt close: May 29 at 4:00:01 PM EDT\n\n529.10  -2.11  (-0.40%)\n\nAfter hours: May 29 at 7:59:50 PM EDT\n\nTrade WDC on Coinbase   Trading disclosure \n\n## Trading disclosure\n\nThe above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for certain activity generated through this link. Prices displayed are informational.\n\n Learn more\n\nDividend\n\nWDC announced a cash dividend of $0.15 with an ex-date of Jun. 5, 2026\n\nChart Range Bar\n\n1D  \n\n5D\n\n### 9.20%\n\n \n\n1M\n\n### 28.70%\n\n \n\n6M\n\n### 225.24%\n\n \n\nYTD\n\n### 208.36%\n\n \n\n1Y\n\n### 910.87%\n\n \n\n5Y\n\n### 834.19%\n\n \n\nAll",
+      "analyzed_news_summary": "Western Digital reports strong fiscal Q3 results with revenue up 45% YoY and 50.5% gross margin, driven by robust demand for memory and AI infrastructure.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "Its own stellar results and AI-driven memory demand signal sustained growth and margin expansion."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "As a major memory competitor, MU benefits directly from the same AI infrastructure boom that lifted WDC."
+        },
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Seagate, as a storage peer, sees positive read-through from robust demand for high-capacity memory in data centers."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "Surging memory demand from AI infra confirms the massive CapEx cycle driving NVIDIA's GPU and networking sales."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "AMD's data center GPU and server CPU businesses stand to benefit from the ongoing AI buildout indicated by strong memory orders."
+        },
+        {
+          "ticker": "MSFT",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "As a hyperscaler heavy investor in AI, robust memory demand reflects accelerating cloud infrastructure, positive for Azure's AI services growth."
+        }
+      ]
+    },
+    {
+      "source_ticker": "WDC",
+      "source_category": "Storage",
+      "news_title": "WDC Stock Quote Price and Forecast - CNN",
+      "news_url": "https://www.cnn.com/markets/stocks/WDC",
+      "news_date": "",
+      "news_snippet": "to $550 from $470 at Mizuho by TipRanks   May 07, 2026 12:37am ET Western Digital announces equity-for-equity exchange by TipRanks   May 06, 2026 12:33pm ET Morning News Wrap-Up, 5/6/26: Today’s Biggest Stock Market Stories! by TipRanks   May 06, 2026 10:26am ET Western Digital (WDC) & SanDisk (SNDK) Stocks Slip on a Share Swap by TipRanks   May 05, 2026 10:05pm ET Top Western Digital Executive Makes Major Insider Move by TipRanks   May 05, 2026 3:40pm ET SanDisk Stock (SNDK) Surges 13% to Hit a New 52-Week High Today, 5/5/2026 by TipRanks   May 05, 2026 10:34am ET SanDisk Stock (SNDK) Kicks Off a Memory Rally Following Cramer Comments by TipRanks   May 04, 2026 10:40am ET Western Digital (WDC) Stock Forecast — What Financial Analysts Expect after Q3 Earnings by TipRanks   May 04, 2026 [...] Thank You!\n\nYour effort and contribution in providing this feedback is much appreciated.\n\nAd Feedback\n\nWDC\n\nWestern Digital Corporation\n\nQuote\n\nAbout\n\nNews\n\nFinancials\n\nForecasts\n\nCompetitors\n\n# Western Digital Corporation\n\nWDC\n\n Price Momentum\n\n  WDC is trading near the top of its 52-week range and above its 200-day simple moving average.\n Price change\n\n  The price of WDC shares has increased $0.03 since the market last closed. This is a 0.01% rise.\n Closed at $531.21.\n\n  The stock has since dropped $2.41 in after-hours trading.\n\n### Key terms\n\n## About WDC\n\nWestern Digital Corp. engages in the development, manufacture, marketing, and sale of data storage devices and solutions. The company was founded by Alvin B. Phillips in 1970 and is headquartered in San Jose, CA.\n\nSector\n\nIndustry [...] Stock (MU) Rockets to $1 Trillion Market Cap on AI Memory Boom by TipRanks   May 26, 2026 6:21am ET Western Digital price target raised to $575 from $500 at Evercore ISI by TipRanks   May 21, 2026 7:40pm ET Closing Bell Movers: Workday jumps 11%, Zoom up 6% after earnings by TipRanks   May 19, 2026 9:12am ET Citi Forecasts Jaw-Dropping 52% Surge For Sandisk Stock as Global AI Memory Shortages Reach Boiling Point by TipRanks   May 19, 2026 8:30am ET Western Digital (WDC) Stock Is Up Nearly 170% This Year. Its Next AI Bet Is Quantum-Safe Storage by TipRanks   May 18, 2026 9:05am ET Western Digital announces post-quantum cryptography hard drives by TipRanks   May 13, 2026 8:45am ET SNDK, MU: Why Are AI Memory Chip Stocks Rising Today, 05/13/26? by TipRanks   May 12, 2026 12:33pm ET Why Is",
+      "analyzed_news_summary": "Western Digital新闻汇总：目标价上调、股价动能及AI存储需求激增推动存储板块看涨情绪。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "分析师密集上调目标价，年内涨幅170%，并推出量子安全存储新品，AI存储繁荣直接利好。"
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 10,
+          "reasoning": "Micron市值突破万亿美元，AI存储短缺达沸点，核心受益者。"
+        },
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "存储板块集体走强，内存与AI需求溢出效应提振希捷预期。"
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "AI存储热潮印证AI基础设施持续投入，为GPU龙头提供需求背书。"
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "AI数据中心的旺盛存储需求间接利好AMD的加速器芯片前景。"
+        }
+      ]
+    },
+    {
+      "source_ticker": "STX",
+      "source_category": "Storage",
+      "news_title": "Seagate Technology: STX Stock Price Quote & News | Robinhood",
+      "news_url": "https://robinhood.com/us/en/stocks/STX",
+      "news_date": "",
+      "news_snippet": "Market cap197.59B\n\nPrice-Earnings ratio\n82.64\n\nPrice-Earnings ratio82.64\n\nDividend yield\n0.34%\n\nDividend yield0.34%\n\nAverage volume\n3.21M\n\nAverage volume3.21M\n\nHigh today\n$905.39\n\nHigh today$905.39\n\nLow today\n$857.84\n\nLow today$857.84\n\nOpen price\n$888.30\n\nOpen price$888.30\n\nVolume\n2.84M\n\nVolume2.84M\n\n52 Week high\n$905.39\n\n52 Week high$905.39\n\n52 Week low\n$116.28\n\n52 Week low$116.28\n\n## Stock Snapshot\n\nSeagate Technology(STX) stock is priced at $887.19, giving the company a market capitalization of 197.59B. It carries a P/E multiple of 82.64 and pays a dividend yield of 33.5%.\n\nAs of 2026-05-29, Seagate Technology(STX) stock has fluctuated between $857.84 and $905.39. The current price stands at $887.19, placing the stock +3.4% above today's low and -2.0% off the high. [...] Seagate Technology(STX) shares are trading with a volume of 2.84M, against a daily average of 3.21M.\n\nIn the last year, Seagate Technology(STX) shares hit a 52-week high of $905.39 and a 52-week low of $116.28.\n\nIn the last year, Seagate Technology(STX) shares hit a 52-week high of $905.39 and a 52-week low of $116.28.\n\n## Analyst ratings\n\n## 81%\n\nof 27 ratings\n\nBuy\n\n81.5%\n\nHold\n\n14.8%\n\nSell\n\n3.7%\n\n## People also own\n\nBased on the portfolios of people who own STX. This list is generated using Robinhood data, and it’s not a recommendation.\n\nWestern Digital\n\nSandisk Corporation\n\nMicron Technology\n\nLumentum\n\nBroadcom\n\nAMD\n\n## Similar Marketcap\n\nThis list is generated by looking at the six larger and six smaller companies by market cap in relation to this company.\n\n## Popular Stocks",
+      "analyzed_news_summary": "Seagate Technology (STX) stock quote snapshot showing price $887.19, market cap $197.59B, P/E 82.64, analyst ratings, and related holdings; no material news events.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "WDC",
+      "source_category": "Storage",
+      "news_title": "This Glorious Growth Stock Has Surged 170% in 2026. It Is Set to Skyrocket Higher",
+      "news_url": "https://finance.yahoo.com/news/glorious-growth-stock-surged-170-193500211.html",
+      "news_date": "",
+      "news_snippet": "Terms\n Privacy\n Privacy & Cookie Settings\n Feedback\n\n© 2026 All rights reserved.\n\nAbout our ads  Advertising  Careers\n\n# Yahoo Finance\n\n Yahoo Finance\n\nMail\n\nSign in\n\nMotley Fool\n\n# This Glorious Growth Stock Has Surged 170% in 2026. It Is Set to Skyrocket Higher\n\nHarsh Chauhan, The Motley Fool\n\n5 min read\n\n WDC\n NVDA\n INTC\n\nHeavy spending on artificial intelligence (AI) infrastructure has supercharged Western Digital (NASDAQ: WDC) stock in 2026, with shares of the data storage company jumping by 170% this year, as of this writing.",
+      "analyzed_news_summary": "AI基础设施支出推动西部数据股价在2026年飙升170%，文章看好其继续上涨，提及NVDA。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "文章直接将WDC股价暴涨归因于AI基础设施支出，并预测进一步上涨，强化了其存储需求的强烈市场共识。"
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "新闻将AI支出作为核心利好，同时提及NVDA，间接强化了AI芯片需求持续高涨的预期，为NVDA提供正向情绪支撑。"
+        }
+      ]
+    },
+    {
+      "source_ticker": "STX",
+      "source_category": "Storage",
+      "news_title": "Seagate Technology Holdings plc (STX) Stock Price, News, Quote & History - Yahoo Finance",
+      "news_url": "https://finance.yahoo.com/quote/STX",
+      "news_date": "",
+      "news_snippet": "Seagate Technology (STX) has experienced strong growth driven by AI demand, with significant revenue and margin increases reported in Q3. Analysts have raised price targets, reflecting confidence in the company's future performance amidst a booming data storage market.\n\nUpdated 38m ago · Powered by Yahoo Scout\n\nView more\n\n Previous Close  880.72\n Open  894.99\n Bid  887.25 x 100\n Ask  870.10 x 100\n Day's Range  867.02 - 904.17\n 52 Week Range  116.78 - 905.39\n Volume  3,831,194\n Avg. Volume  3,995,053\n Market Cap (intraday)  199.057B\n Beta (5Y Monthly)  2.01\n PE Ratio (TTM)  83.31\n EPS (TTM)  10.56\n Earnings Date (est.)  Jul 28, 2026\n Forward Dividend & Yield  2.96 (0.34%)\n Ex-Dividend Date  Jun 24, 2026\n 1y Target Est  829.05 [...] Learn more\n\nChart Range Bar\n\n1D  \n\n5D\n\n### 8.56%\n\n \n\n1M\n\n### 36.76%\n\n \n\n6M\n\n### 217.97%\n\n \n\nYTD\n\n### 219.47%\n\n \n\n1Y\n\n### 644.71%\n\n \n\n5Y\n\n### 818.85%\n\n \n\nAll\n\n### 7,550.43%\n\nMountain\n\nAdvanced Chart \n\nAlphaSpace Chart\n\nLoading chart for STX\n\n## News headlines Seagate Technology (STX) has experienced strong growth driven by AI demand, with significant revenue and margin increases reported in Q3. Analysts have raised price targets, reflecting confidence in the company's future performance amidst a booming data storage market. [...] www.seagate.com\n\n30,000\n\n### Full Time Employees\n\nJune 27\n\n### Fiscal Year Ends\n\nTechnology\n\n### Sector\n\nComputer Hardware\n\n### Industry\n\nMore about Seagate Technology Holdings plc\n\n### Recent News\n\nView More \n\nAll   News   Earnings Calls   Press Releases   SEC Filings\n\nView More\n\n### Performance Overview\n\nTrailing total returns as of 5/29/2026, which may include dividends or other distributions. Benchmark is S&P 500 (^GSPC)\") .\n\n### YTD Return\n\nSTX\n\n220.03%\n\nS&P 500 (^GSPC)\n\n10.73%\n\n### 1-Year Return\n\nSTX\n\n654.31%\n\nS&P 500 (^GSPC)\n\n28.21%\n\n### 3-Year Return\n\nSTX\n\n1,429.78%\n\nS&P 500 (^GSPC)\n\n80.24%\n\n### 5-Year Return\n\nSTX\n\n965.85%\n\nS&P 500 (^GSPC)\n\n80.30%\n\n### Earnings Trends\n\nView More \n\n### Earnings Per Share\n\ngaap GAAP\n\nnongaap Normalized\n\ngaap GAAP\n\nnongaap Normalized",
+      "analyzed_news_summary": "Seagate reported strong Q3 results with significant revenue and margin growth driven by AI demand, leading to analyst price target upgrades.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 10,
+          "reasoning": "Direct positive news: AI-driven demand boosts revenue/margin, analysts raise targets, signaling strong near-term and long-term growth."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "Major storage peer; positive read-across from STX's AI data storage boom validates strong memory demand cycle."
+        },
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "Competitor in HDD and flash storage; same AI-driven data center demand tailwinds lift WDC's growth outlook."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 6,
+          "reasoning": "AI infrastructure demand's trickle-down effect: storage expansion implies sustained GPU/server CapEx, benefiting NVDA's data center business."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Broader AI investment cycle confirmed; AMD's AI accelerator and EPYC CPU demand benefits from intensified data center buildout."
+        }
+      ]
+    },
+    {
+      "source_ticker": "STX",
+      "source_category": "Storage",
+      "news_title": "Seagate Technology (NASDAQ: STX) just delivered a massive Q3 2026 earnings beat!",
+      "news_url": "https://www.youtube.com/watch?v=R_GZ4neZhl0",
+      "news_date": "",
+      "news_snippet": "Apr 28 2026\n\nSeagate Technology (NASDAQ: STX) just delivered a massive Q3 2026 earnings beat! Dive into our full breakdown of Seagate's latest financial results, where the company smashed Wall Street expectations and provided incredibly strong Q4 guidance fueled by the artificial intelligence boom. Key Financial Highlights:\n   Revenue & EPS Crush: Seagate reported a 44% year-over-year revenue increase to $3.11 billion and a 115% jump in non-GAAP EPS to $4.10, easily beating analyst estimates. \n   Record Cash Flow: The company generated a decade-high free cash flow of $953 million, up 57% sequentially, and achieved a record non-GAAP gross margin of 47%. \n   Stock Surge: Following the earnings print and robust forward guidance, STX shares surged between 10% and 12.4% in extended trading. [...] Why is Seagate Growing So Fast? CEO Dave Mosley highlighted that Seagate is entering a \"new era of structural growth\" driven by massive data creation from AI applications. The transition toward Agentic AI (autonomous workflows continuously ingesting and storing data) and Physical AI (autonomous vehicles and robotics generating massive telemetry data) is accelerating the need for high-capacity storage. To meet this demand, Seagate is leading the charge with its Mozaic 4+ HAMR technology. Achieving up to 44 terabytes per drive, Mozaic 4+ is already qualified with the world’s two largest cloud service providers and has begun revenue shipments. Looking Ahead (Q4 2026): Seagate is projecting Q4 revenue of $3.45 billion and a non-GAAP diluted EPS of $5.00, blowing past consensus estimates of [...] diluted EPS of $5.00, blowing past consensus estimates of $3.15 billion and $3.97, respectively. 🔔 Don't forget to LIKE, SUBSCRIBE, and turn on notifications for more deep dives into tech earnings and stock market analysis!Tags:#Seagate#STX#Earnings#StockMarket#Investing#ArtificialIntelligence#DataCenter#CloudStorage#MozaicHAMR#TechStocks#EarningsCall#Finance…...more",
+      "analyzed_news_summary": "Seagate Q3 2026 earnings massively beat expectations with 44% YoY revenue growth, record margins and free cash flow, and Q4 guidance far above consensus, fuelled by AI-driven demand for high-capacity HAMR HDDs.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 9,
+          "reasoning": "Direct beneficiary: earnings beat, guidance raise, AI structural tailwind, HAMR tech leadership, cloud provider qualifications, and double-digit stock surge confirm strong positive momentum."
+        },
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Positive read-across: validates robust HDD demand environment driven by AI/cloud data growth, lifting industry sentiment for Western Digital's own HDD business."
+        }
+      ]
+    },
+    {
+      "source_ticker": "STX",
+      "source_category": "Storage",
+      "news_title": "STX: Seagate Technology Holdings PLC - Stock Price, Quote and News - CNBC",
+      "news_url": "https://www.cnbc.com/quotes/STX",
+      "news_date": "",
+      "news_snippet": "### KEY STATS\n\n Open889.52\n Day High905.39\n Day Low866.01\n Prev Close870.66\n 52 Week High905.39\n 52 Week High Date05/28/26\n 52 Week Low116.28\n 52 Week Low Date05/29/25\n Market Cap197.483B\n Shares Out224.23M\n 10 Day Average Volume3.18M\n Dividend2.96\n Dividend Yield0.34%\n Beta2.06\n\n### RATIOS/PROFITABILITY\n\n EPS (TTM)10.53\n P/E (TTM)83.63\n Fwd P/E (NTM)36.58\n EBITDA (TTM)3.514B\n ROE (TTM)1,787.97%\n Revenue (TTM)11.01B\n Gross Margin (TTM)41.57%\n Net Margin (TTM)21.60%\n Debt To Equity (MRQ)352.79%\n\n### EVENTS\n\n Earnings Date07/27/2026(est)\n Ex Div Date06/24/2026\n Div Amount0.74\n Split Date-\n Split Factor-\n\n## Content From Our Affiliates [...] 887.00quote price arrow up+6.28 (+0.71%)\n\nVolume\n\n55,187\n\nClose\n\n880.72quote price arrow up+10.06 (+1.16%)\n\nVolume\n\n2,623,112\n\n52 week range\n\n116.28- 905.39\n\nLoading...\n\n Open889.52\n Day High905.39\n Day Low866.01\n Prev Close870.66\n 52 Week High905.39\n 52 Week High Date05/28/26\n 52 Week Low116.28\n 52 Week Low Date05/29/25\n\n## Latest On Seagate Technology Holdings PLC [...] Investing Club\n\n Trust Portfolio\n Analysis\n Trade Alerts\n Meeting Videos\n Homestretch\n Jim's Columns\n Education\n Subscribe\n\nJoin IC\n\nPRO\n\n Pro News\n Josh Brown\n Mike Santoli\n Calls of the Day\n My Portfolio\n Livestream\n Full Episodes\n Stock Screener\n Market Forecast\n Options Investing\n Chart Investing\n Subscribe\n\nJoin Pro\n\nLivestream\n\n Make It\n select\n\n USA\n INTL\n\n Livestream\n\n Livestream\n\nWatchlist\n\nSIGN IN\n\nCreate free account\n\nMarkets\n\nBusiness\n\nInvesting\n\nTech\n\nPolitics\n\nVideo\n\nWatchlist\n\nInvesting Club\n\nJoin IC\n\nPRO\n\nJoin Pro\n\nLivestream\n\nNew 52 Week High Today\n\nMy Portfolio\n\n+\n\nLINK YOUR PORTFOLIO\n\n# Seagate Technology Holdings PLC STX:NASDAQ\n\nRT Quote | Last NYSE Arca, VOL From CTA | USD\n\nafter hours iconAfter Hours: Last | 05/28/26 EDT\n\n887.00quote price arrow up+6.28 (+0.71%)",
+      "analyzed_news_summary": "This is a stock quote and key statistics page for Seagate Technology (STX), displaying current price, volume, financial ratios, and upcoming earnings/dividend dates. No material news event.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "GLD",
+      "source_category": "Hedge",
+      "news_title": "SPDR Gold Shares - 15 Year Stock Price History | GLD | MacroTrends",
+      "news_url": "https://www.macrotrends.net/stocks/charts/GLD/spdr-gold-shares/stock-price-history",
+      "news_date": "",
+      "news_snippet": "| Street Tracks Gold Shares offer investors a new, innovative, relatively cost efficient and secure way to access the gold market. Gold Shares are intended to offer investors a means of participating in the gold bullion market without the necessity of taking physical delivery of gold, & to buy and sell that interest through the trading of a security on a regulated stock exchange. The introduction of Gold Shares is intended to lower many of the barriers, such as access, custody, and transaction costs, that have prevented some investors from investing in gold. Gold Shares represent fractional, undivided beneficial ownership interests in the Trust, the sole assets of which are gold bullion, from time to time, cash. Gold Shares are intended to lower a large number of the barriers preventing [...] | Sector | Industry | Market Cap | Revenue |\n ---  --- |\n| Finance | Finance - Publicly Traded Investment Trusts | $160.951B | $0.000B | [...] | ASA Gold And Precious Metals (ASA) | $1.272B | 0.00 |\n| Abrdn Healthcare Investors (HQH) | United States | $1.084B | 0.00 |\n| Tortoise Energy Infrastructure (TYG) | $1.021B | 0.00 |\n| IShares S&P GSCI Commodity-Indexed Trust (GSG) | United States | $0.978B | 0.00 |\n| BlackRock MuniYield New York Quality Fund (MYN) | $0.932B | 0.00 |\n| AllianceBernstein Global High Income Fund (AWF) | $0.898B | 0.00 |\n| NUVEEN SL TFIP (NXP) | $0.895B | 0.00 |\n| PIMCO High Income Fund (PHK) | $0.797B | 0.00 |\n| John Hancock Financial Opportunities Fund (BTO) | $0.749B | 0.00 |\n| IShares MSCI Hong Kong ETF (EWH) | $0.748B | 0.00 |\n| Compass Diversified Holdings (CODI) | United States | $0.737B | 0.00 |\n| Adams Natural Resources Fund (PEO) | United States | $0.725B | 0.00 |",
+      "analyzed_news_summary": "This is a general description of SPDR Gold Shares (GLD) and its 15-year price history, with no specific event that would impact gold prices or related assets.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "GLD",
+      "source_category": "Hedge",
+      "news_title": "SPDR Gold Shares ETF - GLD Stock Price - Investing.com",
+      "news_url": "https://www.investing.com/etfs/spdr-gold-trust",
+      "news_date": "",
+      "news_snippet": "The bottom window is the daily SPY and top window is the NYSE McClellan Oscillator. Market bottoms are made when a “Selling...\n\n  + Tim Ord\n  + 7\n JPMorgan cuts gold forecast on soft demand, expects H2 recovery\n\n  Investing.com -- JPMorgan has trimmed its 2026 gold price forecasts, citing a slowdown in near-term demand momentum, though the...\n\n  + Investing.com\n  + 5\n Gold Price Slide Deepens as Real Yields Punish Bullion\n\n  Gold (XAU/USD) suffered one of its most punishing single sessions of the entire 2026 cycle on Friday, with spot prices collapsing...\n\n  + Itai Smidt\n  + 1\n Gold Market Resilience Raises Case for a Higher Long-Term Trading Range\n\n  High gold prices are enduring, with the yellow metal consolidating high again. Gold’s durability way up here is remarkable... [...] + Itai Smidt\n  + 1\n\n## SPDR® Gold Shares News & Analysis\n\n Gold’s Backward War Trade May Be a Short-Lived Anomaly\n\n  Gold’s reactions to material US-Iran war news in recent months have been backwards. Contrary to logic and precedent, gold has...\n\n  + Adam Hamilton\n Friday Facts: The Largest ETFs in the World\n\n  Given the size of the overall market, it is not surprising that ETFs domiciled in the U.S. are dominating the league table of ETFs...\n\n  + Detlef Glow\n  + 1\n Gold Needs Fed Cut Pricing Before the Bull Case Can Reassert Itself\n\n  Gold (XAU/USD) is trading at $4,521.80 per ounce in midday U.S. action Tuesday, down 1.10% (-$48.75) from Monday's $4,570.56...\n\n  + Itai Smidt\n S&P 500 Momentum Signals a Rally That Could Extend Into Mid-July [...] Domicile\n:   United States\n\nNumber of Holdings\n:   2\n\nISIN\n:   -\n\nBeta\n:   -0.13\n\nHow do you feel today about GLD?\n\nVote to see community's results!\n\nor\n\n## SPDR® Gold Shares News & Analysis\n\n Gold’s Backward War Trade May Be a Short-Lived Anomaly\n\n  Gold’s reactions to material US-Iran war news in recent months have been backwards. Contrary to logic and precedent, gold has...\n\n  + Adam Hamilton\n Gold Price Slide Deepens as Real Yields Punish Bullion\n\n  Gold (XAU/USD) suffered one of its most punishing single sessions of the entire 2026 cycle on Friday, with spot prices collapsing...\n\n  + Itai Smidt\n  + 1\n Friday Facts: The Largest ETFs in the World\n\n  Given the size of the overall market, it is not surprising that ETFs domiciled in the U.S. are dominating the league table of ETFs...",
+      "analyzed_news_summary": "Gold price slides as rising real yields punish bullion; JPMorgan cuts gold forecast citing soft demand, though some analysts see long-term trading range resilience.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "GLD",
+          "asset_category": "Hedge",
+          "impact": "Bearish",
+          "impact_score": 8,
+          "reasoning": "JPMorgan cut gold forecast and real yield spike drove sharp gold sell-off, signaling near-term bearish pressure on GLD as demand softens."
+        }
+      ]
+    },
+    {
+      "source_ticker": "WDC",
+      "source_category": "Storage",
+      "news_title": "WDC Stock Price Quote & News - Western Digital - Robinhood",
+      "news_url": "https://robinhood.com/us/en/stocks/WDC",
+      "news_date": "",
+      "news_snippet": "During the trading session on 2026-05-29, Western Digital(WDC) shares reached a daily high of $544.26 and a low of $518.68. At a current price of $529.60, the stock is +2.1% higher than the low and still -2.7% under the high.\n\nTrading activity shows a volume of 8.38M, compared to an average daily volume of 6.21M.\n\nThe stock's 52-week range extends from a low of $51.17 to a high of $553.50.\n\nThe stock's 52-week range extends from a low of $51.17 to a high of $553.50.\n\nSee More\n\n## WDC News [...] Employees 40,000\n\nHeadquarters San Jose, California\n\nHeadquarters San Jose, California\n\nFounded 1970\n\nFounded 1970\n\nEmployees 40,000\n\nEmployees 40,000\n\n## WDC Key Statistics\n\nMarket cap 183.07B\n\nMarket cap 183.07B\n\nPrice-Earnings ratio 31.71\n\nPrice-Earnings ratio 31.71\n\nDividend yield 0.08%\n\nDividend yield 0.08%\n\nAverage volume 6.21M\n\nAverage volume 6.21M\n\nHigh today$544.26\n\nHigh today$544.26\n\nLow today$518.68\n\nLow today$518.68\n\nOpen price$542.03\n\nOpen price$542.03\n\nVolume 8.38M\n\nVolume 8.38M\n\n52 Week high$553.50\n\n52 Week high$553.50\n\n52 Week low$51.17\n\n52 Week low$51.17\n\n## Stock Snapshot\n\nWestern Digital(WDC) stock is priced at $529.60, giving the company a market capitalization of 183.07B. It carries a P/E multiple of 31.71 and pays a dividend yield of 8.5%. [...] TipRanks 1d Western Digital appoints Das to its board of directors Western Digital (WDC) Corporation announced the appointment of Manuvir Das to its board of directors, effective May 26, 2026. Das currently serves as an Operati...TipRanks 1d Western Digital Adds AI-Focused Veteran to Board Western Digital ( (WDC) ) has provided an update. Western Digital announced that on May 26, 2026, its board of directors unanimously appointed veteran technolo...Nasdaq 2d Forget Micron for a Second: This Storage Maker Just Crossed a Profitability Milestone and Raised Its Dividend 20% Key Points Western Digital's fiscal third-quarter revenue rose 45% year over year. Non-GAAP gross margin crossed 50% for the first time in company history, he... Image 5: Here's How Much a $1000 Investment in Western",
+      "analyzed_news_summary": "Western Digital stock price update with positive developments: revenue up 45% YoY, gross margin crossed 50%, dividend raised 20%, and appointment of AI veteran to board.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "Strong earnings growth, record profitability, dividend hike, and AI board appointment signal robust demand and strategic positioning in AI storage."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "WDC's strong results and AI storage demand indications may lift sector sentiment, benefiting Micron as a key peer."
+        },
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "Positive read-through from WDC's profitability milestone and AI focus suggests healthy storage market, supporting Seagate."
+        }
+      ]
+    },
+    {
+      "source_ticker": "GLD",
+      "source_category": "Hedge",
+      "news_title": "GLD: SPDR Gold Shares - Stock Price, Quote and News - CNBC",
+      "news_url": "https://www.cnbc.com/quotes/GLD",
+      "news_date": "",
+      "news_snippet": "## Latest On SPDR Gold Shares\n\n Cost of gold Friday, May 29CNBC.com\n Cost of gold Thursday, May 28CNBC.com\n Cost of gold Wednesday, May 27CNBC.com\n Options Action: Big moves in goldCNBC VideoCNBC.com\n A battle is brewing in the gold pits. Here are the winners and losersCNBC.com\n Cost of gold Tuesday, May 26CNBC.com\n Final Trade: CEG, GLD, NDAQ, CLFCNBC VideoCNBC.com\n Advocating for barbell between U.S. and EM, says strategistCNBC VideoCNBC.com\n Inside India newsletter: Trump-Xi meeting could test India’s positioning as China counterweightCNBC.com\n The gold chart looks poised for a bounce. How to play it for lessCNBC.com\n\n## Key Stats\n\n 10 Day Average Volume5.55M\n Dividend-\n Dividend Yield-\n Beta0.14\n\n## Latest On SPDR Gold Shares [...] ### KEY STATS\n\n Open415.62\n Day High421.82\n Day Low415.08\n Prev Close412.77\n 52 Week High509.70\n 52 Week High Date01/29/26\n 52 Week Low299.89\n 52 Week Low Date06/27/25\n 10 Day Average Volume5.55M\n Dividend-\n Dividend Yield-\n Beta0.14\n\n### EVENTS\n\n Ex Div Date-\n Div Amount-\n Split Date-\n Split Factor-\n\n## Content From Our Affiliates\n\n SPDR Gold Trust Assets and NAV Surge on Rising Gold PricesTipRanks\n Gold Stock ETF GDX Soars 6% Higher as Gold Price Climbs on Iran Ceasefire: 04/08/26TipRanks\n Gold Stock ETF GDX Drops as Markets Brace for Trump’s Iran Showdown 04/07/26TipRanks\n Gold Stock ETF GDX Drops as Iran Ceasefire Hopes Fade 04/06/26TipRanks\n Gold’s Century-Long Slump Supports Bitcoin’s Rise as ‘Digital Gold’TipRanks\n\n### Related Video\n\nOptions Action: Big moves in gold\n\nwatch now [...] ## Latest On SPDR Gold Shares\n\n Cost of gold Friday, May 29CNBC.com\n Cost of gold Thursday, May 28CNBC.com\n Cost of gold Wednesday, May 27CNBC.com\n Options Action: Big moves in goldCNBC VideoCNBC.com\n A battle is brewing in the gold pits. Here are the winners and losersCNBC.com\n Cost of gold Tuesday, May 26CNBC.com\n Final Trade: CEG, GLD, NDAQ, CLFCNBC VideoCNBC.com\n Advocating for barbell between U.S. and EM, says strategistCNBC VideoCNBC.com\n Inside India newsletter: Trump-Xi meeting could test India’s positioning as China counterweightCNBC.com\n The gold chart looks poised for a bounce. How to play it for lessCNBC.com\n\n### KEY STATS",
+      "analyzed_news_summary": "该页面为 CNBC 上 SPDR Gold Shares (GLD) 的股票报价页面，汇总了近期黄金价格数据、相关头条及附属内容，无单一具体新闻事件。",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "STX",
+      "source_category": "Storage",
+      "news_title": "Seagate Technology Holdings PLC (STX) Stock Price & News",
+      "news_url": "https://www.google.com/finance/beta/quote/STX:NASDAQ",
+      "news_date": "",
+      "news_snippet": "About Seagate Technology Holdings PLC\n\nCEO Dave Mosley\n\nEmployees 30K\n\nFounded Nov 1, 1979\n\nHeadquarters-\n\nSector Computers, Peripherals, and Software\n\nWebsiteseagate.com\n\nLast report\n\nApr 28, 2026\n\nFiscal Period\n\nQ3 2026\n\nEPS / Est. (USD)\n\n$4.10 / $3.52\n\n+16.56%beat\n\n_arrow\\_upward_\n\nRevenue / Est. (USD)\n\n3.11B / 2.96B\n\n+5.10%beat\n\n_arrow\\_upward_\n\nFiscal Q3 2026 earnings call\n\n_docs_ Documents and Forms\n\n_slide\\_library_ Presentation Slides_monitoring_ Earnings Release (8-K)_account\\_balance_ Quarterly Report (10-Q)\n\nMajor Upward Revision to Growth Targets\n\n4m 47s [...] Non-GAAP operating expenses are expected to be approximately $295 million. Based on the midpoint of our revenue guidance, non-GAAP operating margin is expected to be in the lower 40% range. Non-GAAP EPS is expected to be $5.00 ± $0.20 based on a tax rate of about 16% and non-GAAP diluted share count of 231 million shares, including estimated dilution from our 2028 convertible notes of approximately 3 million shares. Our financial performance and guidance demonstrate our focus on profitable revenue growth alongside a product strategy designed to capture the significant opportunities ahead. Combined with the visibility gained through our customer agreements, we are confident in delivering quarterly revenue growth and margin expansion through fiscal 2027, positioning Seagate to enhance value [...] Moving on to the rest of the income statement, non-GAAP gross profit increased to $1.5 billion, up 23% quarter-over-quarter and 87% compared with the prior year period, growing roughly twice the rate of revenue. Non-GAAP gross margin expanded to 47% in the March quarter from 42.2% in the prior period. This improvement reflects continued execution of our long-term pricing strategy along with improving product mix. Together, this drove a mid-single-digit increase in year-over-year data center revenue per terabyte. We expect this trend to continue, supported by a strong demand environment. Non-GAAP operating expenses were in line with our expectation at $196 million or 9.5% of revenue. The combination of higher revenue and expense discipline enable us to achieve our long-term target earlier",
+      "analyzed_news_summary": "Seagate reported strong Q3 2026 earnings with EPS and revenue beats, gross margin expansion to 47%, and raised guidance driven by data center demand, signaling a thriving storage cycle.",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "STX",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 10,
+          "reasoning": "Company's own robust beat-and-raise, margin expansion, and data center demand directly boost valuation and sentiment."
+        },
+        {
+          "ticker": "MU",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 7,
+          "reasoning": "Seagate's strong data center storage demand and pricing trends positively read across to Micron's memory and storage segments."
+        },
+        {
+          "ticker": "WDC",
+          "asset_category": "Storage",
+          "impact": "Bullish",
+          "impact_score": 8,
+          "reasoning": "As a direct HDD competitor, Western Digital benefits from the same favorable demand and pricing environment highlighted by Seagate."
+        },
+        {
+          "ticker": "NVDA",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 5,
+          "reasoning": "Surging data center storage demand correlates with AI GPU infrastructure buildout, reinforcing the broader AI capex cycle supporting NVIDIA."
+        },
+        {
+          "ticker": "AMD",
+          "asset_category": "Tech_AI",
+          "impact": "Bullish",
+          "impact_score": 4,
+          "reasoning": "Indirect positive signal: healthy data center spending trends benefit AMD's server CPU and AI accelerator markets."
+        }
+      ]
+    },
+    {
+      "source_ticker": "USO",
+      "source_category": "Hedge",
+      "news_title": "WTI-Brent Financial Jun 2026 Overview (BKCM26) | Barron's",
+      "news_url": "https://www.barrons.com/market-data/futures/bkcm26?mod=md_future_recentContracts",
+      "news_date": "",
+      "news_snippet": "## Commodities News\n\nLoading data\n\n## Futures Overview\n\n| Last | Chg | % Chg |\n --- \n| Crude Oil Continuous Contract | $87.76 | -1.14 | -1.28% |\n| Brent Crude Oil Continuous Contract | $91.89 | 0.77 | 0.85% |\n| Natural Gas Continuous Contract | $3.273 | -0.012 | -0.37% |\n| RBOB Gasoline Continuous Contract | $3.0469 | -0.0540 | -1.74% |\n| Heating Oil Continuous Contract | $3.5129 | -0.0392 | -1.10% | [...] -$4.96\n\n0.08\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Nov 2026\n\n-$4.89\n\n0.10\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Dec 2026\n\n-$4.95\n\n0.10\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Jan 2027\n\n-$5.00\n\n0.09\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Feb 2027\n\n-$4.86\n\n0.08\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Mar 2027\n\n-$4.83\n\n0.08\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\n## Commodities News\n\nLoading data\n\n## Futures Overview [...] # WTI-Brent Financial Jun 2026\n\nU.S.: Nymex\n\nmarket open\n\n$0.00\n\nundefined EDT\n\nDelayed quote\n\n## Key Data\n\nOpen\n\n$0.00\n\nOpen Interest\n\n14,938\n\nDay Range\n\n0.00 - 0.00\n\n52 Wk Range\n\n-7.81 - 0.00\n\n## Performance\n\n5 Day\n\n1 Month\n\n3 Month\n\nYTD\n\n1 Year\n\n-4.27%\n\n-35.06%\n\n-11.43%\n\n35.24%\n\n24.20%\n\n$\n\n1D\n\nCompare\n\n## Recent Contracts\n\nLast\n\nChg\n\nOpen\n\nHigh\n\nLow\n\nDate/Time\n\nWTI-Brent Financial Jun 2026\n\n-$4.26\n\n0.09\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Jul 2026\n\n-$4.50\n\n0.07\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Aug 2026\n\n-$4.52\n\n0.07\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Sep 2026\n\n-$4.74\n\n0.08\n\n$0.00\n\n$0.00\n\n$0.00\n\nMay 29, 2026 5:09 p.m.\n\nWTI-Brent Financial Oct 2026\n\n-$4.96\n\n0.08\n\n$0.00\n\n$0.00\n\n$0.00",
+      "analyzed_news_summary": "This is a real-time futures price snapshot showing WTI down 1.28%, Brent up 0.85%, and the WTI-Brent spread trading at negative values. It contains no fundamental event or market-moving catalyst.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "GLD",
+      "source_category": "Hedge",
+      "news_title": "SPDR Gold Trust ETF [GLD] (Total Gold, Tonnes) | Series | MacroMicro",
+      "news_url": "https://en.macromicro.me/series/3069/gold-spdr-gold-trust-etf-tonnes",
+      "news_date": "",
+      "news_snippet": "# [SPDR - SPDR Gold Trust ETF [GLD] (Total Gold, Tonnes)](/series/3069/gold-spdr-gold-trust-etf-tonnes)\n\n1,037.71\n\n0.86\n\nShare Chart\n\n   DIY\n\n#### Latest Stats\n\n SPDR - SPDR Gold Trust ETF [GLD] (Total Gold, Tonnes)\n\n  2026-05-21\n\n  1,037.71\n\n  1,036.85\n\n#### Specs\n\n ###### Category\n\n  ETF\n ###### Region\n\n  Global\n ###### Frequency\n\n  Day\n\n#### Related Charts\n\n#### [SPDR Gold Trust ETF [GLD] Holdings vs. Gold Price](/charts/712/spdr-gold-trust-etf-gold-price)\n\nData Download \n\nData File Format: CSV\n\nI agree to the data usage terms and conditions of MacroMicro\n\nData Download \n\nData File Format: CSV\n\nI agree to the data usage terms and conditions of MacroMicro\n\n#### Download Chart (png)",
+      "analyzed_news_summary": "SPDR Gold Trust ETF (GLD) total gold holdings stood at 1,037.71 tonnes as of 2026-05-21, a minor increase of 0.86 tonnes.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "USO",
+      "source_category": "Hedge",
+      "news_title": "WTI Crude Oil Prices - 10 Year Daily Chart - Macrotrends",
+      "news_url": "https://www.macrotrends.net/2516/wti-crude-oil-prices-10-year-daily-chart",
+      "news_date": "",
+      "news_snippet": "# WTI Crude Oil Prices - 10 Year Daily Chart\n\n1/1 Skip Ad Continue watching after the adImage 1: Loading PodsVisit Advertiser websiteGO TO PAGE\n\nVideo 1\n\nVideo 2\n\nVideo 3\n\nVideo 4\n\nVideo 5\n\nVideo 6\n\nVideo 7\n\nVideo 8\n\n✖\n\nImage 2: Macrotrends Logo\n\n## WTI Crude Oil Prices - 10 Year Daily Chart\n\nMarketsMetalsEnergyCommoditiesInterest RatesExchange RatesEconomy\n\nCrude Oil HistoryCrude Oil DailyBrent Crude HistoryBrent Crude DailyNatural GasHeating Oil\n\nInteractive chart showing the daily closing price for West Texas Intermediate (NYMEX) Crude Oil over the last 10 years. The prices shown are in U.S. dollars. The full historical dataset is available for download here: WTI Crude Oil Prices - 10 Years of Daily Data.\n\nView More\n\n## 10 Year Daily Chart\n\nImage 3: Click on chart icon to view chart",
+      "analyzed_news_summary": "This is a 10-year daily chart of WTI crude oil prices with no new information or analysis.",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "USO",
+      "source_category": "Hedge",
+      "news_title": "Energy - Bloomberg - Bloomberg Markets",
+      "news_url": "https://www.bloomberg.com/energy",
+      "news_date": "",
+      "news_snippet": "EMEA+44 20 7330 7500\n\nAsia Pacific+65 6212 1000\n\n, not sorted |\n ---  ---  --- \n| CL1:COM WTI Crude Oil (Nymex) | USD/bbl. | 87.36 | 1.54 | 1.73% | Jul 2026 | 05/29/2026 |\n| CO1:COM Brent Crude (ICE) | USD/bbl. | 91.12 | 1.58 | 1.70% | Aug 2026 | 05/29/2026 |\n| CP1:COM Crude Oil (Tokyo) | JPY/kl | 88,470.00 | 1,330.00 | 1.48% | Jun 2026 | 05/29/2026 |\n| NG1:COM Natural Gas (Nymex) | USD/MMBtu | 3.29 | 0.00 | 0.15% | Jul 2026 | 05/29/2026 |\n\n## Refined Products",
+      "analyzed_news_summary": "该新闻仅为能源期货价格快照，显示WTI原油87.36美元/桶（+1.73%）、布伦特91.12美元/桶（+1.70%），无任何事件、分析或供需变化信息。",
+      "is_relevant": false,
+      "affected_assets": []
+    },
+    {
+      "source_ticker": "USO",
+      "source_category": "Hedge",
+      "news_title": "Crude Oil - Price - Chart - Historical Data - News - Trading Economics",
+      "news_url": "https://tradingeconomics.com/commodity/crude-oil",
+      "news_date": "",
+      "news_snippet": "### Crude Oil fell to 87.76 USD/Bbl on May 29, 2026, down 1.28% from the previous day. Over the past month, Crude Oil's price has fallen 16.47%, but it is still 44.37% higher than a year ago, according to trading on a contract for difference (CFD) that tracks the benchmark market for this commodity. Crude Oil is expected to trade at 98.72 USD/BBL by the end of this quarter, according to Trading Economics global macro models and analysts expectations. Looking forward, we estimate it to trade at 114.39 in 12 months time.\n\n Search...\n\n1D\n\n\n\n   \n\n   \n\nJul Sep Nov 2026 Mar May\n\n87.360\n\n1D1W1M6M1Y5Y10Y25YAll\n\nCrude Oil WTI (USD/Bbl)87.360-1.540(-1.73%)\n\nCrude Oil X [...] Crude Oil X \n\n\n\n|  | Price |  |  | Day | Month | Year | Date |\n ---  ---  ---  --- |\n| Crude Oil | 87.36 |  | -1.540 | -1.73% | -16.86% | 43.71% | May/29 |\n| Brent | 91.12 |  | -1.580 | -1.70% | -17.46% | 45.14% | May/29 |\n| Natural gas | 3.29 |  | 0.0050 | 0.15% | 18.90% | -4.55% | May/29 |\n| Gasoline | 3.03 |  | -0.0665 | -2.14% | -16.06% | 50.70% | May/29 |\n| Heating Oil | 3.49 |  | -0.0635 | -1.79% | -14.51% | 74.26% | May/29 |\n| Coal | 136.75 |  | -0.75 | -0.55% | 2.05% | 32.38% | May/29 |\n| Ethanol | 2.02 |  | 0 | 0% | -0.49% | 14.81% | May/29 |\n| Urals Oil | 86.38 |  | -2.40 | -2.70% | -25.57% | 49.06% | May/28 | [...] ## WTI crude oil futures fell 1.1% to below $88 per barrel on Friday, the lowest in roughly six weeks, ending May down 16.2%. The move followed reports that the US and Iran have reached a preliminary agreement to extend a ceasefire and ease restrictions on shipping through the Strait of Hormuz, although President Donald Trump has not yet approved the deal and Iranian state media said it has not been finalized. The potential agreement has raised expectations of an eventual end to the US-Israeli war in Iran and a reopening of the Strait of Hormuz, a critical route for about one-fifth of global oil and LNG flows. Analysts warn that any recovery in flows would likely be slow, as mines would need clearing, damaged infrastructure repaired and shut-in production restarted, with tanker delays",
+      "analyzed_news_summary": "原油价格在2026年5月29日下跌1.28%至87.76美元/桶，因有报道称美国与伊朗达成初步协议，将扩大停火并放松对霍尔木兹海峡的航运限制，缓和了供应中断担忧。",
+      "is_relevant": true,
+      "affected_assets": [
+        {
+          "ticker": "USO",
+          "asset_category": "Hedge",
+          "impact": "Bearish",
+          "impact_score": 7,
+          "reasoning": "Preliminary US-Iran ceasefire deal eases Strait of Hormuz chokepoint risk, raising expectations of higher oil supply flows and pressuring crude prices."
+        },
+        {
+          "ticker": "GLD",
+          "asset_category": "Hedge",
+          "impact": "Bearish",
+          "impact_score": 5,
+          "reasoning": "De-escalation of US-Israeli war in Iran reduces geopolitical safe-haven demand for gold, moderately bearish."
+        }
+      ]
+    },
+    {
+      "source_ticker": "GLD",
+      "source_category": "Hedge",
+      "news_title": "SPDR Gold Shares Overview - GLD - MarketWatch",
+      "news_url": "https://www.marketwatch.com/investing/fund/gld",
+      "news_date": "",
+      "news_snippet": "May. 28, 2026 at 1:51 a.m. ET on GuruFocus.com\n\n### Should You Buy Gold While It's Under $5,000?\n\nMay. 28, 2026 at 1:20 a.m. ET on Motley Fool\n\n### Gold Prices Under Pressure Amid Diminishing US-Iran Deal Hopes\n\nGold Prices Under Pressure Amid Diminishing US-Iran Deal Hopes\n\nMay. 27, 2026 at 9:50 p.m. ET on GuruFocus.com\n\n### AI Valuations 'On A Tear'? Why Morgan Stanley Is Pushing Energy Stocks Like SLB, Plus Gold\n\nMay. 27, 2026 at 7:23 a.m. ET on Benzinga.com\n\n### The Fed Is Trapped And Markets Aren't Ready For What's Next, Top Macro Analyst Says\n\nMay. 26, 2026 at 3:54 p.m. ET on Benzinga.com\n\n### Gold Prices Dip Amidst US-Iran Agreement Talks\n\nGold Prices Dip Amidst US-Iran Agreement Talks\n\nMay. 25, 2026 at 9:12 p.m. ET on GuruFocus.com [...] Read full story  \n\n### Markets The Iran War Started 1 Month Ago. What It’s Meant for Stocks, Bonds, and Oil.\n\nMar. 27, 2026 at 2:24 p.m. ET by Barron's\n\n### Gold, silver adding to brutal declines in March\n\nMar. 26, 2026 at 10:26 a.m. ET by Joy Wiltermuth\n\nRead full story  \n\n### ETFs Why Beaten Up Gold Could Be Ready to Bounce\n\nMar. 26, 2026 at 9:26 a.m. ET by Barron's\n\nRead full story  \n\n### Cryptocurrencies Vanguard’s Brokerage Arm Is Now Offering Crypto ETFs. They’ve Been Tanking.\n\nMar. 25, 2026 at 2:00 a.m. ET by Barron's\n\nRead full story  \n\n### Precious Metals Gold Is Not a Haven in This War. How That Happened and Some Options for Your Money Now.\n\nMar. 24, 2026 at 1:08 p.m. ET by Barron's\n\nRead full story [...] May. 25, 2026 at 9:12 p.m. ET on GuruFocus.com\n\n### Gold ETFs Shine Again as Ceasefire Hopes Lift Market Optimism\n\nMay. 25, 2026 at 11:43 a.m. ET on Zacks.com\n\n### What Is the Best Way to Own Gold in 2026?\n\nMay. 25, 2026 at 11:35 a.m. ET on Motley Fool\n\n### Trump's Possible Iran Deal Is Putting Gold ETFs Back In Focus As Bullion Prices Climb\n\nMay. 25, 2026 at 6:38 a.m. ET on Benzinga.com\n\n### GLD vs IAU: Same Gold. Different Fees. Here Is Which One Long-Term Investors Should Actually Own\n\nMay. 23, 2026 at 3:35 a.m. ET on Motley Fool\n\n### Iran Optimism Drives Semi Mania, Potential Short Squeeze Ahead\n\nMay. 22, 2026 at 1:52 p.m. ET on Benzinga.com\n\n### Dollar Holds Firm Amid Iran Deal Uncertainty: ETFs to Win/ Lose\n\nMay. 22, 2026 at 8:13 a.m. ET on Zacks.com",
+      "analyzed_news_summary": "SPDR Gold Shares Overview - GLD - MarketWatch",
+      "is_relevant": false,
+      "affected_assets": [],
+      "_error": "LLM analysis failed after 3 retries"
+    },
+    {
+      "source_ticker": "USO",
+      "source_category": "Hedge",
+      "news_title": "Crude Oil Futures Price Today (WTI) - Investing.com",
+      "news_url": "https://www.investing.com/commodities/crude-oil",
+      "news_date": "",
+      "news_snippet": "Vote to see community's results!\n\nBearish or Bullish\n\n## Crude Oil WTI Futures News & Analysis\n\nSummarize CLc1's latest news\n\n   \n\n50,466.00\n\n-113.7\n\n-0.22%\n\nUS 500\")\n\n7,515.90\n\n+42.4\n\n+0.57%\n\nDow Jones\n\n50,458.34\n\n-121.36\n\n-0.24%\n\nS&P 500\")\n\n7,513.17\n\n+39.70\n\n+0.53%\n\nNasdaq\n\n26,593.32\n\n+249.35\n\n+0.95%\n\nS&P 500 VIX\")\n\n17.01\n\n+0.42\n\n+2.53%\n\nDollar Index\")\n\n99.125\n\n-0.061\n\n-0.06%\n\nCrude Oil WTI Futures\")\n\n94.01\n\n-2.59\n\n-2.68%\n\nBrent Oil Futures\")\n\n96.94\n\n+3.52\n\n+3.77%\n\nNatural Gas Futures\")\n\n3.05\n\n+0.029\n\n+0.96%\n\nGold Futures\")\n\n4,541.32\n\n-15.08\n\n-0.33%\n\nSilver Futures\")\n\n76.518\n\n+0.319\n\n+0.42%\n\nCopper Futures\")\n\n6.3995\n\n+0.0205\n\n+0.32%\n\nUS Soybeans Futures\")\n\n1,187.38\n\n-7.63\n\n-0.64%\n\nU.S. 10Y\n\n4.502\n\n-0.071\n\n-1.55%\n\nU.S. 30Y\n\n5.029\n\n-0.053\n\n-1.04%\n\nU.S. 5Y\n\n4.197\n\n-0.068\n\n-1.59%\n\nU.S. 3M [...] Tue, 26 May 2026 10:54:27 GMT\n\nN\n\nIndia stocks lower at close of trade; Nifty 50 down 0.49%\n\nTue, 26 May 2026 10:30:06 GMT\n\nN\n\nIndonesia stocks lower at close of trade; IDX Composite Index down 0.85%\n\nTue, 26 May 2026 08:30:04 GMT\n\nN\n\nBitcoin dips below $77k on Iran peace uncertainty, ETF outflows\n\nTue, 26 May 2026 06:50:35 GMT\n\nN\n\nMorning Bid: Peace talks hit turbulence\n\nTue, 26 May 2026 04:42:31 GMT\n\nN\n\nAsia stocks mixed as new US strikes curb Iran peace hopes; KOSPI hits record high\n\nTue, 26 May 2026 04:11:16 GMT\n\nN\n\nRubio says Iran deal could take days as US launches fresh strikes\n\nTue, 26 May 2026 04:00:36 GMT\n\nN\n\nOil rises, stocks mixed as new US strikes dampen peace deal optimism\n\nTue, 26 May 2026 01:18:37 GMT\n\nN [...] Tue, 26 May 2026 01:18:37 GMT\n\nN\n\nOil prices rise as reports of fresh US-Iran strikes overshadow Hormuz deal hopes\n\nTue, 26 May 2026 00:34:57 GMT\n\nN\n\nUS crude futures fall over 6% on report of possible Strait of Hormuz reopening\n\nMon, 25 May 2026 22:18:26 GMT\n\nN\n\nFinland stocks higher at close of trade; OMX Helsinki 25 up 0.65%\n\nMon, 25 May 2026 16:00:04 GMT\n\nN\n\nTurkey stocks higher at close of trade; BIST 100 up 0.60%\n\nMon, 25 May 2026 15:30:03 GMT\n\nN\n\nMorocco stocks higher at close of trade; Moroccan All Shares up 2.73%\n\nMon, 25 May 2026 15:10:04 GMT\n\nN\n\nGreece stocks higher at close of trade; Athens General Composite up 2.07%\n\nMon, 25 May 2026 14:50:03 GMT\n\nN\n\nTSX futures jump as gold climbs, oil falls amid Iran peace deal hopes\n\nMon, 25 May 2026 11:40:08 GMT\n\n‌volume‌\n\n1 Day\n\n-2.65%",
+      "analyzed_news_summary": "Crude Oil Futures Price Today (WTI) - Investing.com",
+      "is_relevant": false,
+      "affected_assets": [],
+      "_error": "LLM analysis failed after 3 retries"
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "generated_at": "2026-06-09T21:53:33.659055",
+  "llm_model": "deepseek-v4-pro",
+  "batch_count": 15,
+  "results": [
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "SK Hynix to double wafer production capacity, AI-driven memory shortage could persist until 2030",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "SK Hynix's capacity expansion signals AI-driven memory demand outstripping supply, boosting NAND/DRAM ASPs and margins for years."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Tight NAND supply lifts pricing power for all flash storage makers, directly benefiting WDC's memory segment."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "AI-driven data growth increases need for high-capacity HDDs; memory shortage reinforces storage spending tailwinds."
+            }
+          ]
+        },
+        {
+          "news_headline": "OpenAI Files to Go Public as A.I. Companies Rush to Wall St.",
+          "market_sector": "Tech_AI",
+          "impacted_assets": [
+            {
+              "ticker": "MSFT",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Microsoft's multi-billion dollar stake in OpenAI transforms into liquid value, unlocking massive unrealized gains and reinforcing its AI leadership."
+            },
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "OpenAI's IPO validates the AI economy, ensuring sustained GPU capex from cloud providers and startups, driving NVDA's demand pipeline."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "A broader AI boom expands the total addressable market for data center GPUs and AI inference chips, benefiting AMD's growth prospects."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 1,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Micron Breaks Ground on Massive Chip Plant by Syracuse, New York",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "New plant signals Micron’s confidence in sustained AI-driven memory demand, supporting long-term revenue growth and market share expansion."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 3,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "How AI Is Pushing the Semiconductor Supply Chain to the Limit",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "AI model scaling requires massive GPU clusters, directly boosting NVIDIA's data center revenue."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Expanding AI infrastructure needs raise the ceiling for high-performance CPUs and GPUs, benefiting AMD's EPYC and Instinct lines."
+            },
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "AI workloads drive surging demand for high-bandwidth memory (HBM), a key growth area for Micron."
+            }
+          ]
+        },
+        {
+          "news_headline": "Data Center infrastructure market: AI-driven CapEx pushing IT and ...",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Server design changes and record AI CapEx directly increase demand for NVIDIA's GPUs and networking solutions."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Heavy data center investment lifts the entire compute market, benefiting AMD's server CPUs and GPUs."
+            },
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "AI-optimized server architectures accelerate adoption of high-capacity memory and storage, favoring Micron's product mix."
+            }
+          ]
+        },
+        {
+          "news_headline": "Why the AI CapEx cycle may have more staying power than you think",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "A prolonged CapEx cycle supports durable, multi-year demand for NVIDIA's AI accelerators and data center platforms."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Sustained infrastructure buildout broadens the market for AMD's competitive AI and server offerings."
+            }
+          ]
+        },
+        {
+          "news_headline": "How much are AI companies spending on data centers?",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Record hyperscaler CapEx, largely driven by AI chip purchases, directly fuels NVIDIA's top-line growth."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 6,
+              "catalyst_mechanism": "Massive chip spending creates incremental opportunities for AMD's data center GPUs and EPYC processors."
+            }
+          ]
+        },
+        {
+          "news_headline": "AI Data Center Build Advances at Full Speed: Five Things to Know",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Capex estimates soaring to $750B and 23 GW under construction signal an unprecedented, sustained GPU procurement cycle."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Aggressive data center capacity expansion confirms the massive TAM for AI accelerators, lifting AMD's growth runway."
+            },
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Record infrastructure buildout intensifies demand for both HBM and high-capacity storage, driving Micron's revenue."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 4,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_error": "Batch 2 failed after 3 retries"
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Hyperscaler AI Capex to Surge 44% YoY to $371B in 2025, Accelerating Trillion-Dollar Infrastructure Cycle",
+          "market_sector": "Tech",
+          "impacted_assets": [
+            {
+              "ticker": "NVDA",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Hyperscaler capex surge directly accelerates GPU procurement for AI clusters, lifting NVDA's data center revenue and order pipeline."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Record AI infrastructure spend expands the total addressable market for AMD's MI300X and future accelerators, boosting market share and revenue visibility."
+            },
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Massive server expansions drive memory demand growth, tightening DRAM/NAND supply and supporting higher ASPs for Micron."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Hyperscale capex fuels demand for high-capacity HDDs and enterprise SSDs, improving Western Digital's storage revenue outlook."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "AI-driven data center buildout increases mass-capacity storage orders, benefiting Seagate's nearline HDD business and margin recovery."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 5,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "DRAM and NAND Flash prices to surge in Q1 2026",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Q1 2026 DRAM +55-60%, NAND +33-38% forecast signals tight supply, directly lifting Micron's revenue and margins."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Sharp NAND price rise boosts Western Digital's NAND flash segment profitability amid constrained supply."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Higher memory and SSD pricing supports Seagate's drive margins as storage demand outpaces supply."
+            }
+          ]
+        },
+        {
+          "news_headline": "DRAM prices predicted to jump 63% in Q2, NAND up to 75% — follows 95% jumps in Q1",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Sustained DRAM and NAND price hikes through Q2 2026 guarantee elevated earnings for Micron over multiple quarters."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "NAND contract prices accelerating to +75% QoQ directly amplifies Western Digital's profitability outlook."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Tight NAND supply and enterprise SSD demand spill over to support HDD pricing, benefiting Seagate."
+            }
+          ]
+        },
+        {
+          "news_headline": "DRAM & NAND Market 2025-2026: Price increases & shortages linked to AI",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Legacy DRAM supply decline and DDR5 shortages force higher contract prices, strengthening Micron's pricing power."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "NAND prices rising 5-10% quarterly with further double-digit increases expected, a clear tailwind for Western Digital."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Memory market volatility and lead-time extensions signal persistent supply tightness, helping Seagate maintain favorable pricing."
+            }
+          ]
+        },
+        {
+          "news_headline": "Spiralling memory spot prices could trigger 'industry cycle collapse,' report warns — NAND wafer costs surge 25% in a single month",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Spot NAND surge and upward revision of contract forecasts to +90-95% DRAM reflect acute shortage, sharply boosting Micron's near-term revenue."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "25% monthly NAND wafer cost spike signals severe supply constraints, driving immediate margin expansion for Western Digital."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Rapid memory spot price increases underscore an overheating market, which historically lifts all storage vendor pricing including Seagate."
+            }
+          ]
+        },
+        {
+          "news_headline": "DRAM prices expected to double in Q1 as AI ambitions push memory fabs to their limit",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "TrendForce revises DRAM price growth to 90-95%, confirming extreme demand-supply imbalance that will supercharge Micron's earnings."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "NAND contract prices seen rising 55-60% QoQ, a massive boost to Western Digital's flash storage revenue."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Memory price doubling and LPDDR extreme shortages spill over into enterprise storage demand, aiding Seagate's HDD business."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 6,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Memory prices may not fall until 2027, new research warns",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Research indicates no meaningful DRAM/NAND price correction until 2H 2027, signaling sustained elevated ASPs and margin expansion for Micron."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 6,
+              "catalyst_mechanism": "Higher NAND prices improve profitability of Western Digital's flash-based SSD products, offsetting HDD headwinds."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 6,
+              "catalyst_mechanism": "Seagate's NAND-based SSD portfolio benefits from rising flash memory prices, enhancing overall storage revenue."
+            }
+          ]
+        },
+        {
+          "news_headline": "NAND Flash Memory Market Outlook 2026-2031: AI Training Clusters Drive NVMe SSD Demand in Data Centers",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Projected NAND market growth to $76B by 2031, fueled by AI-driven NVMe SSD demand, directly expands Micron's addressable market."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Strong NAND demand outlook for data center SSDs supports Western Digital's flash revenue stream alongside AI server growth."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Seagate's enterprise SSD business stands to benefit from rising hyperscale demand for NVMe drives in AI clusters."
+            }
+          ]
+        },
+        {
+          "news_headline": "Storage trends & outlook 2026",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Supply shortages stretching nearline HDD lead times to a year, combined with AI-driven demand, strengthen Western Digital's pricing power."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Seagate benefits from protracted HDD supply constraints and sustained dominance of high-capacity nearline drives in data centers."
+            },
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 5,
+              "catalyst_mechanism": "Cloud providers' consideration of QLC SSDs for cold storage could create incremental demand for Micron's flash products."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 7,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Digital Storage And Memory Projections For 2026, Part 4",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "AI-driven demand for HBM and flash memory is causing shortages, boosting Micron's ASPs and margins as it ramps high-margin HBM production."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "All-Flash array revenue surged 17.6% YoY, signaling robust NAND demand that directly lifts Western Digital's flash storage business."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 8,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_batch_meta": {
+        "batch_idx": 11,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Semiconductor Memory Market continuing expansion driven by AI infrastructure and GenAI demands higher ASPs",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "AI-driven demand for HBM and NAND is boosting ASPs, benefiting Micron's product mix and margins."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Rising NAND demand from data centers and edge computing drives pricing power for Western Digital."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Increased enterprise storage demand supports Seagate's HDD and SSD sales, improving revenue outlook."
+            }
+          ]
+        },
+        {
+          "news_headline": "The Memory Chip Cycle Has Turned: AI Demand Meets Tighter Supply; DRAM supply gap largest in 30 years, NAND eSSD demand up 40-50%",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 10,
+              "catalyst_mechanism": "Micron set to benefit from unprecedented DRAM supply gap and surging NAND demand, driving sharp margin expansion."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Tight NAND supply and eSSD growth boost Western Digital's enterprise sales and pricing."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Seagate benefits from cyclical upturn in memory, with rising HDD and SSD demand supporting higher ASPs."
+            }
+          ]
+        },
+        {
+          "news_headline": "How AI Forces Are Spurring a Memory Chip Shortage as HBM production diverts capacity from DRAM/NAND",
+          "market_sector": "Storage",
+          "impacted_assets": [
+            {
+              "ticker": "MU",
+              "direction": "Bullish",
+              "confidence_score": 9,
+              "catalyst_mechanism": "Micron is a key HBM and traditional memory player; shortage dynamics lift all memory ASPs."
+            },
+            {
+              "ticker": "WDC",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Western Digital's NAND business benefits from supply constraints and robust demand."
+            },
+            {
+              "ticker": "STX",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Seagate's storage solutions gain from broad memory tightness, supporting higher pricing."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 9,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": true,
+      "triggered_signals": [
+        {
+          "news_headline": "Iran conflict risks oil supply disruption via Strait of Hormuz",
+          "market_sector": "Macro_Hedge",
+          "impacted_assets": [
+            {
+              "ticker": "USO",
+              "direction": "Bullish",
+              "confidence_score": 8,
+              "catalyst_mechanism": "Iran conflict raises threat of Strait of Hormuz closure, spiking oil supply risk premium."
+            },
+            {
+              "ticker": "GLD",
+              "direction": "Bullish",
+              "confidence_score": 7,
+              "catalyst_mechanism": "Geopolitical risk-off drives safe-haven gold demand as macro uncertainty surges."
+            },
+            {
+              "ticker": "NVDA",
+              "direction": "Bearish",
+              "confidence_score": 6,
+              "catalyst_mechanism": "Risk-off rotation and potential energy cost spike weigh on high-beta tech growth."
+            },
+            {
+              "ticker": "AMD",
+              "direction": "Bearish",
+              "confidence_score": 6,
+              "catalyst_mechanism": "Market de-risking reduces appetite for cyclical semiconductor names."
+            },
+            {
+              "ticker": "MSFT",
+              "direction": "Bearish",
+              "confidence_score": 5,
+              "catalyst_mechanism": "Macro uncertainty may dampen enterprise IT spending and elevate input costs."
+            }
+          ]
+        }
+      ],
+      "_batch_meta": {
+        "batch_idx": 13,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_batch_meta": {
+        "batch_idx": 14,
+        "articles_count": 5
+      }
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_batch_meta": {
+        "batch_idx": 15,
+        "articles_count": 1
+      }
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_error": "Batch 10 failed after 3 retries"
+    },
+    {
+      "has_market_moving_news": false,
+      "triggered_signals": [],
+      "_error": "Batch 12 failed after 3 retries"
+    }
+  ]
+}

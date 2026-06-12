@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>物理题目改造结果</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f4f7f6; color: #333; }
+        h1 { text-align: center; color: #2c3e50; }
+        .summary { text-align: center; font-size: 1.2em; margin-bottom: 30px; }
+        .problem-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 25px; padding: 20px; }
+        .problem-header { border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; margin-bottom: 15px; color: #2980b9; }
+        .content-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+        .text-box { background: #f8f9fa; border: 1px solid #e9ecef; border-left: 4px solid #3498db; padding: 15px; border-radius: 4px; white-space: pre-wrap; font-family: monospace; font-size: 14px; overflow-x: auto; }
+        button { align-self: flex-start; cursor: pointer; padding: 8px 16px; background-color: #2ecc71; color: white; border: none; border-radius: 4px; font-weight: bold; transition: background-color 0.3s; }
+        button:hover { background-color: #27ae60; }
+        .label { font-weight: bold; color: #34495e; }
+    </style>
+    <script>
+        function copyText(button, textId) {
+            const textElement = document.getElementById(textId);
+            const text = textElement.innerText || textElement.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '✅ 已复制!';
+                button.style.backgroundColor = '#f39c12';
+                setTimeout(() => { 
+                    button.innerText = originalText; 
+                    button.style.backgroundColor = '#2ecc71';
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>物理题目自动改造批处理</h1>
+    <div class="summary">共识别到 <strong>8</strong> 道问题。</div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 1</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_1">Using a rotating reference frame centered on the system&#x27;s center of mass, find the expression for the tension $T_N$ at the midpoint of the tether. Use a first-order Taylor expansion in terms of $L/r$ to simplify your result. Express your result in terms of $G$, $M_E$, $m$, $L$, and $r$. **[1.2 pt]**</div>
+            <button onclick="copyText(this, 'orig_1')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_1">【演示数据】\n选择题：Using a rotating reference frame centered on the system&#x27;s center of mass, find the expression for the tension $T_N$ at the midpoint of the tether. Use a first-order Taylor expansion in terms of $L/r$ to simplify your result. Express your result in terms of $G$, $M_E$, $m$, $L$, and $r$. **[1.2 pt]** A... B... C... D...\n填空题：Using a rotating reference frame centered on the system&#x27;s center of mass, find the expression for the tension $T_N$ at the midpoint of the tether. Use a first-order Taylor expansion in terms of $L/r$ to simplify your result. Express your result in terms of $G$, $M_E$, $m$, $L$, and $r$. **[1.2 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_1')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 2</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_2">As the conductive tether cuts through the Earth&#x27;s magnetic field lines, a motional electromotive force (EMF) is generated between its ends. Calculate the magnitude of this EMF, $\mathcal{E}$, as a function of $r$, $L$, and the given planetary constants. **[1.0 pt]**</div>
+            <button onclick="copyText(this, 'orig_2')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_2">【演示数据】\n选择题：As the conductive tether cuts through the Earth&#x27;s magnetic field lines, a motional electromotive force (EMF) is generated between its ends. Calculate the magnitude of this EMF, $\mathcal{E}$, as a function of $r$, $L$, and the given planetary constants. **[1.0 pt]** A... B... C... D...\n填空题：As the conductive tether cuts through the Earth&#x27;s magnetic field lines, a motional electromotive force (EMF) is generated between its ends. Calculate the magnitude of this EMF, $\mathcal{E}$, as a function of $r$, $L$, and the given planetary constants. **[1.0 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_2')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 3</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_3">Determine the polarity of the induced EMF, in other words, which satellite (the one closer to Earth or the one farther from Earth) accumulates positive charges? **[0.8 pt]**
+
+---</div>
+            <button onclick="copyText(this, 'orig_3')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_3">【演示数据】\n选择题：Determine the polarity of the induced EMF, in other words, which satellite (the one closer to Earth or the one farther from Earth) accumulates positive charges? **[0.8 pt]**
+
+--- A... B... C... D...\n填空题：Determine the polarity of the induced EMF, in other words, which satellite (the one closer to Earth or the one farther from Earth) accumulates positive charges? **[0.8 pt]**
+
+--- ____</div>
+            <button onclick="copyText(this, 'trans_3')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 4</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_4">Derive the expression for the total Lorentz force $\vec{F}_L$ acting on the tether. Show that this force acts in the direction exactly opposite to the orbital velocity vector $\vec{v}$. **[1.0 pt]**</div>
+            <button onclick="copyText(this, 'orig_4')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_4">【演示数据】\n选择题：Derive the expression for the total Lorentz force $\vec{F}_L$ acting on the tether. Show that this force acts in the direction exactly opposite to the orbital velocity vector $\vec{v}$. **[1.0 pt]** A... B... C... D...\n填空题：Derive the expression for the total Lorentz force $\vec{F}_L$ acting on the tether. Show that this force acts in the direction exactly opposite to the orbital velocity vector $\vec{v}$. **[1.0 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_4')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 5</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_5">Due to the work done by the Lorentz force, the system&#x27;s mechanical energy dissipates, causing the orbit to decay. Assuming the orbit remains quasi-circular at all times, derive the differential equation for the rate of change of the orbital radius, $dr/dt$, in terms of $I, B_0 L, m, M_E, R_E$, and $r$. **[1.5 pt]**</div>
+            <button onclick="copyText(this, 'orig_5')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_5">【演示数据】\n选择题：Due to the work done by the Lorentz force, the system&#x27;s mechanical energy dissipates, causing the orbit to decay. Assuming the orbit remains quasi-circular at all times, derive the differential equation for the rate of change of the orbital radius, $dr/dt$, in terms of $I, B_0 L, m, M_E, R_E$, and $r$. **[1.5 pt]** A... B... C... D...\n填空题：Due to the work done by the Lorentz force, the system&#x27;s mechanical energy dissipates, causing the orbit to decay. Assuming the orbit remains quasi-circular at all times, derive the differential equation for the rate of change of the orbital radius, $dr/dt$, in terms of $I, B_0 L, m, M_E, R_E$, and $r$. **[1.5 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_5')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 6</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_6">Let $Q$ be the total charge transferred through the tether as the system descends from an initial radius $r_1$ to a final radius $r_2$. Prove that $Q = \int I dt$ depends only on $r_1, r_2$, and the planetary constants ($M_E, R_E, B_0$), but is independent of the tether&#x27;s resistance $R$ or the specific time-evolution of the current. Find the expression for $Q$. **[1.5 pt]**
+
+---</div>
+            <button onclick="copyText(this, 'orig_6')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_6">【演示数据】\n选择题：Let $Q$ be the total charge transferred through the tether as the system descends from an initial radius $r_1$ to a final radius $r_2$. Prove that $Q = \int I dt$ depends only on $r_1, r_2$, and the planetary constants ($M_E, R_E, B_0$), but is independent of the tether&#x27;s resistance $R$ or the specific time-evolution of the current. Find the expression for $Q$. **[1.5 pt]**
+
+--- A... B... C... D...\n填空题：Let $Q$ be the total charge transferred through the tether as the system descends from an initial radius $r_1$ to a final radius $r_2$. Prove that $Q = \int I dt$ depends only on $r_1, r_2$, and the planetary constants ($M_E, R_E, B_0$), but is independent of the tether&#x27;s resistance $R$ or the specific time-evolution of the current. Find the expression for $Q$. **[1.5 pt]**
+
+--- ____</div>
+            <button onclick="copyText(this, 'trans_6')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 7</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_7">The tether reaches a steady-state temperature $T_{eq}$ when the Joule heating power is balanced by thermal radiation into space and the energy carried away by the emitted electrons. The whole system is of the same temperature. Assume each emitted electron carries away a kinetic energy that is negligible compared to the work function $\Phi$, so the energy carried away can be approximately written as $\Phi$. Furthermore, assume the induced EMF $\mathcal{E}$ is sufficiently large such that the current $I$ is exactly the saturation current $I_{sat}$ allowed by the cathode temperature. Assume the total surface area of the system is $S$, and $S_{emit}=\eta S$. Formulate a system of two equations that self-consistently determine the steady-state temperature $T_{eq}$ and the saturated current $I_{sat}$ in terms of the tether&#x27;s parameters ($R, S, \eta, \epsilon, \Phi$) and the local EMF $\mathcal{E}$. **[1.2 pt]**</div>
+            <button onclick="copyText(this, 'orig_7')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_7">【演示数据】\n选择题：The tether reaches a steady-state temperature $T_{eq}$ when the Joule heating power is balanced by thermal radiation into space and the energy carried away by the emitted electrons. The whole system is of the same temperature. Assume each emitted electron carries away a kinetic energy that is negligible compared to the work function $\Phi$, so the energy carried away can be approximately written as $\Phi$. Furthermore, assume the induced EMF $\mathcal{E}$ is sufficiently large such that the current $I$ is exactly the saturation current $I_{sat}$ allowed by the cathode temperature. Assume the total surface area of the system is $S$, and $S_{emit}=\eta S$. Formulate a system of two equations that self-consistently determine the steady-state temperature $T_{eq}$ and the saturated current $I_{sat}$ in terms of the tether&#x27;s parameters ($R, S, \eta, \epsilon, \Phi$) and the local EMF $\mathcal{E}$. **[1.2 pt]** A... B... C... D...\n填空题：The tether reaches a steady-state temperature $T_{eq}$ when the Joule heating power is balanced by thermal radiation into space and the energy carried away by the emitted electrons. The whole system is of the same temperature. Assume each emitted electron carries away a kinetic energy that is negligible compared to the work function $\Phi$, so the energy carried away can be approximately written as $\Phi$. Furthermore, assume the induced EMF $\mathcal{E}$ is sufficiently large such that the current $I$ is exactly the saturation current $I_{sat}$ allowed by the cathode temperature. Assume the total surface area of the system is $S$, and $S_{emit}=\eta S$. Formulate a system of two equations that self-consistently determine the steady-state temperature $T_{eq}$ and the saturated current $I_{sat}$ in terms of the tether&#x27;s parameters ($R, S, \eta, \epsilon, \Phi$) and the local EMF $\mathcal{E}$. **[1.2 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_7')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <h2 class="problem-header">问题 8</h2>
+        
+        <div class="content-row">
+            <span class="label">问题原文:</span>
+            <div class="text-box" id="orig_8">Consider a limit where the system is driven to extreme temperatures such that Joule heating dominates the emission cooling (i.e., $I^2 R \gg I\Phi/e$) and the thermal energy is much larger than the work function ($k_B T \gg \Phi$). Under these asymptotic conditions, the exponential term in Richardson&#x27;s Law can be approximated as $\exp(-\Phi/k_B T) \approx 1 - \Phi/k_B T$. Assuming the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\mathcal{E}(r)$, find the expression for the orbital decay rate $|dr/dt|$ in this limit, expressed in terms of the tether&#x27;s material/geometric constants ($S, \epsilon, R, L$), the satellites&#x27; mass $m$, and the local orbital parameters ($B, v, r$). **[1.8 pt]**</div>
+            <button onclick="copyText(this, 'orig_8')">📋 一键复制原文</button>
+        </div>
+        
+        <div class="content-row">
+            <span class="label">改造后问题 (选择题 & 填空题):</span>
+            <div class="text-box" id="trans_8">【演示数据】\n选择题：Consider a limit where the system is driven to extreme temperatures such that Joule heating dominates the emission cooling (i.e., $I^2 R \gg I\Phi/e$) and the thermal energy is much larger than the work function ($k_B T \gg \Phi$). Under these asymptotic conditions, the exponential term in Richardson&#x27;s Law can be approximated as $\exp(-\Phi/k_B T) \approx 1 - \Phi/k_B T$. Assuming the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\mathcal{E}(r)$, find the expression for the orbital decay rate $|dr/dt|$ in this limit, expressed in terms of the tether&#x27;s material/geometric constants ($S, \epsilon, R, L$), the satellites&#x27; mass $m$, and the local orbital parameters ($B, v, r$). **[1.8 pt]** A... B... C... D...\n填空题：Consider a limit where the system is driven to extreme temperatures such that Joule heating dominates the emission cooling (i.e., $I^2 R \gg I\Phi/e$) and the thermal energy is much larger than the work function ($k_B T \gg \Phi$). Under these asymptotic conditions, the exponential term in Richardson&#x27;s Law can be approximated as $\exp(-\Phi/k_B T) \approx 1 - \Phi/k_B T$. Assuming the tether is operated at the tipping point where $I_{sat}$ is exactly limited by the available EMF $\mathcal{E}(r)$, find the expression for the orbital decay rate $|dr/dt|$ in this limit, expressed in terms of the tether&#x27;s material/geometric constants ($S, \epsilon, R, L$), the satellites&#x27; mass $m$, and the local orbital parameters ($B, v, r$). **[1.8 pt]** ____</div>
+            <button onclick="copyText(this, 'trans_8')">📋 一键复制改造后内容</button>
+        </div>
+    </div>
+
+</body>
+</html>
