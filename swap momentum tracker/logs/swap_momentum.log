@@ -1,0 +1,8 @@
+2026-06-12 23:46:49.674 | INFO     | SwapMomentum.Backtest | run_backtest:346 | Mock LLM Agent 已启用（零 API 成本）
+2026-06-12 23:46:49.675 | INFO     | SwapMomentum.BacktestFeeder | start:121 | 历史数据回放器启动 | file=test_ticks.csv | speed=0x
+2026-06-12 23:46:49.675 | INFO     | SwapMomentum.Backtest | backtest_consumer:122 | 回测消费者协程已启动（跳过盘口过滤）
+2026-06-12 23:46:49.676 | INFO     | SwapMomentum.BacktestFeeder | _playback_loop:175 | CSV 加载完成 | rows=100
+2026-06-12 23:46:49.677 | INFO     | SwapMomentum.BacktestFeeder | start:141 | 历史数据回放结束 | 推送=100 | 耗时=0.0s
+2026-06-12 23:46:49.684 | INFO     | SwapMomentum.Backtest | backtest_consumer:147 | 回测: 为 TSLA-USDT-SWAP 创建计算器
+2026-06-12 23:46:49.684 | INFO     | SwapMomentum.Backtest | backtest_consumer:137 | 回测消费者收到毒丸信号
+2026-06-12 23:46:49.684 | INFO     | SwapMomentum.Backtest | backtest_consumer:252 | 回测消费者协程已退出

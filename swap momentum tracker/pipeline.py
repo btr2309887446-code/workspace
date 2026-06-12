@@ -34,6 +34,7 @@ from data_fetcher import SyntheticEquityFetcher
 from analytics import MarketDynamicsCalculator
 from llm_agent import MarketLLMAgent
 from reporter import ReportGenerator, print_energy_alert, print_llm_decision
+from database import AsyncDatabaseManager
 
 logger: Optional[logging.Logger] = None
 
@@ -100,6 +101,7 @@ async def consumer_task(
     settings,
     alert_counters: Dict[str, int],
     shutdown_event: asyncio.Event,
+    db_manager: AsyncDatabaseManager = None,
 ) -> None:
     """
     消费者协程——核心数据处理链路。
@@ -176,6 +178,16 @@ async def consumer_task(
             logger.exception(f"{symbol} 计算器更新失败")
             continue
 
+        # ── 数据库：写入瞬时状态 ticks_history ──
+        if db_manager and result["initialized"]:
+            db_manager.enqueue_tick(
+                timestamp=result["timestamp"],
+                ticker=symbol,
+                price=result["price"],
+                velocity=result["velocity"],
+                energy=result["energy"],
+            )
+
         # ── 能量告警检测 + LLM 触发 ──
         if result["initialized"] and result["energy"] > settings.energy_threshold:
             if symbol not in alert_counters:
@@ -198,6 +210,15 @@ async def consumer_task(
                     timestamp=result["timestamp"],
                 )
 
+                # ── 数据库：写入能量告警事件 ──
+                if db_manager:
+                    db_manager.enqueue_alert(
+                        timestamp=result["timestamp"],
+                        ticker=symbol,
+                        current_energy=result["energy"],
+                        threshold=settings.energy_threshold,
+                    )
+
                 # 非阻塞触发 LLM —— 传入 5 分钟窗口聚合数据
                 now_ts = result["timestamp"]
                 five_min_stats = calc.get_window_stats(now_ts - 300)
@@ -209,6 +230,7 @@ async def consumer_task(
                         velocity=result["velocity"],
                         energy=result["energy"],
                         five_min_stats=five_min_stats,
+                        db_manager=db_manager,
                     ),
                     name=f"llm_{symbol}",
                 )
@@ -250,6 +272,7 @@ async def _llm_analyze_and_print(
     velocity: float,
     energy: float,
     five_min_stats: dict,
+    db_manager: AsyncDatabaseManager = None,
 ) -> None:
     """独立协程：异步调用 LLM 并打印结果。不阻塞主数据流。"""
     try:
@@ -262,6 +285,15 @@ async def _llm_analyze_and_print(
         )
         if result:
             print_llm_decision(result)
+            # ── 数据库：写入 LLM 风控决策 ──
+            if db_manager:
+                db_manager.enqueue_llm_decision(
+                    timestamp=result.get("timestamp", time.time()),
+                    ticker=result.get("ticker", ticker),
+                    action=result.get("action", "HOLD"),
+                    confidence=result.get("confidence", 0.5),
+                    reasoning=result.get("reasoning", ""),
+                )
     except asyncio.CancelledError:
         pass
     except Exception:
@@ -280,6 +312,7 @@ async def stats_printer(
     alert_counters: dict,
     shutdown_event: asyncio.Event,
     interval: float,
+    db_manager: AsyncDatabaseManager = None,
 ) -> None:
     """每隔 interval 秒输出运行摘要。"""
     while not shutdown_event.is_set():
@@ -290,16 +323,17 @@ async def stats_printer(
         if shutdown_event.is_set():
             break
         try:
-            _print_stats(session_manager, calculators, fetcher, llm_agent, alert_counters)
+            _print_stats(session_manager, calculators, fetcher, llm_agent, alert_counters, db_manager)
         except Exception:
             logger.exception("统计打印异常")
 
 
-def _print_stats(sm, calculators, fetcher, llm_agent, alert_counters) -> None:
+def _print_stats(sm, calculators, fetcher, llm_agent, alert_counters, db_manager=None) -> None:
     now = time.strftime("%Y-%m-%d %H:%M:%S")
     info = sm.current_session()
     s = fetcher.stats
     llm_s = llm_agent.get_stats() if llm_agent else {}
+    db_s = db_manager.stats if db_manager else {}
 
     print(f"\n{Ansi.BLUE}{'─' * 64}")
     print(f"  STATUS REPORT | {now} | {info.state_name}")
@@ -339,6 +373,14 @@ def _print_stats(sm, calculators, fetcher, llm_agent, alert_counters) -> None:
             cd_parts = [f"{k}:{v}s" for k, v in active_cd.items()]
             print(f"    Cooldowns: {', '.join(cd_parts)}")
 
+    if db_s:
+        print(f"  ── Database ──")
+        print(f"    Writes: ticks={db_s.get('ticks_written', 0):,}  "
+              f"llm={db_s.get('llm_written', 0):,}  "
+              f"alerts={db_s.get('alerts_written', 0):,}  "
+              f"flushes={db_s.get('flush_count', 0)}  "
+              f"errors={db_s.get('flush_errors', 0)}")
+
     print()
 
 
@@ -370,6 +412,16 @@ async def main() -> None:
     )
     report_generator = ReportGenerator(settings, session_manager, llm_agent)
 
+    # ── 实例化数据库管理器（异步 SQLite + 批量刷写） ──
+    db_manager = AsyncDatabaseManager()
+    try:
+        await db_manager.init_db()
+        await db_manager.start()
+        logger.info("数据库管理器已就绪")
+    except Exception:
+        logger.exception("数据库初始化失败，将以无持久化模式运行")
+        db_manager = None
+
     calculators: Dict[str, MarketDynamicsCalculator] = {}
     alert_counters: Dict[str, int] = {}
 
@@ -397,7 +449,7 @@ async def main() -> None:
     ))
     tasks.append(asyncio.create_task(
         consumer_task(data_queue, calculators, llm_agent, session_manager,
-                      settings, alert_counters, shutdown_event),
+                      settings, alert_counters, shutdown_event, db_manager),
         name="Consumer",
     ))
     tasks.append(asyncio.create_task(
@@ -406,7 +458,7 @@ async def main() -> None:
     ))
     tasks.append(asyncio.create_task(
         stats_printer(session_manager, calculators, fetcher, llm_agent,
-                      alert_counters, shutdown_event, settings.stats_interval),
+                      alert_counters, shutdown_event, settings.stats_interval, db_manager),
         name="StatsPrinter",
     ))
 
@@ -423,6 +475,15 @@ async def main() -> None:
 
     # 6. 有序关闭
     await fetcher.stop()
+
+    # 关闭数据库（强制刷盘残余数据，确保零数据丢失）
+    if db_manager:
+        try:
+            await db_manager.close()
+            counts = await db_manager.get_table_counts()
+            logger.info(f"数据库已关闭 | 统计={counts}")
+        except Exception:
+            logger.exception("数据库关闭异常")
 
     for task in tasks:
         if not task.done():
