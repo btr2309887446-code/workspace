@@ -36,6 +36,8 @@ from config import get_settings, setup_logging, Ansi
 from analytics import MarketDynamicsCalculator
 from llm_agent import MarketLLMAgent
 from backtest_feeder import HistoricalCSVFeeder
+from backtest_broker import BacktestBroker
+from order_manager import OrderRouter
 from reporter import print_energy_alert, print_llm_decision
 
 logger: Optional[logging.Logger] = None
@@ -90,7 +92,8 @@ async def backtest_consumer(
     llm_agent,
     settings,
     alert_counters: Dict[str, int],
-    db_manager=None,  # type: ignore
+    db_manager=None,
+    router: OrderRouter = None,
     shutdown_event: asyncio.Event = None,
     quiet: bool = False,
 ) -> None:
@@ -217,6 +220,7 @@ async def backtest_consumer(
                         energy=result["energy"],
                         five_min_stats=five_min_stats,
                         db_manager=db_manager,
+                        router=router,
                         quiet=quiet,
                     ),
                     name=f"bt_llm_{symbol}",
@@ -260,9 +264,10 @@ async def _backtest_llm_analyze(
     energy: float,
     five_min_stats: dict,
     db_manager=None,
+    router: OrderRouter = None,
     quiet: bool = False,
 ) -> None:
-    """回测版 LLM 分析协程——含数据库写入。"""
+    """回测版 LLM 分析协程——含数据库写入 + OMS 信号处理。"""
     try:
         result = await llm_agent.analyze(
             ticker=ticker,
@@ -284,6 +289,24 @@ async def _backtest_llm_analyze(
                     confidence=result.get("confidence", 0.5),
                     reasoning=result.get("reasoning", ""),
                 )
+
+            # ── OMS：信号转订单（回测虚拟撮合） ──
+            if router and result["action"] in ("BUY", "SELL"):
+                order_result = await router.process_signal(
+                    ticker=ticker,
+                    action=result["action"],
+                    current_price=current_price,
+                )
+                # ── 数据库：写入订单执行记录 ──
+                if db_manager and order_result:
+                    db_manager.enqueue_order(
+                        timestamp=result.get("timestamp", time.time()),
+                        symbol=ticker,
+                        action=order_result.get("action", result["action"]),
+                        qty=order_result.get("qty", 0),
+                        filled_price=order_result.get("filled_price", current_price),
+                        notional_value=order_result.get("notional_value", 0),
+                    )
     except asyncio.CancelledError:
         pass
     except Exception:
@@ -299,6 +322,7 @@ async def run_backtest(
     playback_speed: float = 1.0,
     use_mock_llm: bool = False,
     use_db: bool = False,
+    use_trade: bool = False,
     quiet: bool = False,
 ) -> None:
     """
@@ -309,6 +333,7 @@ async def run_backtest(
         playback_speed: 回放速率（0=光速，1=实时，N=N倍速）
         use_mock_llm:   是否使用 Mock LLM
         use_db:         是否启用数据库持久化
+        use_trade:      是否启用虚拟撮合（BacktestBroker）
         quiet:          静默模式
     """
     global logger
@@ -355,6 +380,21 @@ async def run_backtest(
             cooldown_seconds=settings.llm_cooldown_seconds,
         )
 
+    # BacktestBroker + OrderRouter（可选虚拟撮合）
+    router = None
+    broker = None
+    if use_trade:
+        broker = BacktestBroker(initial_capital=100_000.0)
+        await broker.setup_account()
+        logger.info("BacktestBroker 已就绪（虚拟撮合模式）")
+
+        # 将 BacktestBroker 注入 OrderRouter
+        settings.trading_mode = "BACKTEST"  # 绕过 PAPER/LIVE 模式检查
+        router = OrderRouter(settings)
+        router.executor = broker  # 直接注入，绕过 _init_executor
+        router.mode = "BACKTEST"
+        logger.info("OrderRouter + BacktestBroker 已挂载")
+
     # 数据库（可选）
     db_manager = None
     if use_db:
@@ -384,7 +424,7 @@ async def run_backtest(
     consumer = asyncio.create_task(
         backtest_consumer(
             data_queue, calculators, llm_agent, settings,
-            alert_counters, db_manager, shutdown_event, quiet,
+            alert_counters, db_manager, router, shutdown_event, quiet,
         ),
         name="BacktestConsumer",
     )
@@ -412,13 +452,26 @@ async def run_backtest(
 
     # 5. 关闭数据库
     if db_manager:
-        await db_manager.close()
         counts = await db_manager.get_table_counts()
-        logger.info(f"数据库统计: {counts}")
+        await db_manager.close()
+        logger.info(f"数据库已关闭 | 统计={counts}")
 
     elapsed = time.time() - start_time
 
-    # 6. 打印回测摘要
+    # 6. 回测绩效报告（虚拟撮合模式）
+    if broker and broker.trades:
+        print(broker.format_report())
+        # 同时输出到日志
+        report = broker.generate_report()
+        logger.info(
+            f"回测绩效 | PnL=${report['total_pnl']:+.2f} "
+            f"({report['total_pnl_pct']:+.2f}%) | "
+            f"胜率={report['win_rate']:.1f}% | "
+            f"最大回撤={report['max_drawdown_pct']:.2f}% | "
+            f"夏普={report['ann_sharpe']:.2f}"
+        )
+
+    # 7. 打印回测摘要
     print(f"\n{Ansi.GREEN}{'=' * 64}")
     print(f"  BACKTEST COMPLETED")
     print(f"{'=' * 64}")
@@ -470,6 +523,10 @@ def main():
         "-q", "--quiet", action="store_true",
         help="静默模式（不打印实时行情，仅输出摘要）",
     )
+    parser.add_argument(
+        "-t", "--trade", action="store_true",
+        help="启用虚拟撮合交易（BacktestBroker，含绩效报告）",
+    )
 
     args = parser.parse_args()
 
@@ -484,6 +541,7 @@ def main():
             playback_speed=args.speed,
             use_mock_llm=args.mock_llm,
             use_db=args.db,
+            use_trade=args.trade,
             quiet=args.quiet,
         ))
     except KeyboardInterrupt:

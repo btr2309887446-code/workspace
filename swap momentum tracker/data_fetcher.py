@@ -283,13 +283,15 @@ class SyntheticEquityFetcher:
 
     async def _handle_message(self, raw_message: str) -> None:
         """处理单条原始消息。"""
-        # OKX 应用层 Ping
+        # OKX 应用层 Ping/Pong —— 纯文本协议，不参与 JSON 解析
         if raw_message == "ping":
             if self._ws is not None:
                 try:
                     await self._ws.send("pong")
                 except Exception:
                     pass
+            return
+        if raw_message == "pong":
             return
 
         try:

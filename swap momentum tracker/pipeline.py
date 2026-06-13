@@ -29,7 +29,7 @@ import time
 from typing import Dict, Optional, Set
 
 from config import get_settings, setup_logging, Ansi
-from session_manager import MarketSession, SessionState
+from session_manager import MarketSession
 from data_fetcher import SyntheticEquityFetcher
 from analytics import MarketDynamicsCalculator
 from llm_agent import MarketLLMAgent
@@ -264,6 +264,22 @@ async def consumer_task(
 
     logger.info(f"消费者协程已退出（共抑制 {suppressed_count} 条非活跃时段消息）")
 
+    # ── 等待所有后台 LLM 分析任务完成，防止 DB 关闭时数据丢失 ──
+    if background_tasks:
+        logger.debug(f"等待 {len(background_tasks)} 个后台 LLM 任务完成...")
+        pending = list(background_tasks)
+        try:
+            await asyncio.wait_for(
+                asyncio.gather(*pending, return_exceptions=True),
+                timeout=15.0,
+            )
+        except asyncio.TimeoutError:
+            logger.warning(f"部分 LLM 任务超时未完成，将被强制取消")
+            for t in pending:
+                if not t.done():
+                    t.cancel()
+        background_tasks.clear()
+
 
 async def _llm_analyze_and_print(
     llm_agent: MarketLLMAgent,
@@ -476,15 +492,6 @@ async def main() -> None:
     # 6. 有序关闭
     await fetcher.stop()
 
-    # 关闭数据库（强制刷盘残余数据，确保零数据丢失）
-    if db_manager:
-        try:
-            await db_manager.close()
-            counts = await db_manager.get_table_counts()
-            logger.info(f"数据库已关闭 | 统计={counts}")
-        except Exception:
-            logger.exception("数据库关闭异常")
-
     for task in tasks:
         if not task.done():
             task.cancel()
@@ -493,6 +500,15 @@ async def main() -> None:
     for task, result in zip(tasks, results):
         if isinstance(result, Exception) and not isinstance(result, asyncio.CancelledError):
             logger.error(f"任务 {task.get_name()} 异常退出: {result}")
+
+    # 关闭数据库（在所有协程退出后，确保后台 LLM 写入已完成）
+    if db_manager:
+        try:
+            await db_manager.close()
+            counts = await db_manager.get_table_counts()
+            logger.info(f"数据库已关闭 | 统计={counts}")
+        except Exception:
+            logger.exception("数据库关闭异常")
 
     logger.info("所有任务已安全退出")
     print(f"\n{Ansi.GREEN}程序已安全关闭。{Ansi.RESET}")

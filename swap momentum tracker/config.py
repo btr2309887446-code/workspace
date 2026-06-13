@@ -187,6 +187,29 @@ class Settings:
     stats_interval: float = 120.0
     session_check_interval: float = 30.0
 
+    # ---- 交易/OMS 配置 ----
+    trading_mode: str = "OFF"
+    """
+    交易模式：
+      OFF   = 只读模式（默认，不发送任何订单）
+      PAPER = Alpaca 模拟盘（美股碎股）
+      LIVE  = OKX 实盘（USDT 本位永续合约）
+    """
+
+    alpaca_api_key: str = ""
+    alpaca_api_secret: str = ""
+
+    okx_api_key: str = ""
+    okx_api_secret: str = ""
+    okx_passphrase: str = ""
+
+    default_notional_value: float = 1000.0
+    """默认名义价值（USD），用于计算下单数量"""
+
+    @property
+    def trading_enabled(self) -> bool:
+        return self.trading_mode in ("PAPER", "LIVE")
+
 
 # ============================================================================
 # 日志系统
@@ -251,6 +274,12 @@ def get_settings(**kwargs) -> Settings:
         "LLM_API_KEY": "llm_api_key",
         "LLM_API_ENDPOINT": "llm_api_endpoint",
         "LLM_MODEL": "llm_model",
+        "TRADING_MODE": "trading_mode",
+        "ALPACA_API_KEY": "alpaca_api_key",
+        "ALPACA_API_SECRET": "alpaca_api_secret",
+        "OKX_API_KEY": "okx_api_key",
+        "OKX_API_SECRET": "okx_api_secret",
+        "OKX_PASSPHRASE": "okx_passphrase",
     }
     for env_key, attr_name in str_envs.items():
         val = os.getenv(env_key)
@@ -262,6 +291,7 @@ def get_settings(**kwargs) -> Settings:
         "LLM_COOLDOWN": ("llm_cooldown_seconds", int),
         "ALERT_COOLDOWN": ("alert_cooldown_seconds", int),
         "REPORT_INTERVAL": ("report_interval_seconds", int),
+        "DEFAULT_NOTIONAL_VALUE": ("default_notional_value", float),
     }
     for env_key, (attr_name, cast) in num_envs.items():
         val = os.getenv(env_key)

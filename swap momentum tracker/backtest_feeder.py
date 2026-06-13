@@ -335,3 +335,7 @@ class HistoricalCSVFeeder:
             f"speed={self.playback_speed}x, "
             f"progress={self.progress_pct:.1f}%)"
         )
+
+
+# 别名，保持接口兼容
+HistoricalDataFeeder = HistoricalCSVFeeder

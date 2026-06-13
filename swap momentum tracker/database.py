@@ -45,7 +45,7 @@ class AsyncDatabaseManager:
     """
 
     # 批量刷写触发阈值
-    FLUSH_BATCH_SIZE = 50       # 单表缓冲区满 50 条即刷
+    FLUSH_BATCH_SIZE = 500       # 单表缓冲区满 500 条即刷
     FLUSH_TIMEOUT_SEC = 3.0     # 距上次刷写超 3 秒即刷
 
     def __init__(self, db_path: str = "data/quant_memory.db"):
@@ -58,10 +58,11 @@ class AsyncDatabaseManager:
         self.db_path = db_path
         self._conn: Optional[aiosqlite.Connection] = None  # type: ignore
 
-        # 三张表的写入缓冲区：[(timestamp, ticker, ...), ...]
+        # 四张表的写入缓冲区：[(timestamp, symbol, ...), ...]
         self._tick_buffer: List[Tuple] = []
         self._llm_buffer: List[Tuple] = []
         self._alert_buffer: List[Tuple] = []
+        self._order_buffer: List[Tuple] = []
 
         # 刷写锁——防止 _flush_loop 和 force_flush 并发写
         self._flush_lock = asyncio.Lock()
@@ -78,6 +79,7 @@ class AsyncDatabaseManager:
             "ticks_written": 0,
             "llm_written": 0,
             "alerts_written": 0,
+            "orders_written": 0,
             "flush_count": 0,
             "flush_errors": 0,
         }
@@ -151,6 +153,23 @@ class AsyncDatabaseManager:
         await self._conn.execute("""
             CREATE INDEX IF NOT EXISTS idx_alerts_ts_ticker
             ON energy_alerts (timestamp, ticker)
+        """)
+
+        # ── 建表：OMS 订单执行记录 ──
+        await self._conn.execute("""
+            CREATE TABLE IF NOT EXISTS order_executions (
+                id             INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp      REAL    NOT NULL,
+                symbol         TEXT    NOT NULL,
+                action         TEXT    NOT NULL,
+                qty            REAL    NOT NULL,
+                filled_price   REAL    NOT NULL,
+                notional_value REAL    NOT NULL
+            )
+        """)
+        await self._conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_orders_ts_symbol
+            ON order_executions (timestamp, symbol)
         """)
 
         await self._conn.commit()
@@ -262,6 +281,26 @@ class AsyncDatabaseManager:
             (timestamp, ticker, current_energy, threshold)
         )
 
+    def enqueue_order(
+        self, timestamp: float, symbol: str,
+        action: str, qty: float, filled_price: float,
+        notional_value: float,
+    ) -> None:
+        """
+        将一条 OMS 订单执行记录加入刷写缓冲区。
+
+        Args:
+            timestamp:      UNIX 时间戳
+            symbol:         合约代码
+            action:         BUY / SELL
+            qty:            成交数量（张数或股数）
+            filled_price:   成交价格
+            notional_value: 名义价值（USD）
+        """
+        self._order_buffer.append(
+            (timestamp, symbol, action, qty, filled_price, notional_value)
+        )
+
     # ------------------------------------------------------------------
     # 内部：后台批量刷写循环
     # ------------------------------------------------------------------
@@ -287,6 +326,7 @@ class AsyncDatabaseManager:
                     len(self._tick_buffer) >= self.FLUSH_BATCH_SIZE
                     or len(self._llm_buffer) >= self.FLUSH_BATCH_SIZE
                     or len(self._alert_buffer) >= self.FLUSH_BATCH_SIZE
+                    or len(self._order_buffer) >= self.FLUSH_BATCH_SIZE
                 ):
                     should_flush = True
 
@@ -295,6 +335,7 @@ class AsyncDatabaseManager:
                     len(self._tick_buffer)
                     + len(self._llm_buffer)
                     + len(self._alert_buffer)
+                    + len(self._order_buffer)
                 )
                 elapsed = time.time() - self._last_flush_ts
                 if total_pending > 0 and elapsed >= self.FLUSH_TIMEOUT_SEC:
@@ -324,11 +365,12 @@ class AsyncDatabaseManager:
             ticks = self._tick_buffer[:]
             llms = self._llm_buffer[:]
             alerts = self._alert_buffer[:]
+            orders = self._order_buffer[:]
 
-            if not ticks and not llms and not alerts:
+            if not ticks and not llms and not alerts and not orders:
                 return
 
-            total = len(ticks) + len(llms) + len(alerts)
+            total = len(ticks) + len(llms) + len(alerts) + len(orders)
 
             try:
                 async with self._conn.execute("BEGIN IMMEDIATE"):
@@ -359,6 +401,15 @@ class AsyncDatabaseManager:
                         self.stats["alerts_written"] += len(alerts)
                         self._alert_buffer = self._alert_buffer[len(alerts):]
 
+                    if orders:
+                        await self._conn.executemany(
+                            "INSERT INTO order_executions (timestamp, symbol, action, qty, filled_price, notional_value) "
+                            "VALUES (?, ?, ?, ?, ?, ?)",
+                            orders,
+                        )
+                        self.stats["orders_written"] += len(orders)
+                        self._order_buffer = self._order_buffer[len(orders):]
+
                 # 提交事务
                 await self._conn.commit()
 
@@ -367,7 +418,7 @@ class AsyncDatabaseManager:
 
                 logger.debug(
                     f"批量刷写完成 | ticks={len(ticks)} llms={len(llms)} "
-                    f"alerts={len(alerts)} total={total}"
+                    f"alerts={len(alerts)} orders={len(orders)} total={total}"
                 )
 
             except Exception:
@@ -387,8 +438,9 @@ class AsyncDatabaseManager:
             ticks = self._tick_buffer[:]
             llms = self._llm_buffer[:]
             alerts = self._alert_buffer[:]
+            orders = self._order_buffer[:]
 
-            total = len(ticks) + len(llms) + len(alerts)
+            total = len(ticks) + len(llms) + len(alerts) + len(orders)
 
             if total == 0:
                 logger.debug("强制刷写：缓冲区为空，跳过")
@@ -422,6 +474,15 @@ class AsyncDatabaseManager:
                         )
                         self.stats["alerts_written"] += len(alerts)
                         self._alert_buffer.clear()
+
+                    if orders:
+                        await self._conn.executemany(
+                            "INSERT INTO order_executions (timestamp, symbol, action, qty, filled_price, notional_value) "
+                            "VALUES (?, ?, ?, ?, ?, ?)",
+                            orders,
+                        )
+                        self.stats["orders_written"] += len(orders)
+                        self._order_buffer.clear()
 
                 await self._conn.commit()
                 logger.info(f"强制刷写完成（停机）| total={total}")
@@ -492,11 +553,43 @@ class AsyncDatabaseManager:
         await cursor.close()
         return rows
 
+    async def query_order_executions(
+        self, symbol: str = None, limit: int = 100,
+    ) -> list:
+        """
+        查询 OMS 订单执行记录。
+
+        Args:
+            symbol: 合约代码（None = 全部）
+            limit:  最大返回条数
+
+        Returns:
+            [(id, timestamp, symbol, action, qty, filled_price, notional_value), ...]
+        """
+        if not self._conn:
+            return []
+        if symbol:
+            cursor = await self._conn.execute(
+                "SELECT * FROM order_executions "
+                "WHERE symbol = ? "
+                "ORDER BY timestamp DESC LIMIT ?",
+                (symbol, limit),
+            )
+        else:
+            cursor = await self._conn.execute(
+                "SELECT * FROM order_executions "
+                "ORDER BY timestamp DESC LIMIT ?",
+                (limit,),
+            )
+        rows = await cursor.fetchall()
+        await cursor.close()
+        return rows
+
     async def get_table_counts(self) -> dict:
         """获取各表行数统计。"""
         if not self._conn:
             return {}
-        tables = ["ticks_history", "llm_decisions", "energy_alerts"]
+        tables = ["ticks_history", "llm_decisions", "energy_alerts", "order_executions"]
         counts = {}
         for table in tables:
             cursor = await self._conn.execute(f"SELECT COUNT(*) FROM {table}")
