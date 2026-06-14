@@ -35,6 +35,7 @@ from analytics import MarketDynamicsCalculator
 from llm_agent import MarketLLMAgent
 from reporter import ReportGenerator, print_energy_alert, print_llm_decision
 from database import AsyncDatabaseManager
+from order_manager import OrderRouter
 
 logger: Optional[logging.Logger] = None
 
@@ -46,6 +47,7 @@ logger: Optional[logging.Logger] = None
 async def session_poller(
     sm: MarketSession,
     fetcher: SyntheticEquityFetcher,
+    calculators: Dict[str, MarketDynamicsCalculator],
     shutdown_event: asyncio.Event,
     interval: float,
 ) -> None:
@@ -72,6 +74,11 @@ async def session_poller(
                         f"盘口切换 | {info.state_name} | "
                         f"活跃={info.active_swaps} | 抑制={info.suppressed_swaps}"
                     )
+                    # 重置新激活标的的计算器，清除上一轮交易时段的残留 EMA/Z-Score
+                    for sym in current_active:
+                        if sym in calculators:
+                            calculators[sym].reset()
+                            logger.debug(f"已重置 {sym} 计算器（盘口切换）")
                 else:
                     logger.info(f"盘口: {info.state_name}（休市，已取消所有订阅）")
                 last_active = current_active
@@ -102,6 +109,7 @@ async def consumer_task(
     alert_counters: Dict[str, int],
     shutdown_event: asyncio.Event,
     db_manager: AsyncDatabaseManager = None,
+    router: OrderRouter = None,
 ) -> None:
     """
     消费者协程——核心数据处理链路。
@@ -173,6 +181,8 @@ async def consumer_task(
                 price=data["price"],
                 volume_usdt=data["volume_usdt"],
                 timestamp=timestamp,
+                ask=data.get("ask", 0),
+                bid=data.get("bid", 0),
             )
         except Exception:
             logger.exception(f"{symbol} 计算器更新失败")
@@ -219,9 +229,8 @@ async def consumer_task(
                         threshold=settings.energy_threshold,
                     )
 
-                # 非阻塞触发 LLM —— 传入 5 分钟窗口聚合数据
-                now_ts = result["timestamp"]
-                five_min_stats = calc.get_window_stats(now_ts - 300)
+                # 非阻塞触发 LLM —— 传入完整特征快照（含 Z-Score/OBI/RSI）
+                snapshot = calc.get_recent_snapshot(10)
                 llm_task = asyncio.create_task(
                     _llm_analyze_and_print(
                         llm_agent=llm_agent,
@@ -229,8 +238,9 @@ async def consumer_task(
                         current_price=result["price"],
                         velocity=result["velocity"],
                         energy=result["energy"],
-                        five_min_stats=five_min_stats,
+                        snapshot=snapshot,
                         db_manager=db_manager,
+                        router=router,
                     ),
                     name=f"llm_{symbol}",
                 )
@@ -287,17 +297,22 @@ async def _llm_analyze_and_print(
     current_price: float,
     velocity: float,
     energy: float,
-    five_min_stats: dict,
+    snapshot: dict,
     db_manager: AsyncDatabaseManager = None,
+    router: OrderRouter = None,
 ) -> None:
-    """独立协程：异步调用 LLM 并打印结果。不阻塞主数据流。"""
+    """
+    独立协程：异步调用 LLM 并打印结果，联动 OMS 执行下单。
+
+    完整链路：LLM 裁决 → 打印决策 → 写入数据库 → OMS 下单
+    """
     try:
         result = await llm_agent.analyze(
             ticker=ticker,
             current_price=current_price,
             velocity=velocity,
             energy=energy,
-            five_min_stats=five_min_stats,
+            five_min_stats=snapshot,
         )
         if result:
             print_llm_decision(result)
@@ -310,6 +325,26 @@ async def _llm_analyze_and_print(
                     confidence=result.get("confidence", 0.5),
                     reasoning=result.get("reasoning", ""),
                 )
+            # ── OMS：LLM 判决 → 订单执行 ──
+            if router and result["action"] in ("BUY", "SELL"):
+                try:
+                    order_result = await router.process_signal(
+                        ticker=ticker,
+                        action=result["action"],
+                        current_price=current_price,
+                    )
+                    # ── 数据库：写入订单执行记录 ──
+                    if db_manager and order_result:
+                        db_manager.enqueue_order(
+                            timestamp=time.time(),
+                            symbol=ticker,
+                            action=order_result.get("action", result["action"]),
+                            qty=order_result.get("qty", order_result.get("sz", 0)),
+                            filled_price=order_result.get("filled_price", current_price),
+                            notional_value=order_result.get("notional_value", 0),
+                        )
+                except Exception:
+                    logger.exception(f"OMS 下单异常 | ticker={ticker}")
     except asyncio.CancelledError:
         pass
     except Exception:
@@ -393,7 +428,8 @@ def _print_stats(sm, calculators, fetcher, llm_agent, alert_counters, db_manager
         print(f"  ── Database ──")
         print(f"    Writes: ticks={db_s.get('ticks_written', 0):,}  "
               f"llm={db_s.get('llm_written', 0):,}  "
-              f"alerts={db_s.get('alerts_written', 0):,}  "
+              f"alerts={db_s.get('alerts_written', 0):,}")
+        print(f"    Orders: {db_s.get('orders_written', 0):,}  "
               f"flushes={db_s.get('flush_count', 0)}  "
               f"errors={db_s.get('flush_errors', 0)}")
 
@@ -428,6 +464,17 @@ async def main() -> None:
     )
     report_generator = ReportGenerator(settings, session_manager, llm_agent)
 
+    # ── 实例化 OMS 路由器（TRADING_MODE=OFF 时降级为空操作） ──
+    router = None
+    if settings.trading_enabled:
+        try:
+            router = OrderRouter(settings)
+            await router.initialize()
+            logger.info(f"OMS 就绪 | mode={settings.trading_mode}")
+        except Exception:
+            logger.exception("OMS 初始化失败，将以只读模式运行")
+            router = None
+
     # ── 实例化数据库管理器（异步 SQLite + 批量刷写） ──
     db_manager = AsyncDatabaseManager()
     try:
@@ -460,12 +507,12 @@ async def main() -> None:
     tasks: list[asyncio.Task] = []
     tasks.append(asyncio.create_task(fetcher.start(), name="DataFetcher"))
     tasks.append(asyncio.create_task(
-        session_poller(session_manager, fetcher, shutdown_event, settings.session_check_interval),
+        session_poller(session_manager, fetcher, calculators, shutdown_event, settings.session_check_interval),
         name="SessionPoller",
     ))
     tasks.append(asyncio.create_task(
         consumer_task(data_queue, calculators, llm_agent, session_manager,
-                      settings, alert_counters, shutdown_event, db_manager),
+                      settings, alert_counters, shutdown_event, db_manager, router),
         name="Consumer",
     ))
     tasks.append(asyncio.create_task(

@@ -1,22 +1,20 @@
 """
-历史回测数据源模块 (backtest_feeder.py)
-=========================================
+双轨时间线回测数据源 (backtest_feeder.py)
+==========================================
 职责：
-  1. 读取本地历史 K 线或 Tick CSV 文件，解析为与实盘完全相同的字典结构
-  2. 对外接口 (start/stop/update_subscriptions) 与 SyntheticEquityFetcher 一致
-     实现无缝依赖注入——在 pipeline.py 中可直接替换数据源
-  3. 速率控制 (Playback Speed)：光速回放 / 仿真时间流逝
+  1. 同时读取微观 Tick 数据（CSV/Parquet）与宏观新闻情绪数据（Parquet）
+  2. 按时间戳严格排序交织，模拟真实市场"价格+信息"双流到达
+  3. Tick 事件 → 推入 data_queue 进行动能计算
+  4. 新闻事件 → 直接更新 MacroSentimentPool，供 LLM 风控读取
+  5. 对外接口 (start/stop) 与 SyntheticEquityFetcher 完全兼容
 
-CSV 文件格式要求：
-  必须包含以下列（大小写不敏感）：
-    timestamp       → 时间戳 (UNIX 秒或 ISO 8601 字符串)
-    symbol          → 合约代码，如 "TSLA-USDT-SWAP"
-    price           → 成交价
-    volume_usdt     → 成交额 (USDT) 或 volume (股数×价格)
-    last_trade_size → 成交数量（可选，默认 0）
+双流合并算法：
+  Tick 流 + 新闻流 → pandas.concat → sort_values("timestamp")
+  → 逐行迭代 → 根据 event_type 分发到不同处理路径
 
-  可选列：
-    volume_quote_24h, volume_base_24h, ask, bid, server_timestamp
+时间模拟：
+  playback_speed=0 → 光速
+  playback_speed>0 → await sleep(Δt / speed)
 """
 
 import asyncio
@@ -27,76 +25,82 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any, List, Set
 
+import pandas as pd
+
 from config import Settings
 
 logger = logging.getLogger("SwapMomentum.BacktestFeeder")
 
 
 # ============================================================================
-# 历史 CSV 数据源
+# 双轨时间线回放器
 # ============================================================================
 
 class HistoricalCSVFeeder:
     """
-    历史数据回放器——接口完全兼容 SyntheticEquityFetcher。
+    双轨时间线回放器 —— 接口完全兼容 SyntheticEquityFetcher。
 
-    使用方法（依赖注入）：
-        # 实盘
-        fetcher = SyntheticEquityFetcher(settings, data_queue)
+    使用方法：
+        from news_engine import MacroSentimentPool
 
-        # 回测（直接替换）
-        fetcher = HistoricalCSVFeeder(
+        pool = MacroSentimentPool()
+
+        feeder = HistoricalCSVFeeder(
             settings=settings,
             data_queue=data_queue,
-            csv_path="data/BTC_USDT_2025.csv",
-            playback_speed=10.0,   # 10 倍速
+            tick_path="data/historical/TSLA-USDT-SWAP/2026-01-01.parquet",
+            news_path="data/historical/news_sentiment.parquet",
+            sentiment_pool=pool,
+            playback_speed=10.0,
         )
-
-    CSV 示例：
-        timestamp,symbol,price,volume_usdt
-        1735689600.0,TSLA-USDT-SWAP,248.50,12500.0
-        1735689600.5,TSLA-USDT-SWAP,248.52,8300.0
     """
 
     def __init__(
         self,
         settings: Settings,
         data_queue: asyncio.Queue,
-        csv_path: str,
+        tick_path: str,
+        news_path: str = None,
+        sentiment_pool=None,  # MacroSentimentPool
         playback_speed: float = 1.0,
     ):
         """
-        初始化历史数据回放器。
-
         Args:
             settings:       系统配置
-            data_queue:     异步队列（与实盘共用）
-            csv_path:       CSV 文件路径
-            playback_speed: 播放速率
-                            0   = 光速（不等待，全速推入队列）
-                            1.0 = 实时（按原始 Δt）
-                            10  = 10 倍速
+            data_queue:     异步队列（Tick 事件推入此队列）
+            tick_path:      微观 Tick 数据文件（.csv 或 .parquet）
+            news_path:      宏观新闻情绪文件（.parquet，可选）
+            sentiment_pool: MacroSentimentPool 实例（新闻事件直接更新）
+            playback_speed: 播放速率（0=光速, 1=实时, N=N倍速）
         """
         self.settings = settings
         self.data_queue = data_queue
-        self.csv_path = Path(csv_path)
+        self.tick_path = Path(tick_path)
+        self.news_path = Path(news_path) if news_path else None
+        self.sentiment_pool = sentiment_pool
         self.playback_speed = playback_speed
 
         self._running = False
         self._current_symbols: Set[str] = set()
         self._messages_pushed = 0
+        self._news_events = 0
         self._start_time = 0.0
 
-        # 模拟实盘的运行统计
+        # 兼容旧参数名
+        self.csv_path = self.tick_path
+
+        # 统计
         self.stats: Dict[str, Any] = {
             "messages_received": 0,
             "messages_parsed": 0,
             "messages_dropped": 0,
+            "news_events": 0,
+            "tick_events": 0,
             "reconnect_attempts": 0,
             "subscription_changes": 0,
             "last_price": {},
             "last_update": {},
-            "csv_rows_total": 0,
+            "total_events": 0,
         }
 
     # ------------------------------------------------------------------
@@ -105,21 +109,27 @@ class HistoricalCSVFeeder:
 
     async def start(self) -> None:
         """
-        启动历史数据回放。
+        启动双轨时间线回放。
 
-        读取 CSV 文件，逐行解析并推入 data_queue。
-        当文件读取完毕后自动停止。
+        流程：
+          1. 读取 Tick 数据 → 标准化 → 打上 event_type="tick"
+          2. 读取新闻数据 → 标准化 → 打上 event_type="news"
+          3. 合并 → 按 timestamp 排序
+          4. 逐行迭代，按事件类型分发
         """
         self._running = True
         self._start_time = time.time()
 
-        if not self.csv_path.exists():
-            logger.error(f"CSV 文件不存在: {self.csv_path}")
+        if not self.tick_path.exists():
+            logger.error(f"Tick 文件不存在: {self.tick_path}")
             self._running = False
             return
 
+        has_news = self.news_path and self.news_path.exists()
+
         logger.info(
-            f"历史数据回放器启动 | file={self.csv_path.name} | "
+            f"双轨回放器启动 | tick={self.tick_path.name} | "
+            f"news={self.news_path.name if has_news else '无'} | "
             f"speed={self.playback_speed}x"
         )
 
@@ -139,126 +149,245 @@ class HistoricalCSVFeeder:
 
             elapsed = time.time() - self._start_time
             logger.info(
-                f"历史数据回放结束 | 推送={self._messages_pushed} | "
-                f"耗时={elapsed:.1f}s"
+                f"双轨回放结束 | ticks={self._messages_pushed} "
+                f"news={self._news_events} | 耗时={elapsed:.1f}s"
             )
 
     async def stop(self) -> None:
-        """停止回放。"""
         self._running = False
 
     async def update_subscriptions(self, active_symbols: List[str]) -> None:
-        """
-        动态切换标的列表（回测模式下仅记录，不做实际订阅）。
-        """
         self._current_symbols = set(active_symbols)
         self.stats["subscription_changes"] += 1
 
     # ------------------------------------------------------------------
-    # 内部：回放主循环
+    # 内部：双轨回放主循环
     # ------------------------------------------------------------------
 
     async def _playback_loop(self) -> None:
         """
-        读取 CSV 并逐行回放。
+        双轨时间线归并 + 回放。
 
-        速率控制逻辑：
-          - playback_speed == 0：光速模式，不 sleep
-          - playback_speed > 0：计算相邻行的 Δt，sleep(Δt / speed)
+        算法：
+          1. 在线程池中读取 Tick + News 数据
+          2. pandas.concat + sort_values("timestamp") 归并
+          3. 逐行迭代，根据 event_type 分发：
+             - "tick" → 推入 data_queue
+             - "news" → 更新 sentiment_pool
+          4. playback_speed 控制时间流逝
         """
+        # 在线程池中加载并合并
+        timeline = await asyncio.to_thread(self._build_timeline)
+        self.stats["total_events"] = len(timeline)
+
+        tick_count = sum(1 for e in timeline if e.get("event_type") == "tick")
+        news_count = len(timeline) - tick_count
+        self.stats["tick_events"] = tick_count
+        self.stats["news_events"] = news_count
+
+        logger.info(
+            f"时间线构建完成 | total={len(timeline)} "
+            f"ticks={tick_count} news={news_count}"
+        )
+
         previous_ts: Optional[float] = None
 
-        # 在线程池中读取文件（CSV 文件可能很大）
-        rows = await asyncio.to_thread(self._read_csv)
-        self.stats["csv_rows_total"] = len(rows)
-
-        logger.info(f"CSV 加载完成 | rows={len(rows)}")
-
-        for row in rows:
+        for event in timeline:
             if not self._running:
                 break
 
-            # 解析字段
-            parsed = self._parse_row(row)
-            if parsed is None:
-                continue
+            ts = float(event.get("timestamp", 0))
+            etype = event.get("event_type", "tick")
 
-            # 速率控制
-            current_ts = parsed.get("local_timestamp", time.time())
+            # ── 时间模拟 ──
             if self.playback_speed > 0 and previous_ts is not None:
-                dt = current_ts - previous_ts
+                dt = ts - previous_ts
                 if dt > 0:
-                    wait_time = dt / self.playback_speed
-                    # 限制单次等待不超过 10 秒（防止 CSV 中过大的时间间隔）
-                    wait_time = min(wait_time, 10.0)
-                    await asyncio.sleep(wait_time)
+                    wait = min(dt / self.playback_speed, 10.0)
+                    await asyncio.sleep(wait)
 
-            previous_ts = current_ts
+            previous_ts = ts
 
-            # 推入队列
-            try:
-                self.data_queue.put_nowait(parsed)
-                self._messages_pushed += 1
-                self.stats["messages_received"] += 1
-                self.stats["messages_parsed"] += 1
-                symbol = parsed.get("symbol", "")
-                if symbol:
-                    self.stats["last_price"][symbol] = parsed["price"]
-                    self.stats["last_update"][symbol] = current_ts
-            except asyncio.QueueFull:
-                self.stats["messages_dropped"] += 1
+            # ── 事件分发 ──
+            if etype == "news":
+                self._dispatch_news(event)
+            else:
+                self._dispatch_tick(event)
 
     # ------------------------------------------------------------------
-    # 内部：CSV 解析
+    # 内部：时间线构建（同步，在线程池中执行）
     # ------------------------------------------------------------------
 
-    def _read_csv(self) -> List[Dict[str, str]]:
+    def _build_timeline(self) -> List[Dict[str, Any]]:
         """
-        同步读取 CSV 文件，返回字典列表。
+        构建统一的排序时间线。
+
+        1. 读取 Tick 数据 → 标准化 → 添加 event_type="tick"
+        2. 读取 News 数据 → 标准化 → 添加 event_type="news"
+        3. pandas.concat → sort_values("timestamp") → records
 
         Returns:
-            [{"timestamp": "...", "symbol": "...", ...}, ...]
+            [{"timestamp": ..., "event_type": "tick"/"news", ...}, ...]
         """
+        events = []
+
+        # ── Tick 流 ──
+        tick_rows = self._load_tick_data()
+        for row in tick_rows:
+            parsed = self._parse_row(row)
+            if parsed is not None:
+                parsed["event_type"] = "tick"
+                # 确保顶层有 timestamp 键（_parse_row 返回 local_timestamp）
+                if "timestamp" not in parsed:
+                    parsed["timestamp"] = parsed.get(
+                        "local_timestamp", parsed.get("server_timestamp", 0)
+                    )
+                events.append(parsed)
+
+        # ── News 流 ──
+        if self.news_path and self.news_path.exists():
+            news_df = pd.read_parquet(self.news_path)
+            for _, row in news_df.iterrows():
+                ticker = str(row.get("ticker", ""))
+                impact = float(row.get("impact", 0) or row.get("impact_score", 0))
+                headline = str(row.get("headline", ""))
+                # 时间戳统一为 float UNIX 秒
+                ts_raw = row.get("timestamp", 0)
+                try:
+                    if isinstance(ts_raw, (int, float)):
+                        ts = float(ts_raw)
+                    elif isinstance(ts_raw, pd.Timestamp):
+                        ts = ts_raw.timestamp()
+                    else:
+                        ts = float(ts_raw)
+                except (ValueError, TypeError):
+                    ts = 0.0
+
+                if ticker and ts > 0 and abs(impact) > 0.001:
+                    events.append({
+                        "event_type": "news",
+                        "timestamp": ts,
+                        "ticker": ticker,
+                        "impact_score": impact,
+                        "headline": headline,
+                        "symbol": ticker,  # 兼容
+                    })
+
+        if not events:
+            return []
+
+        # pandas 排序（毫秒级稳定排序）
+        df = pd.DataFrame(events)
+        df["timestamp"] = df["timestamp"].astype(float)
+        df = df.sort_values("timestamp", kind="mergesort").reset_index(drop=True)
+        return df.to_dict("records")
+
+    # ------------------------------------------------------------------
+    # 内部：事件分发
+    # ------------------------------------------------------------------
+
+    def _dispatch_tick(self, parsed: Dict[str, Any]) -> None:
+        """Tick 事件 → 推入队列，走原有动能计算链路。"""
+        try:
+            self.data_queue.put_nowait(parsed)
+            self._messages_pushed += 1
+            self.stats["messages_received"] += 1
+            self.stats["messages_parsed"] += 1
+            symbol = parsed.get("symbol", "")
+            if symbol:
+                self.stats["last_price"][symbol] = parsed["price"]
+                self.stats["last_update"][symbol] = parsed["local_timestamp"]
+        except asyncio.QueueFull:
+            self.stats["messages_dropped"] += 1
+
+    def _dispatch_news(self, event: Dict[str, Any]) -> None:
+        """
+        新闻事件 → 直接更新 MacroSentimentPool。
+
+        不推入 data_queue，因为队列中的消费者只处理价格数据。
+        情绪池更新后，同时间或稍后的 Tick 触发 LLM 时，
+        llm_agent 通过 get_current_bias() 即可读取最新情绪。
+        """
+        if self.sentiment_pool is None:
+            return
+
+        ticker = event.get("ticker", "")
+        impact = event.get("impact_score", 0.0)
+        headline = event.get("headline", "")
+
+        self.sentiment_pool.update(
+            ticker=ticker,
+            impact_score=impact,
+            headline=headline,
+        )
+        self._news_events += 1
+
+        logger.debug(
+            f"[BT-NEWS] {ticker} impact={impact:+.2f} | {headline[:50]}"
+        )
+
+    # ------------------------------------------------------------------
+    # 内部：数据加载
+    # ------------------------------------------------------------------
+
+    def _load_tick_data(self) -> List[Dict[str, str]]:
+        """根据文件扩展名加载 Tick 数据。"""
+        ext = self.tick_path.suffix.lower()
+        if ext == ".parquet":
+            return self._read_parquet_tick()
+        else:
+            return self._read_csv_tick()
+
+    def _read_csv_tick(self) -> List[Dict[str, str]]:
         rows = []
-        with open(self.csv_path, "r", encoding="utf-8-sig") as f:
+        with open(self.tick_path, "r", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 rows.append(row)
         return rows
 
+    def _read_parquet_tick(self) -> List[Dict[str, str]]:
+        """Parquet → 列名标准化 → 字典列表。"""
+        df = pd.read_parquet(self.tick_path)
+        rename = {}
+        for col in df.columns:
+            lc = str(col).lower().strip()
+            if lc in ("ts", "time"):
+                rename[col] = "timestamp"
+            elif lc in ("ticker", "instid"):
+                rename[col] = "symbol"
+            elif lc in ("px",):
+                rename[col] = "price"
+            elif lc in ("sz", "qty"):
+                rename[col] = "volume"
+        if rename:
+            df = df.rename(columns=rename)
+        if "volume_usdt" not in df.columns:
+            if "price" in df.columns and "volume" in df.columns:
+                df["volume_usdt"] = df["price"] * df["volume"]
+            else:
+                df["volume_usdt"] = 0.0
+        return df.where(pd.notna(df), None).to_dict("records")
+
+    # ------------------------------------------------------------------
+    # 内部：Tick 行解析
+    # ------------------------------------------------------------------
+
     def _parse_row(self, row: Dict[str, str]) -> Optional[Dict[str, Any]]:
-        """
-        将 CSV 的一行解析为与实盘 WebSocket 完全相同的字典结构。
-
-        字段映射（大小写不敏感）：
-          timestamp / time  → local_timestamp
-          symbol / ticker   → symbol
-          price / last      → price
-          volume_usdt       → volume_usdt
-          last_trade_size   → last_trade_size
-          volume / lastSz   → 用于推导 volume_usdt
-
-        Returns:
-            标准化行情 dict，解析失败返回 None
-        """
-        # 统一 key 为小写以便查找
+        """将一行原始数据解析为标准化的行情 dict。"""
         lower_row = {k.lower().strip(): v for k, v in row.items()}
 
         try:
-            # ── 时间戳 ──
             ts_raw = lower_row.get("timestamp") or lower_row.get("time") or "0"
             try:
-                # 尝试 UNIX 秒
                 timestamp = float(ts_raw)
             except ValueError:
-                # 尝试 ISO 8601 字符串
                 try:
-                    dt = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+                    dt = datetime.fromisoformat(str(ts_raw).replace("Z", "+00:00"))
                     timestamp = dt.timestamp()
                 except Exception:
                     timestamp = time.time()
 
-            # ── 合约代码 ──
             symbol = (
                 lower_row.get("symbol")
                 or lower_row.get("ticker")
@@ -268,7 +397,6 @@ class HistoricalCSVFeeder:
             if not symbol:
                 return None
 
-            # ── 价格 ──
             price = float(
                 lower_row.get("price")
                 or lower_row.get("last")
@@ -278,11 +406,9 @@ class HistoricalCSVFeeder:
             if price <= 0:
                 return None
 
-            # ── 成交量 / 成交额 ──
             volume_usdt = float(lower_row.get("volume_usdt", 0) or 0)
             last_trade_size = float(lower_row.get("last_trade_size", 0) or 0)
 
-            # 若 volume_usdt 缺失，尝试从 volume 和 price 推导
             if volume_usdt <= 0:
                 raw_vol = float(
                     lower_row.get("volume")
@@ -293,49 +419,43 @@ class HistoricalCSVFeeder:
                 volume_usdt = raw_vol * price
                 last_trade_size = raw_vol if last_trade_size <= 0 else last_trade_size
 
-            # ── 可选字段 ──
             ask = float(lower_row.get("ask", 0) or 0)
             bid = float(lower_row.get("bid", 0) or 0)
-            vol_quote_24h = float(lower_row.get("volume_quote_24h", 0) or 0)
-            vol_base_24h = float(lower_row.get("volume_base_24h", 0) or 0)
 
             return {
                 "symbol": symbol,
                 "price": price,
                 "last_trade_size": last_trade_size,
                 "volume_usdt": volume_usdt,
-                "volume_quote_24h": vol_quote_24h,
-                "volume_base_24h": vol_base_24h,
                 "ask": ask,
                 "bid": bid,
                 "spread": ask - bid if ask > 0 and bid > 0 else 0.0,
                 "server_timestamp": timestamp,
                 "local_timestamp": timestamp,
             }
-
         except (ValueError, TypeError, KeyError) as e:
-            logger.warning(f"CSV 行解析失败: {e} | row={str(row)[:200]}")
+            logger.warning(f"行解析失败: {e} | row={str(row)[:200]}")
             return None
 
     # ------------------------------------------------------------------
-    # 公开：统计
+    # 统计
     # ------------------------------------------------------------------
 
     @property
     def progress_pct(self) -> float:
-        """回放进度百分比"""
-        total = self.stats.get("csv_rows_total", 0)
+        total = self.stats.get("total_events", 0)
         if total == 0:
             return 0.0
-        return min(100.0, self._messages_pushed / total * 100.0)
+        done = self._messages_pushed + self._news_events
+        return min(100.0, done / total * 100.0)
 
     def __repr__(self) -> str:
         return (
-            f"HistoricalCSVFeeder(file={self.csv_path.name}, "
+            f"HistoricalCSVFeeder(file={self.tick_path.name}, "
             f"speed={self.playback_speed}x, "
             f"progress={self.progress_pct:.1f}%)"
         )
 
 
-# 别名，保持接口兼容
+# 别名
 HistoricalDataFeeder = HistoricalCSVFeeder

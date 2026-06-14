@@ -161,6 +161,8 @@ async def backtest_consumer(
                 price=data["price"],
                 volume_usdt=data["volume_usdt"],
                 timestamp=timestamp,
+                ask=data.get("ask", 0),
+                bid=data.get("bid", 0),
             )
         except Exception:
             logger.exception(f"回测: {symbol} 计算器更新失败")

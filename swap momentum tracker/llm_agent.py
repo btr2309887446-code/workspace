@@ -313,21 +313,38 @@ class MarketLLMAgent:
             f"瞬时能量: {energy:.6f}",
         ]
 
-        # 如果有 5 分钟聚合数据，追加统计信息
+        # 如果有聚合数据，追加统计信息
         if five_min_stats and isinstance(five_min_stats, dict):
             lines.append("")
-            lines.append("--- 近5分钟聚合统计 ---")
-            lines.append(f"采样数量: {five_min_stats.get('sample_count', 0)}")
-            lines.append(f"5分钟涨跌幅: {five_min_stats.get('price_change_pct', 0):+.4f}%")
-            lines.append(f"平均速度: {five_min_stats.get('avg_velocity', 0):+.6f} USDT/s")
-            lines.append(f"速度标准差: {five_min_stats.get('std_velocity', 0):.6f}")
-            lines.append(f"平均能量: {five_min_stats.get('avg_energy', 0):.6f}")
-            lines.append(f"能量积分(∫Edt): {five_min_stats.get('energy_integral', 0):.2f}")
-            lines.append(f"最高能量: {five_min_stats.get('max_energy', 0):.6f}")
-            lines.append(f"最低能量: {five_min_stats.get('min_energy', 0):.6f}")
-            lines.append(f"趋势方向: {five_min_stats.get('direction', '未知')}")
-            lines.append(f"买盘能量占比: {five_min_stats.get('bull_ratio', 50):.1f}%")
-            lines.append(f"总成交额: {five_min_stats.get('total_volume', 0):.2f} USDT")
+            # 如果包含新特征引擎的 Z-Score/OBI/RSI 字段，优先展示
+            has_new = "velocity_zscore" in five_min_stats
+            if has_new:
+                lines.append("--- 实时微观特征 ---")
+                lines.append(f"速度Z-Score: {five_min_stats.get('velocity_zscore', 0):+.2f} "
+                             f"(极端程度: {five_min_stats.get('severity', 'normal')})")
+                lines.append(f"能量Z-Score: {five_min_stats.get('energy_zscore', 0):+.2f}")
+                lines.append(f"买卖价差%: {five_min_stats.get('spread_pct', 0):.4f}")
+                lines.append(f"订单簿失衡率(OBI): {five_min_stats.get('obi', 0):+.4f} "
+                             f"({five_min_stats.get('obi_signal', '')})")
+                lines.append(f"Tick级RSI: {five_min_stats.get('tick_rsi', 50):.1f} "
+                             f"({five_min_stats.get('rsi_signal', '')})")
+                lines.append(f"微观波动率: {five_min_stats.get('micro_volatility', 0):.6f}")
+                if five_min_stats.get('vwap', 0) > 0:
+                    lines.append(f"价格vs VWAP偏离: {five_min_stats.get('price_vs_vwap_pct', 0):+.4f}%")
+            else:
+                # 兼容旧版聚合统计
+                lines.append("--- 近5分钟聚合统计 ---")
+                lines.append(f"采样数量: {five_min_stats.get('sample_count', 0)}")
+                lines.append(f"5分钟涨跌幅: {five_min_stats.get('price_change_pct', 0):+.4f}%")
+                lines.append(f"平均速度: {five_min_stats.get('avg_velocity', 0):+.6f} USDT/s")
+                lines.append(f"速度标准差: {five_min_stats.get('std_velocity', 0):.6f}")
+                lines.append(f"平均能量: {five_min_stats.get('avg_energy', 0):.6f}")
+                lines.append(f"最高能量: {five_min_stats.get('max_energy', 0):.6f}")
+                lines.append(f"最低能量: {five_min_stats.get('min_energy', 0):.6f}")
+                lines.append(f"趋势方向: {five_min_stats.get('direction', '未知')}")
+                lines.append(f"买盘能量占比: {five_min_stats.get('bull_ratio', 50):.1f}%")
+                if five_min_stats.get('total_volume', 0) > 0:
+                    lines.append(f"总成交额: {five_min_stats.get('total_volume', 0):.2f} USDT")
         else:
             lines.append("")
             lines.append("--- 近期统计 ---")
