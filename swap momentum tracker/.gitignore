@@ -1,0 +1,15 @@
+# 环境变量 & 密钥
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# 运行时数据
+logs/
+data/
+reports/
+
+# IDE
+.vscode/
+.idea/
